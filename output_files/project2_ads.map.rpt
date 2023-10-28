@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project2_ads
-Tue Oct 24 19:44:08 2023
+Sat Oct 28 13:53:23 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -14,9 +14,10 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |project2_ads
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 24 19:44:08 2023          ;
+; Analysis & Synthesis Status        ; Successful - Sat Oct 28 13:53:23 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; project2_ads                                   ;
 ; Top-level Entity Name              ; project2_ads                                   ;
@@ -169,7 +170,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; ads_fixed.vhd                    ; yes             ; User VHDL File  ; /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd    ; work    ;
+; ads_complex.vhd                  ; yes             ; User VHDL File  ; /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd  ; work    ;
+; vga_data.vhd                     ; yes             ; User VHDL File  ; /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd     ; work    ;
 ; project2_ads.vhd                 ; yes             ; User VHDL File  ; /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd ;         ;
+; project2_pkg.vhd                 ; yes             ; User VHDL File  ; /home/smcginn-adsd/src/ads/ads_project2/project2_pkg.vhd ; work    ;
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
 
 
@@ -229,6 +234,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |project2_ads ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; num_iterations ; 40    ; Signed Integer                                      ;
+; hori_pixels    ; 640   ; Signed Integer                                      ;
+; vert_pixels    ; 480   ; Signed Integer                                      ;
+; min_real       ; -2.2  ; Signed Float                                        ;
+; min_im         ; -1.2  ; Signed Float                                        ;
+; max_real       ; 1.0   ; Signed Float                                        ;
+; max_im         ; 1.2   ; Signed Float                                        ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-------------------+---------------------------------+
@@ -256,28 +277,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Tue Oct 24 19:43:58 2023
+    Info: Processing started: Sat Oct 28 13:53:04 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project2_ads -c project2_ads
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 0 entities, in source file ads_fixed.vhd
+    Info (12022): Found design unit 1: ads_fixed File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 7
+    Info (12022): Found design unit 2: ads_fixed-body File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 60
+Info (12021): Found 2 design units, including 0 entities, in source file ads_complex.vhd
+    Info (12022): Found design unit 1: ads_complex File: /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd Line: 6
+    Info (12022): Found design unit 2: ads_complex-body File: /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd Line: 52
+Info (12021): Found 2 design units, including 0 entities, in source file vga_data.vhd
+    Info (12022): Found design unit 1: vga_data File: /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd Line: 4
+    Info (12022): Found design unit 2: vga_data-body File: /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd Line: 133
+Info (12021): Found 2 design units, including 1 entities, in source file vga_fsm.vhd
+    Info (12022): Found design unit 1: vga_fsm-fsm File: /home/smcginn-adsd/src/ads/ads_project2/vga_fsm.vhd Line: 25
+    Info (12023): Found entity 1: vga_fsm File: /home/smcginn-adsd/src/ads/ads_project2/vga_fsm.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file vga_test.vhd
+    Info (12022): Found design unit 1: vga_test-test_fixture File: /home/smcginn-adsd/src/ads/ads_project2/vga_test.vhd Line: 13
+    Info (12023): Found entity 1: vga_test File: /home/smcginn-adsd/src/ads/ads_project2/vga_test.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file project2_ads.vhd
-    Info (12022): Found design unit 1: project2_ads-top_arch File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 17
-    Info (12023): Found entity 1: project2_ads File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 10
-Info (12021): Found 0 design units, including 0 entities, in source file project2_pkg.vhd
+    Info (12022): Found design unit 1: project2_ads-top_arch File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 31
+    Info (12023): Found entity 1: project2_ads File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file project2_pkg.vhd
+    Info (12022): Found design unit 1: project2_pkg File: /home/smcginn-adsd/src/ads/ads_project2/project2_pkg.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file mandelbrot_stage.vhd
+    Info (12022): Found design unit 1: mandelbrot_stage-behavior File: /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd Line: 33
+    Info (12023): Found entity 1: mandelbrot_stage File: /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd Line: 12
 Info (12127): Elaborating entity "project2_ads" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at project2_ads.vhd(19): object "temp" assigned a value but never read File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 19
+Warning (10036): Verilog HDL or VHDL warning at project2_ads.vhd(33): object "temp" assigned a value but never read File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 33
 Warning (12158): Entity "project2_ads" contains only dangling pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clock" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 13
+    Warning (15610): No output dependent on input pin "clock" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 27
 Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 0 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 423 megabytes
-    Info: Processing ended: Tue Oct 24 19:44:08 2023
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Peak virtual memory: 422 megabytes
+    Info: Processing ended: Sat Oct 28 13:53:23 2023
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:41
 
 

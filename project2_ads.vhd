@@ -6,6 +6,9 @@ use ieee.numeric_std.all;
 
 library work;
 use work.project2_pkg.all;
+use work.vga_data.all;
+use work.ads_complex.all;
+use work.ads_fixed.all;
 
 entity project2_ads is
 	generic (
