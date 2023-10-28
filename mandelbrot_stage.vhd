@@ -1,6 +1,12 @@
--- Project 2 package
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
-component mandelbrot_stage is
+
+library work;
+use work.project2_pkg.all;
+
+entity mandelbrot_stage is
 	generic (
 		num_iterations := 40
 	)
@@ -19,4 +25,8 @@ component mandelbrot_stage is
 		c_in: in ads_complex;
 		c_out: out ads_complex
 	);
-end component mandelbrot_stage;
+end entity mandelbrot_stage;
+
+architecture behavior of mandelbrot_stage is
+begin
+end architecture behavior;
