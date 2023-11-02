@@ -13,7 +13,7 @@ use work.ads_fixed.all;
 entity project2_ads is
 	generic (
 		num_iterations: natural := 40;
-		hori_pixels: positive := 640;
+		horz_pixels: positive := 640;
 		vert_pixels: positive := 480;
 		
 		-- FIX: convert to fixed type ?
@@ -30,7 +30,7 @@ end entity project2_ads;
 
 architecture top_arch of project2_ads is
 	-- FIX: convert min, max values in fixed type --> complex type
-	type rgb_array is array(<natural range>) of array(0 to 3);
+	type rgb_array is array(0 to num_iterations-1, 0 to 2) of natural range 0 to 255;
 	
 	-- FIX: create color table
 	

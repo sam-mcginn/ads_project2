@@ -4,8 +4,8 @@ use ieee.numeric_std.all;
 
 use std.textio.all;
 
-library vga;
-use vga.vga_data.all;
+library work;
+use work.vga_data.all;
 
 entity vga_test is
 end entity vga_test;
