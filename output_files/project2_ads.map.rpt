@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project2_ads
-Thu Nov  2 13:39:16 2023
+Thu Nov  2 13:53:50 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -10,7 +10,14 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |project2_ads
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -37,22 +44,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Nov  2 13:39:16 2023              ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov  2 13:53:50 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; project2_ads                                   ;
 ; Top-level Entity Name              ; project2_ads                                   ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
-; UFM blocks                         ; N/A until Partition Merge                      ;
-; ADC blocks                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 0                                              ;
+;     Total combinational functions  ; 0                                              ;
+;     Dedicated logic registers      ; 0                                              ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 1                                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -158,13 +165,119 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                    ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; ads_fixed.vhd                    ; yes             ; User VHDL File  ; /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd    ; work    ;
+; ads_complex.vhd                  ; yes             ; User VHDL File  ; /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd  ; work    ;
+; vga_data.vhd                     ; yes             ; User VHDL File  ; /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd     ; work    ;
+; project2_ads.vhd                 ; yes             ; User VHDL File  ; /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd ;         ;
+; project2_pkg.vhd                 ; yes             ; User VHDL File  ; /home/smcginn-adsd/src/ads/ads_project2/project2_pkg.vhd ; work    ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 1     ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 1     ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
+; |project2_ads              ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 1    ; 0            ; 0          ; |project2_ads       ; project2_ads ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |project2_ads ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; num_iterations ; 40    ; Signed Integer                                      ;
+; horz_pixels    ; 640   ; Signed Integer                                      ;
+; vert_pixels    ; 480   ; Signed Integer                                      ;
+; min_real       ; -2.2  ; Signed Float                                        ;
+; min_im         ; -1.2  ; Signed Float                                        ;
+; max_real       ; 1.0   ; Signed Float                                        ;
+; max_im         ; 1.2   ; Signed Float                                        ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 1                               ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Thu Nov  2 13:38:57 2023
+    Info: Processing started: Thu Nov  2 13:53:17 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project2_ads -c project2_ads
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -173,7 +286,7 @@ Info (12021): Found 2 design units, including 0 entities, in source file ads_fix
     Info (12022): Found design unit 2: ads_fixed-body File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 60
 Info (12021): Found 2 design units, including 0 entities, in source file ads_complex.vhd
     Info (12022): Found design unit 1: ads_complex File: /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd Line: 6
-    Info (12022): Found design unit 2: ads_complex-body File: /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd Line: 52
+    Info (12022): Found design unit 2: ads_complex-body File: /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd Line: 58
 Info (12021): Found 2 design units, including 0 entities, in source file vga_data.vhd
     Info (12022): Found design unit 1: vga_data File: /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd Line: 4
     Info (12022): Found design unit 2: vga_data-body File: /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd Line: 133
@@ -191,29 +304,19 @@ Info (12021): Found 1 design units, including 0 entities, in source file project
 Info (12021): Found 2 design units, including 1 entities, in source file mandelbrot_stage.vhd
     Info (12022): Found design unit 1: mandelbrot_stage-behavior File: /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd Line: 38
     Info (12023): Found entity 1: mandelbrot_stage File: /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd Line: 12
-Error (10482): VHDL error at project2_ads.vhd(38): object "r" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 38
-Error (10482): VHDL error at project2_ads.vhd(38): object "g" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 38
-Error (10482): VHDL error at project2_ads.vhd(38): object "b" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 38
-Error (10482): VHDL error at project2_ads.vhd(40): object "r" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 40
-Error (10482): VHDL error at project2_ads.vhd(40): object "g" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 40
-Error (10482): VHDL error at project2_ads.vhd(40): object "b" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 40
-Error (10482): VHDL error at project2_ads.vhd(41): object "r" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 41
-Error (10482): VHDL error at project2_ads.vhd(41): object "g" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 41
-Error (10482): VHDL error at project2_ads.vhd(41): object "b" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 41
-Error (10482): VHDL error at project2_ads.vhd(43): object "r" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 43
-Error (10482): VHDL error at project2_ads.vhd(43): object "g" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 43
-Error (10482): VHDL error at project2_ads.vhd(43): object "b" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 43
-Error (10482): VHDL error at project2_ads.vhd(44): object "r" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 44
-Error (10482): VHDL error at project2_ads.vhd(44): object "g" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 44
-Error (10482): VHDL error at project2_ads.vhd(44): object "b" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 44
-Error (10482): VHDL error at project2_ads.vhd(46): object "r" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 46
-Error (10482): VHDL error at project2_ads.vhd(46): object "g" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 46
-Error (10482): VHDL error at project2_ads.vhd(46): object "b" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 46
-Error (10482): VHDL error at project2_ads.vhd(48): object "r" is used but not declared File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 48
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 19 errors, 1 warning
-    Error: Peak virtual memory: 413 megabytes
-    Error: Processing ended: Thu Nov  2 13:39:16 2023
-    Error: Elapsed time: 00:00:19
-    Error: Total CPU time (on all processors): 00:00:44
+Info (12127): Elaborating entity "project2_ads" for the top level hierarchy
+Warning (12158): Entity "project2_ads" contains only dangling pins
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clock" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 27
+Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 422 megabytes
+    Info: Processing ended: Thu Nov  2 13:53:50 2023
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:01:13
 
 

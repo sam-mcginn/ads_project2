@@ -128,7 +128,7 @@ package body ads_complex is
 	
 	function ads_square (
 			arg: in ads_complex
-		) return ads_complex;
+		) return ads_complex
 	is
 		variable ret: ads_complex;
 	begin
@@ -137,6 +137,4 @@ package body ads_complex is
 		return ret;
 	end function ads_square;
 		
-		
-
 end package body ads_complex;
