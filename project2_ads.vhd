@@ -32,7 +32,55 @@ architecture top_arch of project2_ads is
 	-- FIX: convert min, max values in fixed type --> complex type
 	type rgb_array is array(0 to num_iterations-1, 0 to 2) of natural range 0 to 255;
 	
+	constant r: natural := 0;
+	constant g: natural := 0;
+	constant b: natural := 0;
 	-- FIX: create color table
+	constant color_map: rgb_array := (
+													(153, 255, 255),
+													(r, g, b),
+													(102, 255, 255),
+													(r, g, b),
+													(r, g, b),
+													(51, 255, 255),
+													(r, g, b),
+													(r, g, b),
+													(0, 255, 255),
+													(r, g, b),
+													
+													(r, g, b),
+													(r, g, b),
+													(r, g, b),
+													(r, g, b),
+													(r, g, b),
+													(r, g, b),
+													(51, 153, 255),
+													(r, g, b),
+													(r, g, b),
+													(0, 153, 255),
+													
+													(r, g, b),
+													(r, g, b),
+													(0, 128, 255),
+													(r, g, b),
+													(r, g, b),
+													(0, 0, 255),
+													(r, g, b),
+													(r, g, b),
+													(0, 0, 204),
+													(r, g, b),
+													
+													(r, g, b),
+													(0, 0, 153),
+													(r, g, b),
+													(r, g, b),
+													(0, 0, 102),
+													(r, g, b),
+													(r, g, b),
+													(0, 0, 51),
+													(r, g, b),
+													(0, 0, 0)
+												);
 	
 begin
 	-- FIX: instantiate num_iterations mandelbrot blocks (pipeline)
