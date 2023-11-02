@@ -38,53 +38,73 @@ architecture top_arch of project2_ads is
 	-- FIX: create color table
 	constant color_map: rgb_array := (
 													(153, 255, 255),
-													(r, g, b),
+													(125, 255, 255),
 													(102, 255, 255),
-													(r, g, b),
-													(r, g, b),
+													(85, 255, 255),
+													(70, 255, 255),
 													(51, 255, 255),
-													(r, g, b),
-													(r, g, b),
-													(0, 255, 255),
-													(r, g, b),
+													(35, 255, 255),
+													(125, 225, 255),
+													(100, 225, 255),
+													(125, 200, 255),
 													
-													(r, g, b),
-													(r, g, b),
-													(r, g, b),
-													(r, g, b),
-													(r, g, b),
-													(r, g, b),
+													(100, 200, 255),
+													(50, 200, 255),
+													(25, 200, 255),
+													(0, 200, 255),
+													(100, 153, 255),
+													(75, 153, 255),
 													(51, 153, 255),
-													(r, g, b),
-													(r, g, b),
-													(0, 153, 255),
-													
-													(r, g, b),
-													(r, g, b),
-													(0, 128, 255),
-													(r, g, b),
-													(r, g, b),
+													(25, 150, 255),
+													(50, 125, 255),
+													(25, 125, 255),
+
+													(0, 125, 255),
+													(0, 100, 255),
+													(0, 75, 255),
+													(0, 50, 255),
+													(0, 25, 255),
 													(0, 0, 255),
-													(r, g, b),
-													(r, g, b),
+													(0, 0, 235),
+													(0, 0, 220),
 													(0, 0, 204),
-													(r, g, b),
+													(0, 0, 185),
 													
-													(r, g, b),
+													(0, 0, 170),
 													(0, 0, 153),
-													(r, g, b),
-													(r, g, b),
+													(0, 0, 135),
+													(0, 0, 119),
 													(0, 0, 102),
-													(r, g, b),
-													(r, g, b),
+													(0, 0, 85),
+													(0, 0, 70),
 													(0, 0, 51),
-													(r, g, b),
+													(0, 0, 25),
 													(0, 0, 0)
 												);
+	type pipeline_nodes_cmplx is array(0 to num_iterations) of ads_complex;
+	type pipeline_nodes_nat is array (0 to num_iterations) of natural;
+	
+	signal z_nodes: pipeline_nodes_cmplx;
+	signal c_nodes: pipeline_nodes_cmplx;
+	signal threshold_nodes: pipeline_nodes_cmplx;
+	signal index_nodes: pipeline_nodes_nat;
 	
 begin
 	-- FIX: instantiate num_iterations mandelbrot blocks (pipeline)
-	
+	pipeline: for num in 0 to num_iterations-1 generate
+		p0: mandelbrot_stage
+			port map (
+				clock => clock,
+				threshold_in => threshold_nodes(num),
+				threshold_out => threshold_nodes(num+1),
+				c_in => c_nodes(num),
+				c_out => c_nodes(num+1),
+				z_in => z_nodes(num),
+				z_out => z_nodes(num+1),
+				table_index_in => index_nodes(num),
+				table_index_out => index_nodes(num+1)
+			);
+	end generate pipeline;
 	-- FIX: calculate input vector(s) to mandelbrot pipeline
 	-- (scale R{c}, I{c} range --> horizontal, vertical pixels)
 	
