@@ -1,7 +1,7 @@
----- this file is part of the ADS library
+-- this file is part of the ADS library
 
-library work;
-use work.ads_fixed.all;
+library ads;
+use ads.ads_fixed.all;
 
 package ads_complex is
 	-- complex number in rectangular form
@@ -42,11 +42,17 @@ package ads_complex is
 	function abs2 (
 			arg: in ads_complex
 		) return ads_sfixed;
+		
+	-- returns ads_square 
+	function ads_square (
+			arg: in ads_complex
+		) return ads_complex;
 
 	-- constants
 	constant complex_zero: ads_complex :=
 					ads_cmplx(to_ads_sfixed(0), to_ads_sfixed(0));
-
+	
+		
 end package ads_complex;
 
 package body ads_complex is
@@ -119,5 +125,18 @@ package body ads_complex is
 	   ret := arg.re * arg.re + arg.im * arg.im;
 		return ret;
 	end function abs2;
+	
+	function ads_square (
+			arg: in ads_complex
+		) return ads_complex;
+	is
+		variable ret: ads_complex;
+	begin
+		ret.re:= arg.re * arg.re;
+		ret.im:= arg.im * arg.im;
+		return ret;
+	end function ads_square;
+		
+		
 
 end package body ads_complex;
