@@ -1,7 +1,7 @@
 -- this file is part of the ADS library
 
-library ads;
-use ads.ads_fixed.all;
+library work;
+use work.ads_fixed.all;
 
 package ads_complex is
 	-- complex number in rectangular form
