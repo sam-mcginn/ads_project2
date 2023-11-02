@@ -33,13 +33,13 @@ architecture test_fixture of vga_test is
 	signal point_valid:	boolean;
 
 	signal vga_clock: 	std_logic	:= '0';
-	signal reset:		std_logic	:= '0';
+	signal reset:		std_logic	:= '1';
 	signal h_sync:		std_logic;
 	signal v_sync:		std_logic;
 
 	signal finished:	boolean		:= false;
 
-	constant vga_res:	vga_timing	:= vga_res_1920x1080;
+	constant vga_res:	vga_timing	:= vga_res_default;
 
 	-- testbench related
 	constant horizontal_timing:	timing_data := vga_res.horizontal;
@@ -104,18 +104,22 @@ begin
 		writeline(output, output_line);
 
 		-- reset dut
-		reset <= '1';
-		wait until rising_edge(vga_clock);
 		reset <= '0';
+		wait until rising_edge(vga_clock);
+		reset <= '1';
 
 		-- make image
-		while point.y < vga_res.vertical.active loop
+		--while point.y < vga_res.vertical.active loop
+		while point.y < (vertical_timing.active + vertical_timing.front_porch
+				+ vertical_timing.sync_width + vertical_timing.back_porch -1) loop
 			wait until rising_edge(vga_clock);
 			if point_valid then
 				idx := to_unsigned(point.x + point.y, 32);
 				red := to_integer(idx(3 downto 0));
 				green := to_integer(idx(7 downto 4));
 				blue := to_integer(idx(11 downto 8));
+				
+				--write(output_line, integer'image(point.y) & string'(" ") & std_logic'image(v_sync));
 				write(output_line,
 						integer'image(red) & string'(" ")
 							& integer'image(green) & string'(" ")

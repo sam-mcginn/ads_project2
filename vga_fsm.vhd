@@ -24,7 +24,7 @@ end entity vga_fsm;
 
 architecture fsm of vga_fsm is
 
-signal vga_point: coordinate;
+signal vga_point: coordinate := (x=>0,y=>0);
 -- any internal signals you may need
 begin
 
@@ -33,7 +33,7 @@ begin
 position_counter: process(vga_clock, reset)
 begin
 	if (reset = '0') then
-		vga_point <= make_coordinate(1,1);
+		vga_point <= make_coordinate(0,0);
 		point <= vga_point;
 	elsif (vga_clock'event) and (vga_clock = '1') then
 		vga_point <= next_coordinate(vga_point, vga_res);
@@ -42,9 +42,11 @@ begin
 		
 end process;
 
-hsync: process(vga_clock, reset)
+hsync: process(vga_clock, reset, vga_point)
 begin
-	if (reset = '0') then
+	if (vga_res.sync_polarity = active_low and reset = '0') then
+		h_sync <= '1';
+	elsif (vga_res.sync_polarity = active_high and reset = '0') then
 		h_sync <= '0';
 	elsif(vga_clock'event and vga_clock = '1') then
 		h_sync <= do_horizontal_sync(vga_point, vga_res);
@@ -52,9 +54,11 @@ begin
 	
 end process;
 
-vsync: process(vga_clock)
+vsync: process(vga_clock, reset, vga_point)
 begin
-	if (reset = '0') then
+	if (vga_res.sync_polarity = active_low and reset = '0') then
+		v_sync <= '1';
+	elsif (vga_res.sync_polarity = active_high and reset = '0') then
 		v_sync <= '0';
 	elsif(vga_clock'event and vga_clock = '1') then
 		v_sync <= do_vertical_sync(vga_point, vga_res);
