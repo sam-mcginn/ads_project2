@@ -29,16 +29,12 @@ entity project2_ads is
 end entity project2_ads;
 
 architecture top_arch of project2_ads is
-	-- delete:
-	signal temp: std_logic := '0';
-	
 	-- FIX: convert min, max values in fixed type --> complex type
+	type rgb_array is array(<natural range>) of array(0 to 3);
 	
 	-- FIX: create color table
-begin
-	-- delete:
-	temp <= '1' when rising_edge(clock) else '0';
 	
+begin
 	-- FIX: instantiate num_iterations mandelbrot blocks (pipeline)
 	
 	-- FIX: calculate input vector(s) to mandelbrot pipeline

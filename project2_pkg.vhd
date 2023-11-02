@@ -11,23 +11,22 @@ use work.ads_fixed.all;
 
 package project2_pkg is
 	component mandelbrot_stage is
-		generic (
-			num_iterations: positive := 40
-		);
 		port (
-			clock: in std_logic;
-			
-			-- Pass iteration count
-			iteration_in: in natural;
-			iteration_out: out natural;
-			
-			-- Pass color associated w/ current iteration
-			table_index_in: in natural;
-			table_index_out: out natural;
-			
-			-- Pass current seed value of mandelbrot set
-			c_in: in ads_complex;
-			c_out: out ads_complex
-		);
+		clock: in std_logic;
+		
+		threshold: in ads_complex;
+		curr_c: in ads_complex;
+		-- Pass iteration count
+		--iteration_in: in natural;
+		--iteration_out: out natural;
+		
+		-- Pass current seed value of mandelbrot set
+		z_in: in ads_complex;
+		z_out: out ads_complex;
+		
+		-- Pass color index associated w/ current iteration
+		table_index_in: in natural;
+		table_index_out: out natural
+	);
 	end component mandelbrot_stage;
 end package project2_pkg;
