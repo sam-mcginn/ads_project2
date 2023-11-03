@@ -11,11 +11,14 @@ use work.ads_fixed.all;
 
 package project2_pkg is
 	component mandelbrot_stage is
-		port (
+		generic (
+		threshold: ads_complex
+	);
+	port (
 		clock: in std_logic;
 		-- Threshold
-		threshold_in: in ads_complex;
-		threshold_out: out ads_complex;
+		--threshold_in: in ads_complex;
+		--threshold_out: out ads_complex;
 		
 		-- Initial seed value
 		c_in: in ads_complex;
