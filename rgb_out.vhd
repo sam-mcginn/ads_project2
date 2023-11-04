@@ -31,10 +31,14 @@ begin
 		red <= "0000";
 		green <= "0000";
 		blue <= "0000";
-	else
+	elsif (point.x >= 100 and point.x <= 400) and (point.y >= 20 and point.y <= 300) then
 		red <= "0000";
 		green <= "1010";
 		blue <= "1111";
+	else
+		red <= "0000";
+		green <= "0000";
+		blue <= "0000";
 	end if;	
 		
 end process;

@@ -83,7 +83,7 @@ package vga_data is
 	constant vga_res_1920x1080:	vga_timing := vga_res_data(0);
 	constant vga_res_640x480:	vga_timing := vga_res_data(1);
 	constant vga_res_800x600:	vga_timing := vga_res_data(2);
-	constant vga_res_default:	vga_timing := vga_res_data(1);
+	constant vga_res_default:	vga_timing := vga_res_data(2);
 												
 
 	---- TODO: some functions need to be implemented

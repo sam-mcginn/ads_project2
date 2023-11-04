@@ -70,7 +70,7 @@ entity vga_output is
  begin
 	driver: vga_fsm
 		generic map (
-			vga_res => vga_res_800x600			
+			vga_res => vga_res_default			
 		)
 		port map (
 			vga_clock => vga_clock,
