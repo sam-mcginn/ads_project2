@@ -11,14 +11,18 @@ use work.ads_fixed.all;
 
 package project2_pkg is
 	component mandelbrot_stage is
-		port (
+		generic (
+		threshold: ads_complex
+	);
+	port (
 		clock: in std_logic;
+		-- Threshold
+		--threshold_in: in ads_complex;
+		--threshold_out: out ads_complex;
 		
-		threshold: in ads_complex;
-		curr_c: in ads_complex;
-		-- Pass iteration count
-		--iteration_in: in natural;
-		--iteration_out: out natural;
+		-- Initial seed value
+		c_in: in ads_complex;
+		c_out: out ads_complex;
 		
 		-- Pass current seed value of mandelbrot set
 		z_in: in ads_complex;
