@@ -11,7 +11,7 @@ entity vga_fsm is
 		vga_res:	vga_timing := vga_res_default
 	);
 	port (
-		vga_clock:		in	std_logic; --25Mhz
+		vga_clock:		in	std_logic;
 		reset:			in	std_logic;
 
 		point:			out	coordinate;
@@ -25,10 +25,17 @@ end entity vga_fsm;
 architecture fsm of vga_fsm is
 
 signal vga_point: coordinate := (x=>0,y=>0);
+--signal vga_clock: std_logic := '0';
 -- any internal signals you may need
 begin
 
 
+--clock_divider: process(clock_in)
+--begin
+	--if(clock_in'event and clock_in='1') then
+		--vga_clock <= not vga_clock;
+	--end if;
+--end process;
 
 position_counter: process(vga_clock, reset)
 begin
