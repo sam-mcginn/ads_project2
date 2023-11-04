@@ -35,8 +35,9 @@ end entity project2_ads;
 
 architecture top_arch of project2_ads is
 	type rgb_val is array(0 to 2) of natural range 0 to 255;
-	type rgb_array is array(0 to num_iterations-1, 0 to 2) of natural range 0 to 255;
+	type rgb_array is array(0 to num_iterations-1, 0 to 2) of unsigned range 0 to 255;
 
+	-- FIX: 24 bit RGB values, need 12 bit values and --> std logic vector
 	constant color_map: rgb_array := (
 													(153, 255, 255),
 													(125, 255, 255),
@@ -83,16 +84,16 @@ architecture top_arch of project2_ads is
 													(0, 0, 0)
 												);
 	type pipeline_nodes_cmplx is array(0 to num_iterations) of ads_complex;
-	type pipeline_nodes_nat is array (0 to num_iterations) of natural;
+	type pipeline_nodes_natural is array (0 to num_iterations) of natural;
 	
 	signal z_nodes: pipeline_nodes_cmplx;
 	signal c_nodes: pipeline_nodes_cmplx;
-	signal index_nodes: pipeline_nodes_nat;
+	signal index_nodes: pipeline_nodes_natural;
 	
 	constant threshold: ads_complex := ads_cmplx(thres_real, thres_im);
 	signal curr_rgb: rgb_val;
-	signal curr_h: natural := 0;
-	signal curr_v: natural := 0;
+	signal curr_h: integer := 0;
+	signal curr_v: integer := 0;
 begin
 	curr_rgb <=
 		(color_map(num_iterations-1, 0),

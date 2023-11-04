@@ -37,6 +37,7 @@ begin
 	--end if;
 --end process;
 
+-- updates current pixel on each clock cycle OR when reset
 position_counter: process(vga_clock, reset)
 begin
 	if (reset = '0') then
