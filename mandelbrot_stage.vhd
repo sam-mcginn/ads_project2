@@ -41,7 +41,7 @@ begin
 	begin
 		if rising_edge(clock) then
 			-- FIX - need ads_square fn. in ads_complex
-			z_out <= ads_square(z_curr) + c_in;
+			z_curr <= ads_square(z_curr) + c_in;
 			
 			if (abs2(threshold) > abs2(z_curr)) then
 				table_index_out <= (table_index_in + 1);

@@ -49,17 +49,6 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VHDL_FILE vga_output.vhd
-set_global_assignment -name VHDL_FILE rgb_out.vhd
-set_global_assignment -name VHDL_FILE ads_fixed.vhd -library work
-set_global_assignment -name VHDL_FILE ads_complex.vhd -library work
-set_global_assignment -name VHDL_FILE vga_data.vhd -library work
-set_global_assignment -name VHDL_FILE vga_fsm.vhd -library work
-set_global_assignment -name VHDL_FILE vga_test.vhd -library work
-set_global_assignment -name VHDL_FILE project2_ads.vhd
-set_global_assignment -name VHDL_FILE project2_pkg.vhd -library work
-set_global_assignment -name VHDL_FILE mandelbrot_stage.vhd
-set_global_assignment -name QIP_FILE clock_25.qip
 set_location_assignment PIN_P11 -to clock_in
 set_location_assignment PIN_B8 -to reset
 set_location_assignment PIN_A9 -to locked_led
@@ -81,5 +70,16 @@ set_location_assignment PIN_AA1 -to red[0]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE vga_output.vhd -library work
+set_global_assignment -name VHDL_FILE rgb_out.vhd
+set_global_assignment -name VHDL_FILE ads_fixed.vhd -library work
+set_global_assignment -name VHDL_FILE ads_complex.vhd -library work
+set_global_assignment -name VHDL_FILE vga_data.vhd -library work
+set_global_assignment -name VHDL_FILE vga_fsm.vhd -library work
+set_global_assignment -name VHDL_FILE vga_test.vhd -library work
+set_global_assignment -name VHDL_FILE project2_ads.vhd
+set_global_assignment -name VHDL_FILE project2_pkg.vhd -library work
+set_global_assignment -name VHDL_FILE mandelbrot_stage.vhd
+set_global_assignment -name QIP_FILE clock_25.qip
 set_global_assignment -name VHDL_FILE pipeline_rgb_out.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

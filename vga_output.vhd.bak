@@ -1,9 +1,8 @@
 --Top level file
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-library work;
-use work.vga_data.all;
+library vga;
+use vga.vga_data.all;
 
 entity vga_output is
 	generic (
@@ -83,7 +82,7 @@ entity vga_output is
 		);
 
 
-	output: pipeline_rgb_out
+	output: rgb_out
 		port map (
 			reset => reset,
 			point => point,
@@ -108,5 +107,9 @@ entity vga_output is
 		else
 			reset_led <= '0';
 		end if;
+	end process;
+		-- make instance of ro_puf
+
+
 
 end architecture top;

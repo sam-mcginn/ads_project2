@@ -1,13 +1,14 @@
 -- rgb out for pipeline
 library ieee;
 use ieee.std_logic_1164.all;
-
+use ieee.numeric_std.all;
 
 library work;
 use work.vga_data.all;
+use work.project2_pkg.all;
 
 
-entity rgb_out is
+entity pipeline_rgb_out is
 	port (
 		reset:			in	std_logic;
 		point: 			in coordinate;
@@ -19,11 +20,10 @@ entity rgb_out is
 		green:		out	std_logic_vector (3 downto 0);
 		blue:			out	std_logic_vector (3 downto 0)
 	);
-end entity rgb_out;
+end entity pipeline_rgb_out;
 
-architecture gen of rgb_out is
+architecture gen of pipeline_rgb_out is
 	-- FIX: 24 bit RGB values, need 12 bit values and --> std logic vector
-	type rgb_array is array(0 to num_iterations-1, 0 to 2) of unsigned range 0 to 255;
 	constant color_map: rgb_array := (
 														(153, 255, 255),
 														(125, 255, 255),
@@ -81,9 +81,9 @@ begin
 		green <= "0000";
 		blue <= "0000";
 	else
-		red <= )(color_map(table_index, 0));
-		green <= (color_map(table_index, 1));
-		blue <= (color_map(table_index, 2));
+		red <= std_logic_vector(to_unsigned((color_map(table_index, 0)/17), red'length));
+		green <= std_logic_vector(to_unsigned((color_map(table_index, 1)/17), green'length));
+		blue <= std_logic_vector(to_unsigned((color_map(table_index, 2)/17), blue'length));
 	end if;	
 		
 end process;

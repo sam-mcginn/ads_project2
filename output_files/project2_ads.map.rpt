@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project2_ads
-Sat Nov  4 11:25:28 2023
+Mon Nov  6 18:19:15 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -10,56 +10,7 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |project2_ads
- 10. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:0:p0
- 11. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:1:p0
- 12. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:2:p0
- 13. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:3:p0
- 14. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:4:p0
- 15. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:5:p0
- 16. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:6:p0
- 17. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:7:p0
- 18. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:8:p0
- 19. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:9:p0
- 20. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:10:p0
- 21. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:11:p0
- 22. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:12:p0
- 23. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:13:p0
- 24. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:14:p0
- 25. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:15:p0
- 26. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:16:p0
- 27. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:17:p0
- 28. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:18:p0
- 29. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:19:p0
- 30. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:20:p0
- 31. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:21:p0
- 32. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:22:p0
- 33. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:23:p0
- 34. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:24:p0
- 35. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:25:p0
- 36. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:26:p0
- 37. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:27:p0
- 38. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:28:p0
- 39. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:29:p0
- 40. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:30:p0
- 41. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:31:p0
- 42. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:32:p0
- 43. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:33:p0
- 44. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:34:p0
- 45. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:35:p0
- 46. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:36:p0
- 47. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:37:p0
- 48. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:38:p0
- 49. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:39:p0
- 50. Port Connectivity Checks: "mandelbrot_stage:\pipeline:39:p0"
- 51. Port Connectivity Checks: "mandelbrot_stage:\pipeline:0:p0"
- 52. Post-Synthesis Netlist Statistics for Top Partition
- 53. Elapsed Time Per Partition
- 54. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -86,22 +37,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Nov  4 11:25:28 2023          ;
+; Analysis & Synthesis Status        ; Failed - Mon Nov  6 18:19:14 2023              ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; project2_ads                                   ;
 ; Top-level Entity Name              ; project2_ads                                   ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 0                                              ;
-;     Total combinational functions  ; 0                                              ;
-;     Dedicated logic registers      ; 0                                              ;
-; Total registers                    ; 0                                              ;
-; Total pins                         ; 1                                              ;
-; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
-; Embedded Multiplier 9-bit elements ; 0                                              ;
-; Total PLLs                         ; 0                                              ;
-; UFM blocks                         ; 0                                              ;
-; ADC blocks                         ; 0                                              ;
+; Total logic elements               ; N/A until Partition Merge                      ;
+;     Total combinational functions  ; N/A until Partition Merge                      ;
+;     Dedicated logic registers      ; N/A until Partition Merge                      ;
+; Total registers                    ; N/A until Partition Merge                      ;
+; Total pins                         ; N/A until Partition Merge                      ;
+; Total virtual pins                 ; N/A until Partition Merge                      ;
+; Total memory bits                  ; N/A until Partition Merge                      ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
+; Total PLLs                         ; N/A until Partition Merge                      ;
+; UFM blocks                         ; N/A until Partition Merge                      ;
+; ADC blocks                         ; N/A until Partition Merge                      ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -196,8 +147,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -207,593 +158,55 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                               ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                        ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; ads_fixed.vhd                    ; yes             ; User VHDL File  ; C:/Users/esosa/Documents/Project2/ads_project2/ads_fixed.vhd        ; work    ;
-; ads_complex.vhd                  ; yes             ; User VHDL File  ; C:/Users/esosa/Documents/Project2/ads_project2/ads_complex.vhd      ; work    ;
-; vga_data.vhd                     ; yes             ; User VHDL File  ; C:/Users/esosa/Documents/Project2/ads_project2/vga_data.vhd         ; work    ;
-; project2_ads.vhd                 ; yes             ; User VHDL File  ; C:/Users/esosa/Documents/Project2/ads_project2/project2_ads.vhd     ;         ;
-; project2_pkg.vhd                 ; yes             ; User VHDL File  ; C:/Users/esosa/Documents/Project2/ads_project2/project2_pkg.vhd     ; work    ;
-; mandelbrot_stage.vhd             ; yes             ; User VHDL File  ; C:/Users/esosa/Documents/Project2/ads_project2/mandelbrot_stage.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 1     ;
-;                                             ;       ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 1     ;
-; Average fan-out                             ; 0.50  ;
-+---------------------------------------------+-------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name  ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
-; |project2_ads              ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 1    ; 0            ; 0          ; |project2_ads       ; project2_ads ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |project2_ads ;
-+----------------+-------------------------------+-----------------------------+
-; Parameter Name ; Value                         ; Type                        ;
-+----------------+-------------------------------+-----------------------------+
-; num_iterations ; 40                            ; Signed Integer              ;
-; horz_pixels    ; 640                           ; Signed Integer              ;
-; vert_pixels    ; 480                           ; Signed Integer              ;
-; thres_real     ; 00000000010000000000000000000 ; Unsigned Binary             ;
-; thres_im       ; 00000000010000000000000000000 ; Unsigned Binary             ;
-; min_real       ; 11111111101110011001100110100 ; Unsigned Binary             ;
-; max_real       ; 00000000001000000000000000000 ; Unsigned Binary             ;
-; min_im         ; 11111111110110011001100110100 ; Unsigned Binary             ;
-; max_im         ; 00000000001001100110011001100 ; Unsigned Binary             ;
-+----------------+-------------------------------+-----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:0:p0                         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:1:p0                         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:2:p0                         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:3:p0                         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:4:p0                         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:5:p0                         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:6:p0                         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:7:p0                         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:8:p0                         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:9:p0                         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:10:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:11:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:12:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:13:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:14:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:15:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:16:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:17:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:18:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:19:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:20:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:21:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:22:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:23:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:24:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:25:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:26:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:27:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:28:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:29:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:30:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:31:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:32:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:33:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:34:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:35:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:36:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:37:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:38:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:39:p0                        ;
-+----------------+----------------------------------------------------------------------+--------------+
-; Parameter Name ; Value                                                                ; Type         ;
-+----------------+----------------------------------------------------------------------+--------------+
-; threshold      ; A(B"00000000010000000000000000000",B"00000000010000000000000000000") ; Array/Record ;
-+----------------+----------------------------------------------------------------------+--------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mandelbrot_stage:\pipeline:39:p0"                                                              ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                             ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; c_out           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; z_out           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; table_index_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "mandelbrot_stage:\pipeline:0:p0" ;
-+----------------+-------+----------+-------------------------+
-; Port           ; Type  ; Severity ; Details                 ;
-+----------------+-------+----------+-------------------------+
-; z_in           ; Input ; Info     ; Stuck at GND            ;
-; table_index_in ; Input ; Info     ; Stuck at GND            ;
-+----------------+-------+----------+-------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; boundary_port     ; 1                               ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Sat Nov  4 11:25:18 2023
+    Info: Processing started: Mon Nov  6 18:18:41 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project2_ads -c project2_ads
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file vga_output.vhd
-    Info (12022): Found design unit 1: vga_output-top File: C:/Users/esosa/Documents/Project2/ads_project2/vga_output.vhd Line: 25
-    Info (12023): Found entity 1: vga_output File: C:/Users/esosa/Documents/Project2/ads_project2/vga_output.vhd Line: 7
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Error (10500): VHDL syntax error at vga_output.vhd(112) near text "architecture";  expecting "process" File: /home/smcginn-adsd/src/ads/ads_project2/vga_output.vhd Line: 112
+Info (12021): Found 0 design units, including 0 entities, in source file vga_output.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file rgb_out.vhd
-    Info (12022): Found design unit 1: rgb_out-gen File: C:/Users/esosa/Documents/Project2/ads_project2/rgb_out.vhd Line: 22
-    Info (12023): Found entity 1: rgb_out File: C:/Users/esosa/Documents/Project2/ads_project2/rgb_out.vhd Line: 9
+    Info (12022): Found design unit 1: rgb_out-gen File: /home/smcginn-adsd/src/ads/ads_project2/rgb_out.vhd Line: 22
+    Info (12023): Found entity 1: rgb_out File: /home/smcginn-adsd/src/ads/ads_project2/rgb_out.vhd Line: 9
 Info (12021): Found 2 design units, including 0 entities, in source file ads_fixed.vhd
-    Info (12022): Found design unit 1: ads_fixed File: C:/Users/esosa/Documents/Project2/ads_project2/ads_fixed.vhd Line: 7
-    Info (12022): Found design unit 2: ads_fixed-body File: C:/Users/esosa/Documents/Project2/ads_project2/ads_fixed.vhd Line: 60
+    Info (12022): Found design unit 1: ads_fixed File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 7
+    Info (12022): Found design unit 2: ads_fixed-body File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 60
 Info (12021): Found 2 design units, including 0 entities, in source file ads_complex.vhd
-    Info (12022): Found design unit 1: ads_complex File: C:/Users/esosa/Documents/Project2/ads_project2/ads_complex.vhd Line: 6
-    Info (12022): Found design unit 2: ads_complex-body File: C:/Users/esosa/Documents/Project2/ads_project2/ads_complex.vhd Line: 58
+    Info (12022): Found design unit 1: ads_complex File: /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd Line: 6
+    Info (12022): Found design unit 2: ads_complex-body File: /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd Line: 58
 Info (12021): Found 2 design units, including 0 entities, in source file vga_data.vhd
-    Info (12022): Found design unit 1: vga_data File: C:/Users/esosa/Documents/Project2/ads_project2/vga_data.vhd Line: 4
-    Info (12022): Found design unit 2: vga_data-body File: C:/Users/esosa/Documents/Project2/ads_project2/vga_data.vhd Line: 133
+    Info (12022): Found design unit 1: vga_data File: /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd Line: 4
+    Info (12022): Found design unit 2: vga_data-body File: /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd Line: 133
 Info (12021): Found 2 design units, including 1 entities, in source file vga_fsm.vhd
-    Info (12022): Found design unit 1: vga_fsm-fsm File: C:/Users/esosa/Documents/Project2/ads_project2/vga_fsm.vhd Line: 25
-    Info (12023): Found entity 1: vga_fsm File: C:/Users/esosa/Documents/Project2/ads_project2/vga_fsm.vhd Line: 9
+    Info (12022): Found design unit 1: vga_fsm-fsm File: /home/smcginn-adsd/src/ads/ads_project2/vga_fsm.vhd Line: 25
+    Info (12023): Found entity 1: vga_fsm File: /home/smcginn-adsd/src/ads/ads_project2/vga_fsm.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file vga_test.vhd
-    Info (12022): Found design unit 1: vga_test-test_fixture File: C:/Users/esosa/Documents/Project2/ads_project2/vga_test.vhd Line: 13
-    Info (12023): Found entity 1: vga_test File: C:/Users/esosa/Documents/Project2/ads_project2/vga_test.vhd Line: 10
-Info (12021): Found 2 design units, including 1 entities, in source file project2_ads.vhd
-    Info (12022): Found design unit 1: project2_ads-top_arch File: C:/Users/esosa/Documents/Project2/ads_project2/project2_ads.vhd Line: 36
-    Info (12023): Found entity 1: project2_ads File: C:/Users/esosa/Documents/Project2/ads_project2/project2_ads.vhd Line: 13
+    Info (12022): Found design unit 1: vga_test-test_fixture File: /home/smcginn-adsd/src/ads/ads_project2/vga_test.vhd Line: 13
+    Info (12023): Found entity 1: vga_test File: /home/smcginn-adsd/src/ads/ads_project2/vga_test.vhd Line: 10
+Error (10500): VHDL syntax error at project2_ads.vhd(88) near text ":";  expecting ")", or "," File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 88
+Error (10500): VHDL syntax error at project2_ads.vhd(93) near text ":";  expecting ")", or "," File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 93
+Error (10500): VHDL syntax error at project2_ads.vhd(101) near text ";";  expecting "<=" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 101
+Info (12021): Found 0 design units, including 0 entities, in source file project2_ads.vhd
 Info (12021): Found 1 design units, including 0 entities, in source file project2_pkg.vhd
-    Info (12022): Found design unit 1: project2_pkg File: C:/Users/esosa/Documents/Project2/ads_project2/project2_pkg.vhd Line: 12
+    Info (12022): Found design unit 1: project2_pkg File: /home/smcginn-adsd/src/ads/ads_project2/project2_pkg.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file mandelbrot_stage.vhd
-    Info (12022): Found design unit 1: mandelbrot_stage-behavior File: C:/Users/esosa/Documents/Project2/ads_project2/mandelbrot_stage.vhd Line: 36
-    Info (12023): Found entity 1: mandelbrot_stage File: C:/Users/esosa/Documents/Project2/ads_project2/mandelbrot_stage.vhd Line: 12
+    Info (12022): Found design unit 1: mandelbrot_stage-behavior File: /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd Line: 36
+    Info (12023): Found entity 1: mandelbrot_stage File: /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file clock_25.vhd
-    Info (12022): Found design unit 1: clock_25-SYN File: C:/Users/esosa/Documents/Project2/ads_project2/clock_25.vhd Line: 53
-    Info (12023): Found entity 1: clock_25 File: C:/Users/esosa/Documents/Project2/ads_project2/clock_25.vhd Line: 43
-Info (12127): Elaborating entity "project2_ads" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at project2_ads.vhd(93): object "curr_rgb" assigned a value but never read File: C:/Users/esosa/Documents/Project2/ads_project2/project2_ads.vhd Line: 93
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:0:p0" File: C:/Users/esosa/Documents/Project2/ads_project2/project2_ads.vhd Line: 106
-Warning (10540): VHDL Signal Declaration warning at mandelbrot_stage.vhd(37): used explicit default value for signal "z_curr" because signal was never assigned a value File: C:/Users/esosa/Documents/Project2/ads_project2/mandelbrot_stage.vhd Line: 37
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clock" File: C:/Users/esosa/Documents/Project2/ads_project2/project2_ads.vhd Line: 32
-Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Sat Nov  4 11:25:28 2023
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:11
+    Info (12022): Found design unit 1: clock_25-SYN File: /home/smcginn-adsd/src/ads/ads_project2/clock_25.vhd Line: 53
+    Info (12023): Found entity 1: clock_25 File: /home/smcginn-adsd/src/ads/ads_project2/clock_25.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file pipeline_rgb_out.vhd
+    Info (12022): Found design unit 1: pipeline_rgb_out-gen File: /home/smcginn-adsd/src/ads/ads_project2/pipeline_rgb_out.vhd Line: 25
+    Info (12023): Found entity 1: pipeline_rgb_out File: /home/smcginn-adsd/src/ads/ads_project2/pipeline_rgb_out.vhd Line: 11
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 1 warning
+    Error: Peak virtual memory: 413 megabytes
+    Error: Processing ended: Mon Nov  6 18:19:15 2023
+    Error: Elapsed time: 00:00:34
+    Error: Total CPU time (on all processors): 00:00:44
 
 
