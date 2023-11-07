@@ -47,20 +47,20 @@ entity project2_ads is
 end entity project2_ads;
 
 architecture top_arch of project2_ads is
-	--type rgb_val is array(0 to 2) of natural range 0 to 255;
-	--type rgb_array is array(0 to num_iterations-1, 0 to 2) of integer range 0 to 255;
-
+	-- pipeline nodes
 	type pipeline_nodes_cmplx is array(0 to num_iterations) of ads_complex;
 	type pipeline_nodes_natural is array (0 to num_iterations) of natural;
-	
 	signal z_nodes: pipeline_nodes_cmplx;
 	signal c_nodes: pipeline_nodes_cmplx;
 	signal index_nodes: pipeline_nodes_natural;
 	
+	-- Convert threshold to complex format
 	constant threshold: ads_complex := ads_cmplx(thres_real, thres_im);
-	--signal curr_rgb: rgb_val;
-	signal curr_h: integer := 0;
-	signal curr_v: integer := 0;
+	
+	-- Current point
+	signal curr_point: coordinate;
+	signal curr_h: natural;
+	signal curr_v: natural;
 	
 	-- VGA signals
 	signal hsync_reg: std_logic_vector(0 to num_iterations-1);
@@ -113,8 +113,8 @@ begin
 			h_sync => hsync_in,
 			v_sync => vsync_in,
 			reset_led => reset_led,
+			curr_point => curr_point,
 			table_index => index_nodes(num_iterations),
-			
 			red => r_out,
 			green => g_out,
 			blue => b_out
@@ -127,10 +127,12 @@ begin
 			c0 => vga_clock,
 			locked => locked_led
 		);
+		
+	-- Decompose curr_point into real/horz and im/vert:
+	curr_h <= curr_point.x;
+	curr_v <= curr_point.y;
 	
-	-- FIX: drive mandelbrot pipeline
-	-- (scale R{c}, I{c} range <-- horizontal, vertical pixels)
-	-- Iterate over each (scaled) pixed --> input to pipeline
+	-- Drive mandelbrot pipeline
 	display: process (vga_clock) is
 		variable re_in: ads_sfixed;
 		variable im_in: ads_sfixed;
@@ -138,6 +140,7 @@ begin
 	begin
 		if rising_edge(vga_clock) then
 			-- calculate seed = c_in from current point
+			-- (scale R{c}, I{c} range <-- horizontal, vertical pixels)
 			re_in := ((max_real - min_real)*(to_ads_sfixed(curr_h/horz_pixels))) + min_real;
 			im_in := ((max_im - min_im)*(to_ads_sfixed(curr_v/vert_pixels))) + min_im;
 			

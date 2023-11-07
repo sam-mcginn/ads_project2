@@ -18,20 +18,23 @@ entity vga_output is
 		v_sync:			out std_logic;
 		reset_led:  	out std_logic;
 		
-		table_index: in natural;
-		red:			out	std_logic_vector (3 downto 0);
-		green:		out	std_logic_vector (3 downto 0);
-		blue:			out	std_logic_vector (3 downto 0)
+		curr_point:		out coordinate;
+		
+		table_index: 	in natural;
+		red:				out	std_logic_vector (3 downto 0);
+		green:			out	std_logic_vector (3 downto 0);
+		blue:				out	std_logic_vector (3 downto 0)
 	);
  end entity vga_output;
  
  architecture top of vga_output is
-  --any signal declarations you may need
   signal point: coordinate;
-  --signal vga_clock: std_logic;
   signal point_valid: boolean;
 
  begin
+	-- Drive current point to point output
+	curr_point <= point;
+	
 	driver: vga_fsm
 		generic map (
 			vga_res => vga_res_default			

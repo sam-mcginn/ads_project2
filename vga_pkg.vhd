@@ -78,10 +78,12 @@ package vga_pkg is
 			v_sync:			out std_logic;
 			reset_led:  	out std_logic;
 			
-			table_index: in natural;
-			red:			out	std_logic_vector (3 downto 0);
-			green:		out	std_logic_vector (3 downto 0);
-			blue:			out	std_logic_vector (3 downto 0)
+			curr_point:		out coordinate;
+			
+			table_index: 	in natural;
+			red:				out	std_logic_vector (3 downto 0);
+			green:			out	std_logic_vector (3 downto 0);
+			blue:				out	std_logic_vector (3 downto 0)
 		);
 	 end component vga_output;
  
