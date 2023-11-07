@@ -11,7 +11,8 @@ use work.ads_fixed.all;
 
 entity mandelbrot_stage is
 	generic (
-		threshold: ads_sfixed
+		threshold: ads_sfixed;
+		stage_number: natural
 	);
 	port (
 		clock: in std_logic;
@@ -26,6 +27,10 @@ entity mandelbrot_stage is
 		-- Pass current seed value of mandelbrot set
 		z_in: in ads_complex;
 		z_out: out ads_complex;
+		
+		-- overflow flags
+		overflow_in:	in boolean;
+		overflow_out:	out	boolean;
 		
 		-- Pass color index associated w/ current iteration
 		table_index_in: in natural;
@@ -51,10 +56,22 @@ begin
 			ab_term := z_in.re * z_in.im * to_ads_sfixed(2);
 			z_curr := ads_cmplx(re_square - im_square, ab_term);
 			
-			if (threshold > (re_square + im_square)) then
-				table_index_out <= (table_index_in + 1);
+			--if (threshold > (re_square + im_square)) then
+			--	table_index_out <= stage_number;
+			--else
+			--	table_index_out <= table_index_in;
+			--end if;
+			
+			if (threshold > (re_square + im_square)) or overflow_in then
+				overflow_out <= true;
 			else
+				overflow_out <= false;
+			end if;
+			
+			if overflow_in then
 				table_index_out <= table_index_in;
+			else
+				table_index_out <= stage_number;
 			end if;
 			
 			z_out <= z_curr;

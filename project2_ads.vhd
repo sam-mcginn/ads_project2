@@ -49,9 +49,11 @@ architecture top_arch of project2_ads is
 	-- pipeline nodes
 	type pipeline_nodes_cmplx is array(0 to num_iterations) of ads_complex;
 	type pipeline_nodes_natural is array (0 to num_iterations) of natural;
+	type pipeline_nodes_boolean is array (0 to num_iterations) of boolean;
 	signal z_nodes: pipeline_nodes_cmplx;
 	signal c_nodes: pipeline_nodes_cmplx;
 	signal index_nodes: pipeline_nodes_natural;
+	signal overflow_nodes: pipeline_nodes_boolean;
 	
 	-- Convert threshold to complex format
 	constant threshold: ads_sfixed := (thres_im*thres_im) + (thres_re*thres_re);
@@ -84,11 +86,13 @@ begin
 	-- z, index should both start at 0
 	z_nodes(0) <= ads_cmplx(to_ads_sfixed(0), to_ads_sfixed(0));
 	index_nodes(0) <= 0;
+	overflow_nodes(0) <= false;
 	-- instantiate num_iterations mandelbrot blocks (pipeline)
 	pipeline: for num in 0 to num_iterations-1 generate
 		p0: mandelbrot_stage
 			generic map (
-				threshold => threshold
+				threshold => threshold,
+				stage_number => num
 			)
 			port map (
 				clock => vga_clock,
@@ -97,7 +101,9 @@ begin
 				z_in => z_nodes(num),
 				z_out => z_nodes(num+1),
 				table_index_in => index_nodes(num),
-				table_index_out => index_nodes(num+1)
+				table_index_out => index_nodes(num+1),
+				overflow_in => overflow_nodes(num),
+				overflow_out => overflow_nodes(num+1)
 			);
 	end generate pipeline;
 	
@@ -135,7 +141,7 @@ begin
 	display: process (vga_clock) is
 		variable re_in: ads_sfixed;
 		variable im_in: ads_sfixed;
-		variable index_out: natural;
+		--variable index_out: natural;
 	begin
 		if rising_edge(vga_clock) then
 			-- calculate seed = c_in from current point
@@ -147,7 +153,7 @@ begin
 			c_nodes(0) <= ads_cmplx(re_in, im_in);
 			
 			-- read index from output
-			index_out := index_nodes(num_iterations);
+			--index_out := index_nodes(num_iterations);
 		end if;
 	end process display;
 
