@@ -4,6 +4,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 library work;
 use work.vga_data.all;
+use work.vga_pkg.all;
 
 entity vga_output is
 	generic (
@@ -17,6 +18,7 @@ entity vga_output is
 		reset_led:  	out std_logic;
 		locked_led: 	out std_logic;
 		
+		table_index: in natural;
 		red:			out	std_logic_vector (3 downto 0);
 		green:		out	std_logic_vector (3 downto 0);
 		blue:			out	std_logic_vector (3 downto 0)
@@ -24,45 +26,6 @@ entity vga_output is
  end entity vga_output;
  
  architecture top of vga_output is
-	--components 
-		component vga_fsm is
-			generic (
-				vga_res:	vga_timing := vga_res_default
-			);
-			port (
-				vga_clock:		in	std_logic; --25Mhz
-				reset:			in	std_logic;
-
-				point:			out	coordinate;
-				point_valid:	out	boolean;
-
-				h_sync:			out	std_logic;
-				v_sync:			out 	std_logic
-			);
-		end component vga_fsm;
-		
-		component rgb_out is
-			port (
-				reset:			in	std_logic;
-				point: 			in coordinate;
-				point_valid: in boolean;
-				
-
-				red:			out	std_logic_vector (3 downto 0);
-				green:		out	std_logic_vector (3 downto 0);
-				blue:			out	std_logic_vector (3 downto 0)
-			);
-		end component rgb_out;
-		
-		component clock_25 is
-			port (
-				inclk0: 			IN STD_LOGIC  := '0';
-				c0: 				OUT STD_LOGIC ;
-				locked: 			OUT STD_LOGIC 
-			);
-		end component clock_25;
-		
-
   --any signal declarations you may need
   signal point: coordinate;
   signal vga_clock: std_logic;
@@ -88,6 +51,7 @@ entity vga_output is
 			reset => reset,
 			point => point,
 			point_valid => point_valid,
+			table_index => table_index,
 			red => red,
 			green => green,
 			blue => blue
@@ -108,5 +72,6 @@ entity vga_output is
 		else
 			reset_led <= '0';
 		end if;
+	end process reset_light;
 
 end architecture top;

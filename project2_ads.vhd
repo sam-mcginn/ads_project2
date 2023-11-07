@@ -7,15 +7,15 @@ use ieee.numeric_std.all;
 library work;
 use work.project2_pkg.all;
 use work.vga_data.all;
+use work.vga_pkg.all;
 use work.ads_complex.all;
 use work.ads_fixed.all;
-use work.vga_output.all;
 
 entity project2_ads is
 	generic (
-		num_iterations: natural := 40;
-		horz_pixels: natural := 800;
-		vert_pixels: natural := 600;
+		num_iterations: 	natural := 40;
+		horz_pixels: 		natural := 800;
+		vert_pixels: 		natural := 600;
 		
 		thres_real: ads_sfixed := to_ads_sfixed(2.0);
 		thres_im: ads_sfixed := to_ads_sfixed(2.0);
@@ -33,11 +33,16 @@ entity project2_ads is
 		clock: in std_logic;
 		reset: in std_logic;
 		
-		
-		
+		-- VGA outputs
+		horz_sync: 		out std_logic;
+		vert_sync:		out std_logic;
 		r_out:			out	std_logic_vector (3 downto 0);
-		g_out:		out	std_logic_vector (3 downto 0);
-		b_out:			out	std_logic_vector (3 downto 0)
+		g_out:			out	std_logic_vector (3 downto 0);
+		b_out:			out	std_logic_vector (3 downto 0);
+		
+		-- PLL indicators
+		reset_led:  	out std_logic;
+		locked_led: 	out std_logic
 	);
 end entity project2_ads;
 
@@ -56,7 +61,26 @@ architecture top_arch of project2_ads is
 	--signal curr_rgb: rgb_val;
 	signal curr_h: integer := 0;
 	signal curr_v: integer := 0;
+	
+	signal hsync_reg: std_logic_vector(0 to num_iterations-1);
+	signal hsync: std_logic;
+	signal vsync_reg: std_logic_vector(0 to num_iterations-1);
+	signal vsync: std_logic;
 begin
+	-- shift in 
+	sync_regs: process(vga_clock, reset) is
+	begin
+		if reset = '0' then
+			hsync_reg <= (others => '0');
+		elsif rising_edge(vga_clock) then
+			hsync_reg <= hsync & hsync_reg(0 to num_iterations - 2);
+		end if;
+	end process sync_regs;
+	
+	-- Use output of 'shift reg' to drive sync outputs
+	horz_sync <= hsync_reg(num_iterations-1);
+	
+	
 	--curr_rgb <=
 	--	(color_map(num_iterations-1, 0),
 	--	 color_map(num_iterations-1, 1),
@@ -64,7 +88,6 @@ begin
 		
 	-- z, index should both start at 0
 	z_nodes(0) <= ads_cmplx(to_ads_sfixed(0), to_ads_sfixed(0));
-	c_nodes(0) <= -- something
 	index_nodes(0) <= 0;
 	-- instantiate num_iterations mandelbrot blocks (pipeline)
 	pipeline: for num in 0 to num_iterations-1 generate
@@ -85,21 +108,21 @@ begin
 	
 	v0: vga_output
 		generic map (
-			vga_res:	vga_timing := vga_res_default
-		);
+			vga_res => vga_res_default
+		)
 		port map (
 			clock_in => clock,
 			reset => reset,
-			h_sync: 			out std_logic,
-			v_sync:			out std_logic,
-			reset_led:  	out std_logic,
-			locked_led: 	out std_logic,
+			h_sync => hsync,
+			v_sync => vert_sync,
+			reset_led => reset_led,
+			locked_led => locked_led,
+			table_index => index_nodes(num_iterations),
 			
 			red => r_out,
 			green => g_out,
 			blue => b_out
 		);
-	 end entity vga_output;
 	
 	-- FIX: drive mandelbrot pipeline
 	-- (scale R{c}, I{c} range <-- horizontal, vertical pixels)

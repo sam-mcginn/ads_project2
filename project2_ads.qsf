@@ -81,5 +81,6 @@ set_global_assignment -name VHDL_FILE project2_ads.vhd
 set_global_assignment -name VHDL_FILE project2_pkg.vhd -library work
 set_global_assignment -name VHDL_FILE mandelbrot_stage.vhd
 set_global_assignment -name QIP_FILE clock_25.qip
-set_global_assignment -name VHDL_FILE pipeline_rgb_out.vhd
+set_global_assignment -name VHDL_FILE pipeline_rgb_out.vhd -library work
+set_global_assignment -name VHDL_FILE vga_pkg.vhd -library work
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

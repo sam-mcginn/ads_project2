@@ -2,7 +2,76 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "horz_sync",
+					"strict" : false
+				},
+				{
+					"name" : "vert_sync",
+					"strict" : false
+				},
+				{
+					"name" : "r_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "r_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "r_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "r_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "g_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "g_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "g_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "g_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "b_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "b_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "b_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "b_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reset_led",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				}
+			]
 		}
 	]
 }
