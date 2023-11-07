@@ -12,7 +12,7 @@ use work.ads_fixed.all;
 
 entity project2_ads is
 	generic (
-		num_iterations: 	natural := 25;
+		num_iterations: 	natural := 10;
 		horz_pixels: 		natural := 800;
 		vert_pixels: 		natural := 600;
 		

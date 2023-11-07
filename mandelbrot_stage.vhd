@@ -34,14 +34,15 @@ entity mandelbrot_stage is
 end entity mandelbrot_stage;
 
 architecture behavior of mandelbrot_stage is
-	signal z_curr: ads_complex := z_in;
+	--signal z_curr: ads_complex := z_in;
 begin
 	-- start with c=c_in, z=0; compute fc(z) = z^2 + c
 	stage: process (clock) is
+		variable z_curr: ads_complex;
 	begin
 		if rising_edge(clock) then
 			-- FIX - need ads_square fn. in ads_complex
-			z_curr <= ads_square(z_curr) + c_in;
+			z_curr := ads_square(z_curr) + c_in;
 			
 			if (abs2(threshold) > abs2(z_curr)) then
 				table_index_out <= (table_index_in + 1);

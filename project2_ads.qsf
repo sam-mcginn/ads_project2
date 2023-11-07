@@ -65,7 +65,6 @@ set_global_assignment -name VHDL_FILE vga_test.vhd -library work
 set_global_assignment -name VHDL_FILE project2_ads.vhd
 set_global_assignment -name VHDL_FILE project2_pkg.vhd -library work
 set_global_assignment -name VHDL_FILE mandelbrot_stage.vhd
-set_global_assignment -name QIP_FILE clock_25.qip
 set_global_assignment -name VHDL_FILE pipeline_rgb_out.vhd -library work
 set_global_assignment -name VHDL_FILE vga_pkg.vhd -library work
 set_global_assignment -name TCL_SCRIPT_FILE place_project2.tcl
@@ -102,4 +101,5 @@ set_location_assignment PIN_P4 -to b_out[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to b_out[2]
 set_location_assignment PIN_N2 -to b_out[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to b_out[3]
+set_global_assignment -name QIP_FILE clock_25.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
