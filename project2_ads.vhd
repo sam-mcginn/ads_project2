@@ -68,12 +68,12 @@ architecture top_arch of project2_ads is
 	signal vsync: std_logic;
 begin
 	-- shift in 
-	sync_regs: process(vga_clock, reset) is
+	sync_regs: process( reset) is
 	begin
 		if reset = '0' then
 			hsync_reg <= (others => '0');
-		elsif rising_edge(vga_clock) then
-			hsync_reg <= hsync & hsync_reg(0 to num_iterations - 2);
+		--elsif rising_edge(vga_clock) then
+		--	hsync_reg <= hsync & hsync_reg(0 to num_iterations - 2);
 		end if;
 	end process sync_regs;
 	
@@ -108,7 +108,8 @@ begin
 	
 	v0: vga_output
 		generic map (
-			vga_res => vga_res_default
+			vga_res => vga_res_default,
+			num_iterations => num_iterations
 		)
 		port map (
 			clock_in => clock,

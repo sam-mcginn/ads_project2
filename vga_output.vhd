@@ -8,6 +8,7 @@ use work.vga_pkg.all;
 
 entity vga_output is
 	generic (
+		num_iterations: 	natural := 40;
 		vga_res:	vga_timing := vga_res_default
 	);
 	port (
@@ -47,6 +48,9 @@ entity vga_output is
 
 
 	output: pipeline_rgb_out
+		generic map (
+			num_iterations => num_iterations
+		)
 		port map (
 			reset => reset,
 			point => point,

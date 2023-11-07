@@ -4,10 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "horz_sync",
-					"strict" : false
-				},
-				{
 					"name" : "vert_sync",
 					"strict" : false
 				},
