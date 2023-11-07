@@ -64,29 +64,23 @@ architecture top_arch of project2_ads is
 	
 	-- VGA signals
 	signal hsync_reg: std_logic_vector(0 to num_iterations-1);
-	signal hsync: std_logic;
+	signal hsync_in: std_logic;
 	signal vsync_reg: std_logic_vector(0 to num_iterations-1);
-	signal vsync: std_logic;
+	signal vsync_in: std_logic;
 	signal vga_clock: std_logic;
 begin
-	-- shift in 
+	-- shift register for sync signals to match pipeline delay
 	sync_regs: process(vga_clock, reset) is
 	begin
-		if reset = '0' then
-			hsync_reg <= (others => '0');
-		elsif rising_edge(vga_clock) then
-			hsync_reg <= hsync & hsync_reg(0 to num_iterations - 2);
+		if rising_edge(vga_clock) then
+			hsync_reg <= hsync_in & hsync_reg(0 to num_iterations - 2);
+			vsync_reg <= vsync_in & vsync_reg(0 to num_iterations - 2);
 		end if;
 	end process sync_regs;
 	
 	-- Use output of 'shift reg' to drive sync outputs
 	horz_sync <= hsync_reg(num_iterations-1);
-	
-	
-	--curr_rgb <=
-	--	(color_map(num_iterations-1, 0),
-	--	 color_map(num_iterations-1, 1),
-	--	 color_map(num_iterations-1, 2));
+	vert_sync <= vsync_reg(num_iterations-1);
 		
 	-- z, index should both start at 0
 	z_nodes(0) <= ads_cmplx(to_ads_sfixed(0), to_ads_sfixed(0));
@@ -116,8 +110,8 @@ begin
 		port map (
 			clock_in => vga_clock,
 			reset => reset,
-			h_sync => hsync,
-			v_sync => vert_sync,
+			h_sync => hsync_in,
+			v_sync => vsync_in,
 			reset_led => reset_led,
 			table_index => index_nodes(num_iterations),
 			
@@ -143,33 +137,15 @@ begin
 		variable index_out: natural;
 	begin
 		if rising_edge(vga_clock) then
-			-- calculate seed = c_in
+			-- calculate seed = c_in from current point
 			re_in := ((max_real - min_real)*(to_ads_sfixed(curr_h/horz_pixels))) + min_real;
 			im_in := ((max_im - min_im)*(to_ads_sfixed(curr_v/vert_pixels))) + min_im;
 			
 			-- input c_in to pipeline
 			c_nodes(0) <= ads_cmplx(re_in, im_in);
 			
-			-- read index and get rgb val from color map
+			-- read index from output
 			index_out := index_nodes(num_iterations);
-			--curr_rgb <=
-			--	(color_map(index_out, 0), color_map(index_out, 1), color_map(index_out, 2));
-			
-			-- FIX - drive vga from (maybe?) curr_rgb, curr_h, curr_v
-			
-			-- update pixel positions
-			--if curr_h < (horz_pixels-1) then
-			--		curr_h <= curr_h + 1;
-			--else
-			--	curr_h <= 0;
-			--end if;
-			
-			--if curr_v < (vert_pixels-1) then
-			--	curr_v <= curr_v +1;
-			--else
-			--	curr_v <= 0;
-			--end if;
-			
 		end if;
 	end process display;
 
