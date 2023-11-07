@@ -62,18 +62,20 @@ architecture top_arch of project2_ads is
 	signal curr_h: integer := 0;
 	signal curr_v: integer := 0;
 	
+	-- VGA signals
 	signal hsync_reg: std_logic_vector(0 to num_iterations-1);
 	signal hsync: std_logic;
 	signal vsync_reg: std_logic_vector(0 to num_iterations-1);
 	signal vsync: std_logic;
+	signal vga_clock: std_logic;
 begin
 	-- shift in 
-	sync_regs: process( reset) is
+	sync_regs: process(vga_clock, reset) is
 	begin
 		if reset = '0' then
 			hsync_reg <= (others => '0');
-		--elsif rising_edge(vga_clock) then
-		--	hsync_reg <= hsync & hsync_reg(0 to num_iterations - 2);
+		elsif rising_edge(vga_clock) then
+			hsync_reg <= hsync & hsync_reg(0 to num_iterations - 2);
 		end if;
 	end process sync_regs;
 	
@@ -96,7 +98,7 @@ begin
 				threshold => threshold
 			)
 			port map (
-				clock => clock,
+				clock => vga_clock,
 				c_in => c_nodes(num),
 				c_out => c_nodes(num+1),
 				z_in => z_nodes(num),
@@ -112,28 +114,35 @@ begin
 			num_iterations => num_iterations
 		)
 		port map (
-			clock_in => clock,
+			clock_in => vga_clock,
 			reset => reset,
 			h_sync => hsync,
 			v_sync => vert_sync,
 			reset_led => reset_led,
-			locked_led => locked_led,
 			table_index => index_nodes(num_iterations),
 			
 			red => r_out,
 			green => g_out,
 			blue => b_out
 		);
+		
+	-- VGA clock
+		clk: clock_25
+		port map (
+			inclk0 => clock,
+			c0 => vga_clock,
+			locked => locked_led
+		);
 	
 	-- FIX: drive mandelbrot pipeline
 	-- (scale R{c}, I{c} range <-- horizontal, vertical pixels)
 	-- Iterate over each (scaled) pixed --> input to pipeline
-	display: process (clock) is
+	display: process (vga_clock) is
 		variable re_in: ads_sfixed;
 		variable im_in: ads_sfixed;
 		variable index_out: natural;
 	begin
-		if rising_edge(clock) then
+		if rising_edge(vga_clock) then
 			-- calculate seed = c_in
 			re_in := ((max_real - min_real)*(to_ads_sfixed(curr_h/horz_pixels))) + min_real;
 			im_in := ((max_im - min_im)*(to_ads_sfixed(curr_v/vert_pixels))) + min_im;

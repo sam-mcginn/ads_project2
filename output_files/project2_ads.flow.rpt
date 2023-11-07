@@ -1,5 +1,5 @@
 Flow report for project2_ads
-Tue Nov  7 10:11:43 2023
+Tue Nov  7 10:34:01 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Tue Nov  7 10:11:43 2023          ;
+; Flow Status                        ; Successful - Tue Nov  7 10:34:01 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; project2_ads                                   ;
 ; Top-level Entity Name              ; project2_ads                                   ;
 ; Family                             ; MAX 10                                         ;
 ; Device                             ; 10M50DAF484C7G                                 ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 866                                            ;
-;     Total combinational functions  ; 866                                            ;
-;     Dedicated logic registers      ; 347                                            ;
-; Total registers                    ; 347                                            ;
+; Total logic elements               ; 909                                            ;
+;     Total combinational functions  ; 869                                            ;
+;     Dedicated logic registers      ; 388                                            ;
+; Total registers                    ; 388                                            ;
 ; Total pins                         ; 18                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/07/2023 10:10:15 ;
+; Start date & time ; 11/07/2023 10:33:33 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; project2_ads        ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 8796750404080.169936981403805          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 8796750404080.169937121303387          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; clock_25.cmp                           ; --            ; --          ; --         ;
@@ -97,8 +97,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:28     ; 1.0                     ; 492 MB              ; 00:02:06                           ;
-; Total                ; 00:01:28     ; --                      ; --                  ; 00:02:06                           ;
+; Analysis & Synthesis ; 00:00:28     ; 1.0                     ; 493 MB              ; 00:00:38                           ;
+; Total                ; 00:00:28     ; --                      ; --                  ; 00:00:38                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

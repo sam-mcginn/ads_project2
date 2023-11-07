@@ -1,105 +1,46 @@
 |project2_ads
-clock => mandelbrot_stage:pipeline:0:p0.clock
-clock => c_nodes[0].im[-18].CLK
-clock => c_nodes[0].im[-17].CLK
-clock => c_nodes[0].im[-16].CLK
-clock => c_nodes[0].im[-15].CLK
-clock => c_nodes[0].im[-14].CLK
-clock => c_nodes[0].im[-13].CLK
-clock => c_nodes[0].im[-12].CLK
-clock => c_nodes[0].im[-11].CLK
-clock => c_nodes[0].im[-10].CLK
-clock => c_nodes[0].im[-9].CLK
-clock => c_nodes[0].im[-8].CLK
-clock => c_nodes[0].im[-7].CLK
-clock => c_nodes[0].im[-6].CLK
-clock => c_nodes[0].im[-5].CLK
-clock => c_nodes[0].im[-4].CLK
-clock => c_nodes[0].im[-3].CLK
-clock => c_nodes[0].im[-2].CLK
-clock => c_nodes[0].im[-1].CLK
-clock => c_nodes[0].im[0].CLK
-clock => c_nodes[0].im[1].CLK
-clock => c_nodes[0].im[2].CLK
-clock => c_nodes[0].im[3].CLK
-clock => c_nodes[0].im[4].CLK
-clock => c_nodes[0].im[5].CLK
-clock => c_nodes[0].im[6].CLK
-clock => c_nodes[0].im[7].CLK
-clock => c_nodes[0].im[8].CLK
-clock => c_nodes[0].im[9].CLK
-clock => c_nodes[0].im[10].CLK
-clock => c_nodes[0].re[-18].CLK
-clock => c_nodes[0].re[-17].CLK
-clock => c_nodes[0].re[-16].CLK
-clock => c_nodes[0].re[-15].CLK
-clock => c_nodes[0].re[-14].CLK
-clock => c_nodes[0].re[-13].CLK
-clock => c_nodes[0].re[-12].CLK
-clock => c_nodes[0].re[-11].CLK
-clock => c_nodes[0].re[-10].CLK
-clock => c_nodes[0].re[-9].CLK
-clock => c_nodes[0].re[-8].CLK
-clock => c_nodes[0].re[-7].CLK
-clock => c_nodes[0].re[-6].CLK
-clock => c_nodes[0].re[-5].CLK
-clock => c_nodes[0].re[-4].CLK
-clock => c_nodes[0].re[-3].CLK
-clock => c_nodes[0].re[-2].CLK
-clock => c_nodes[0].re[-1].CLK
-clock => c_nodes[0].re[0].CLK
-clock => c_nodes[0].re[1].CLK
-clock => c_nodes[0].re[2].CLK
-clock => c_nodes[0].re[3].CLK
-clock => c_nodes[0].re[4].CLK
-clock => c_nodes[0].re[5].CLK
-clock => c_nodes[0].re[6].CLK
-clock => c_nodes[0].re[7].CLK
-clock => c_nodes[0].re[8].CLK
-clock => c_nodes[0].re[9].CLK
-clock => c_nodes[0].re[10].CLK
-clock => mandelbrot_stage:pipeline:1:p0.clock
-clock => mandelbrot_stage:pipeline:2:p0.clock
-clock => mandelbrot_stage:pipeline:3:p0.clock
-clock => mandelbrot_stage:pipeline:4:p0.clock
-clock => mandelbrot_stage:pipeline:5:p0.clock
-clock => mandelbrot_stage:pipeline:6:p0.clock
-clock => mandelbrot_stage:pipeline:7:p0.clock
-clock => mandelbrot_stage:pipeline:8:p0.clock
-clock => mandelbrot_stage:pipeline:9:p0.clock
-clock => mandelbrot_stage:pipeline:10:p0.clock
-clock => mandelbrot_stage:pipeline:11:p0.clock
-clock => mandelbrot_stage:pipeline:12:p0.clock
-clock => mandelbrot_stage:pipeline:13:p0.clock
-clock => mandelbrot_stage:pipeline:14:p0.clock
-clock => mandelbrot_stage:pipeline:15:p0.clock
-clock => mandelbrot_stage:pipeline:16:p0.clock
-clock => mandelbrot_stage:pipeline:17:p0.clock
-clock => mandelbrot_stage:pipeline:18:p0.clock
-clock => mandelbrot_stage:pipeline:19:p0.clock
-clock => mandelbrot_stage:pipeline:20:p0.clock
-clock => mandelbrot_stage:pipeline:21:p0.clock
-clock => mandelbrot_stage:pipeline:22:p0.clock
-clock => mandelbrot_stage:pipeline:23:p0.clock
-clock => mandelbrot_stage:pipeline:24:p0.clock
-clock => mandelbrot_stage:pipeline:25:p0.clock
-clock => mandelbrot_stage:pipeline:26:p0.clock
-clock => mandelbrot_stage:pipeline:27:p0.clock
-clock => mandelbrot_stage:pipeline:28:p0.clock
-clock => mandelbrot_stage:pipeline:29:p0.clock
-clock => mandelbrot_stage:pipeline:30:p0.clock
-clock => mandelbrot_stage:pipeline:31:p0.clock
-clock => mandelbrot_stage:pipeline:32:p0.clock
-clock => mandelbrot_stage:pipeline:33:p0.clock
-clock => mandelbrot_stage:pipeline:34:p0.clock
-clock => mandelbrot_stage:pipeline:35:p0.clock
-clock => mandelbrot_stage:pipeline:36:p0.clock
-clock => mandelbrot_stage:pipeline:37:p0.clock
-clock => mandelbrot_stage:pipeline:38:p0.clock
-clock => mandelbrot_stage:pipeline:39:p0.clock
-clock => vga_output:v0.clock_in
+clock => clock_25:clk.inclk0
 reset => vga_output:v0.reset
-reset => hsync_reg[39].CLK
+reset => hsync_reg[39].ACLR
+reset => hsync_reg[38].ACLR
+reset => hsync_reg[37].ACLR
+reset => hsync_reg[36].ACLR
+reset => hsync_reg[35].ACLR
+reset => hsync_reg[34].ACLR
+reset => hsync_reg[33].ACLR
+reset => hsync_reg[32].ACLR
+reset => hsync_reg[31].ACLR
+reset => hsync_reg[30].ACLR
+reset => hsync_reg[29].ACLR
+reset => hsync_reg[28].ACLR
+reset => hsync_reg[27].ACLR
+reset => hsync_reg[26].ACLR
+reset => hsync_reg[25].ACLR
+reset => hsync_reg[24].ACLR
+reset => hsync_reg[23].ACLR
+reset => hsync_reg[22].ACLR
+reset => hsync_reg[21].ACLR
+reset => hsync_reg[20].ACLR
+reset => hsync_reg[19].ACLR
+reset => hsync_reg[18].ACLR
+reset => hsync_reg[17].ACLR
+reset => hsync_reg[16].ACLR
+reset => hsync_reg[15].ACLR
+reset => hsync_reg[14].ACLR
+reset => hsync_reg[13].ACLR
+reset => hsync_reg[12].ACLR
+reset => hsync_reg[11].ACLR
+reset => hsync_reg[10].ACLR
+reset => hsync_reg[9].ACLR
+reset => hsync_reg[8].ACLR
+reset => hsync_reg[7].ACLR
+reset => hsync_reg[6].ACLR
+reset => hsync_reg[5].ACLR
+reset => hsync_reg[4].ACLR
+reset => hsync_reg[3].ACLR
+reset => hsync_reg[2].ACLR
+reset => hsync_reg[1].ACLR
+reset => hsync_reg[0].ACLR
 horz_sync <= hsync_reg[39].DB_MAX_OUTPUT_PORT_TYPE
 vert_sync <= vga_output:v0.v_sync
 r_out[0] <= vga_output:v0.red[0]
@@ -115,7 +56,7 @@ b_out[1] <= vga_output:v0.blue[1]
 b_out[2] <= vga_output:v0.blue[2]
 b_out[3] <= vga_output:v0.blue[3]
 reset_led <= vga_output:v0.reset_led
-locked_led <= vga_output:v0.locked_led
+locked_led <= clock_25:clk.locked
 
 
 |project2_ads|mandelbrot_stage:\pipeline:0:p0
@@ -23919,14 +23860,13 @@ table_index_out[30] <= table_index_out[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |project2_ads|vga_output:v0
-clock_in => clock_25:clk.inclk0
+clock_in => vga_fsm:driver.vga_clock
 reset => vga_fsm:driver.reset
 reset => pipeline_rgb_out:output.reset
 reset => reset_led.DATAIN
 h_sync <= vga_fsm:driver.h_sync
 v_sync <= vga_fsm:driver.v_sync
 reset_led <= reset.DB_MAX_OUTPUT_PORT_TYPE
-locked_led <= clock_25:clk.locked
 table_index[0] => pipeline_rgb_out:output.table_index[0]
 table_index[1] => pipeline_rgb_out:output.table_index[1]
 table_index[2] => pipeline_rgb_out:output.table_index[2]
@@ -24536,13 +24476,13 @@ blue[2] <= blue.DB_MAX_OUTPUT_PORT_TYPE
 blue[3] <= blue.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|project2_ads|vga_output:v0|clock_25:clk
+|project2_ads|clock_25:clk
 inclk0 => altpll:altpll_component.inclk[0]
 c0 <= altpll:altpll_component.clk[0]
 locked <= altpll:altpll_component.locked
 
 
-|project2_ads|vga_output:v0|clock_25:clk|altpll:altpll_component
+|project2_ads|clock_25:clk|altpll:altpll_component
 inclk[0] => clock_25_altpll:auto_generated.inclk[0]
 inclk[1] => clock_25_altpll:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
@@ -24602,7 +24542,7 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|project2_ads|vga_output:v0|clock_25:clk|altpll:altpll_component|clock_25_altpll:auto_generated
+|project2_ads|clock_25:clk|altpll:altpll_component|clock_25_altpll:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2

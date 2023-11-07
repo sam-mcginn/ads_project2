@@ -77,7 +77,6 @@ package vga_pkg is
 			h_sync: 			out std_logic;
 			v_sync:			out std_logic;
 			reset_led:  	out std_logic;
-			locked_led: 	out std_logic;
 			
 			table_index: in natural;
 			red:			out	std_logic_vector (3 downto 0);

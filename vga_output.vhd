@@ -17,7 +17,6 @@ entity vga_output is
 		h_sync: 			out std_logic;
 		v_sync:			out std_logic;
 		reset_led:  	out std_logic;
-		locked_led: 	out std_logic;
 		
 		table_index: in natural;
 		red:			out	std_logic_vector (3 downto 0);
@@ -29,7 +28,7 @@ entity vga_output is
  architecture top of vga_output is
   --any signal declarations you may need
   signal point: coordinate;
-  signal vga_clock: std_logic;
+  --signal vga_clock: std_logic;
   signal point_valid: boolean;
 
  begin
@@ -38,7 +37,7 @@ entity vga_output is
 			vga_res => vga_res_default			
 		)
 		port map (
-			vga_clock => vga_clock,
+			vga_clock => clock_in,
 			reset => reset,
 			point => point,
 			point_valid => point_valid,
@@ -59,15 +58,7 @@ entity vga_output is
 			red => red,
 			green => green,
 			blue => blue
-		);
-		
-	clk: clock_25
-		port map (
-			inclk0 => clock_in,
-			c0 => vga_clock,
-			locked => locked_led
-		);
-			
+		);		
 			
 	reset_light: process(reset)
 	begin
