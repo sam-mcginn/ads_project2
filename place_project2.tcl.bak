@@ -1,0 +1,11 @@
+# Pin assignments for Project 2
+
+# clock assignment to chip clock
+set_location_assignment PIN_P11 -to clock
+set_instance_assignment -name IO_STANDARD "3.3V LVTTL" -to clock
+# done assignment to LED
+set_location_assignment PIN_A8 -to done
+set_instance_assignment -name IO_STANDARD "3.3V LVTTL" -to done
+# reset assignment to push button
+set_location_assignment PIN_B8 -to reset
+set_instance_assignment -name IO_STANDARD "3.3V Schmitt Trigger" -to reset
