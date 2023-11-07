@@ -16,7 +16,7 @@ entity project2_ads is
 		horz_pixels: 		natural := 800;
 		vert_pixels: 		natural := 600;
 		
-		thres_real: ads_sfixed := to_ads_sfixed(5.0);
+		thres_re: ads_sfixed := to_ads_sfixed(5.0);
 		thres_im: ads_sfixed := to_ads_sfixed(5.0);
 		
 		min_real: ads_sfixed := to_ads_sfixed(-2.2);
@@ -54,7 +54,7 @@ architecture top_arch of project2_ads is
 	signal index_nodes: pipeline_nodes_natural;
 	
 	-- Convert threshold to complex format
-	constant threshold: ads_complex := ads_cmplx(thres_real, thres_im);
+	constant threshold: ads_sfixed := (thres_im*thres_im) + (thres_re*thres_re);
 	
 	-- Current point
 	signal curr_point: coordinate;

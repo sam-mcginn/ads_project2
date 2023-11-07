@@ -11,7 +11,7 @@ use work.ads_fixed.all;
 
 entity mandelbrot_stage is
 	generic (
-		threshold: ads_complex
+		threshold: ads_sfixed
 	);
 	port (
 		clock: in std_logic;
@@ -39,12 +39,19 @@ begin
 	-- start with c=c_in, z=0; compute fc(z) = z^2 + c
 	stage: process (clock) is
 		variable z_curr: ads_complex;
+		variable re_square: ads_sfixed;
+		variable im_square: ads_sfixed;
+		variable ab_term: ads_sfixed;
 	begin
 		if rising_edge(clock) then
-			-- FIX - need ads_square fn. in ads_complex
-			z_curr := ads_square(z_curr) + c_in;
+			-- square = a^2 + 2abi - b^2
+			-- absolute value = a^2 + b^2
+			re_square := z_in.re * z_in.re;
+			im_square := z_in.im * z_in.im;
+			ab_term := z_in.re * z_in.im * to_ads_sfixed(2);
+			z_curr := ads_cmplx(re_square - im_square, ab_term);
 			
-			if (abs2(threshold) > abs2(z_curr)) then
+			if (threshold > (re_square + im_square)) then
 				table_index_out <= (table_index_in + 1);
 			else
 				table_index_out <= table_index_in;
@@ -52,7 +59,6 @@ begin
 			
 			z_out <= z_curr;
 			c_out <= c_in;
-			--threshold_out <= threshold_in;
 		end if;
 	end process stage;
 		

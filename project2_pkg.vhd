@@ -14,7 +14,7 @@ package project2_pkg is
 
 	component mandelbrot_stage is
 		generic (
-		threshold: ads_complex
+		threshold: ads_sfixed
 	);
 	port (
 		clock: in std_logic;
