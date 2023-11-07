@@ -3,7 +3,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-
 library work;
 use work.project2_pkg.all;
 use work.vga_data.all;
@@ -13,12 +12,12 @@ use work.ads_fixed.all;
 
 entity project2_ads is
 	generic (
-		num_iterations: 	natural := 40;
+		num_iterations: 	natural := 25;
 		horz_pixels: 		natural := 800;
 		vert_pixels: 		natural := 600;
 		
-		thres_real: ads_sfixed := to_ads_sfixed(2.0);
-		thres_im: ads_sfixed := to_ads_sfixed(2.0);
+		thres_real: ads_sfixed := to_ads_sfixed(5.0);
+		thres_im: ads_sfixed := to_ads_sfixed(5.0);
 		
 		min_real: ads_sfixed := to_ads_sfixed(-2.2);
 		max_real: ads_sfixed := to_ads_sfixed(1.0);
