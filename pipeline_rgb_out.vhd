@@ -82,6 +82,14 @@ begin
 				red <= "0000";
 				green <= "0000";
 				blue <= "0000";
+			elsif (table_index > 30) then
+				red <= std_logic_vector(to_unsigned(table_index-30, red'length));
+				green <= std_logic_vector(to_unsigned(table_index-30, green'length));
+				blue <= std_logic_vector(to_unsigned(table_index-30, blue'length));
+			elsif (table_index > 15) then
+				red <= std_logic_vector(to_unsigned(table_index-15, red'length));
+				green <= std_logic_vector(to_unsigned(table_index-15, green'length));
+				blue <= std_logic_vector(to_unsigned(table_index-15, blue'length));
 			else
 				red <= std_logic_vector(to_unsigned(table_index, red'length));
 				green <= std_logic_vector(to_unsigned(table_index, green'length));

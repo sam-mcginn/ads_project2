@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project2_ads
-Wed Nov  8 15:03:33 2023
+Wed Nov  8 15:47:48 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -93,7 +93,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov  8 15:03:32 2023          ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov  8 15:47:48 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; project2_ads                                   ;
 ; Top-level Entity Name              ; project2_ads                                   ;
@@ -211,7 +211,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.8%      ;
+;     Processor 2            ;   0.6%      ;
 ;     Processor 3            ;   0.2%      ;
 ;     Processor 4            ;   0.2%      ;
 +----------------------------+-------------+
@@ -390,101 +390,346 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------+--------------+---------+--------------+--------------+----------------------------+-----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                ;
-+-------------------------------------------------------+-----------------------------------------------------------+
-; Register name                                         ; Reason for Removal                                        ;
-+-------------------------------------------------------+-----------------------------------------------------------+
-; mandelbrot_stage:\pipeline:0:p0|table_index_out[0..3] ; Stuck at GND due to stuck port data_in                    ;
-; mandelbrot_stage:\pipeline:1:p0|table_index_out[1..3] ; Stuck at GND due to stuck port data_in                    ;
-; mandelbrot_stage:\pipeline:2:p0|table_index_out[2,3]  ; Stuck at GND due to stuck port data_in                    ;
-; mandelbrot_stage:\pipeline:3:p0|table_index_out[2,3]  ; Stuck at GND due to stuck port data_in                    ;
-; mandelbrot_stage:\pipeline:4:p0|table_index_out[3]    ; Stuck at GND due to stuck port data_in                    ;
-; mandelbrot_stage:\pipeline:5:p0|table_index_out[3]    ; Stuck at GND due to stuck port data_in                    ;
-; mandelbrot_stage:\pipeline:6:p0|table_index_out[3]    ; Stuck at GND due to stuck port data_in                    ;
-; mandelbrot_stage:\pipeline:7:p0|table_index_out[3]    ; Stuck at GND due to stuck port data_in                    ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[10]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[10]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[9]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[9]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[8]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[8]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[7]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[7]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[6]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[6]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[5]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[5]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[4]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[4]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[3]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[3]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[2]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[2]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[1]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[1]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[0]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[0]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-1]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-1]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-2]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-2]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-3]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-3]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-4]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-4]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-5]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-5]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-6]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-6]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-7]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-7]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-8]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-8]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-9]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-9]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-10]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-10] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-11]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-11] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-12]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-12] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-13]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-13] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-14]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-14] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-15]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-15] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-16]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-16] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-17]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-17] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.re[-18]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-18] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[10]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[10]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[9]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[9]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[8]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[8]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[7]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[7]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[6]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[6]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[5]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[5]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[4]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[4]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[3]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[3]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[2]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[2]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[1]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[1]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[0]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[0]   ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-1]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-1]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-2]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-2]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-3]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-3]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-4]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-4]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-5]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-5]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-6]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-6]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-7]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-7]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-8]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-8]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-9]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-9]  ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-10]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-10] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-11]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-11] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-12]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-12] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-13]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-13] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-14]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-14] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-15]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-15] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-16]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-16] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-17]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-17] ;
-; mandelbrot_stage:\pipeline:0:p0|c_out.im[-18]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-18] ;
-; vga_fsm:fsm|point.y[11..30]                           ; Lost fanout                                               ;
-; vga_fsm:fsm|point.x[11..30]                           ; Lost fanout                                               ;
-; Total Number of Removed Registers = 113               ;                                                           ;
-+-------------------------------------------------------+-----------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                 ;
++--------------------------------------------------------+-----------------------------------------------------------+
+; Register name                                          ; Reason for Removal                                        ;
++--------------------------------------------------------+-----------------------------------------------------------+
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[0..30] ; Stuck at GND due to stuck port data_in                    ;
+; mandelbrot_stage:\pipeline:1:p0|table_index_out[1..30] ; Stuck at GND due to stuck port data_in                    ;
+; mandelbrot_stage:\pipeline:2:p0|table_index_out[2..30] ; Stuck at GND due to stuck port data_in                    ;
+; mandelbrot_stage:\pipeline:3:p0|table_index_out[2..30] ; Stuck at GND due to stuck port data_in                    ;
+; mandelbrot_stage:\pipeline:4:p0|table_index_out[3..30] ; Stuck at GND due to stuck port data_in                    ;
+; mandelbrot_stage:\pipeline:5:p0|table_index_out[3..30] ; Stuck at GND due to stuck port data_in                    ;
+; mandelbrot_stage:\pipeline:6:p0|table_index_out[3..30] ; Stuck at GND due to stuck port data_in                    ;
+; mandelbrot_stage:\pipeline:7:p0|table_index_out[3..30] ; Stuck at GND due to stuck port data_in                    ;
+; mandelbrot_stage:\pipeline:8:p0|table_index_out[4..30] ; Stuck at GND due to stuck port data_in                    ;
+; mandelbrot_stage:\pipeline:9:p0|table_index_out[4..30] ; Stuck at GND due to stuck port data_in                    ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[10]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[10]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[9]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[9]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[8]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[8]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[7]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[7]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[6]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[6]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[5]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[5]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[4]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[4]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[3]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[3]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[2]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[2]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[1]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[1]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[0]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[0]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-1]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-1]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-2]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-2]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-3]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-3]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-4]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-4]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-5]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-5]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-6]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-6]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-7]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-7]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-8]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-8]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-9]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-9]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-10]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-10] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-11]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-11] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-12]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-12] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-13]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-13] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-14]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-14] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-15]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-15] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-16]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-16] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-17]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-17] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.re[-18]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-18] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[10]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[10]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[9]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[9]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[8]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[8]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[7]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[7]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[6]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[6]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[5]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[5]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[4]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[4]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[3]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[3]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[2]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[2]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[1]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[1]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[0]            ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[0]   ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-1]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-1]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-2]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-2]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-3]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-3]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-4]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-4]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-5]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-5]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-6]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-6]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-7]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-7]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-8]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-8]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-9]           ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-9]  ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-10]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-10] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-11]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-11] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-12]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-12] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-13]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-13] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-14]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-14] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-15]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-15] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-16]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-16] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-17]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-17] ;
+; mandelbrot_stage:\pipeline:0:p0|c_out.im[-18]          ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-18] ;
+; vga_fsm:fsm|point.y[11..30]                            ; Lost fanout                                               ;
+; vga_fsm:fsm|point.x[11..30]                            ; Lost fanout                                               ;
+; Total Number of Removed Registers = 383                ;                                                           ;
++--------------------------------------------------------+-----------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                          ;
-+----------------------------------------------------+---------------------------+-----------------------------------------------------+
-; Register name                                      ; Reason for Removal        ; Registers Removed due to This Register              ;
-+----------------------------------------------------+---------------------------+-----------------------------------------------------+
-; mandelbrot_stage:\pipeline:0:p0|table_index_out[3] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[3], ;
-;                                                    ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[3], ;
-;                                                    ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[3], ;
-;                                                    ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[3], ;
-;                                                    ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[3], ;
-;                                                    ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[3], ;
-;                                                    ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[3]  ;
-; mandelbrot_stage:\pipeline:0:p0|table_index_out[2] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[2], ;
-;                                                    ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[2], ;
-;                                                    ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[2]  ;
-; mandelbrot_stage:\pipeline:0:p0|table_index_out[1] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[1]  ;
-;                                                    ; due to stuck port data_in ;                                                     ;
-+----------------------------------------------------+---------------------------+-----------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                            ;
++-----------------------------------------------------+---------------------------+------------------------------------------------------+
+; Register name                                       ; Reason for Removal        ; Registers Removed due to This Register               ;
++-----------------------------------------------------+---------------------------+------------------------------------------------------+
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[29] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[29], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[29], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[29], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[29], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[29], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[29], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[29], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[29], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[29]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[4]  ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[4],  ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[4],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[4],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[4],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[4],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[4],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[4],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[4],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[4]   ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[5]  ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[5],  ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[5],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[5],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[5],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[5],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[5],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[5],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[5],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[5]   ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[6]  ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[6],  ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[6],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[6],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[6],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[6],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[6],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[6],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[6],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[6]   ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[7]  ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[7],  ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[7],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[7],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[7],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[7],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[7],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[7],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[7],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[7]   ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[8]  ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[8],  ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[8],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[8],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[8],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[8],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[8],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[8],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[8],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[8]   ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[9]  ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[9],  ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[9],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[9],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[9],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[9],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[9],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[9],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[9],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[9]   ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[10] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[10], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[10], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[10], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[10], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[10], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[10], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[10], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[10], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[10]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[11] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[11], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[11], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[11], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[11], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[11], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[11], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[11], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[11], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[11]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[12] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[12], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[12], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[12], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[12], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[12], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[12], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[12], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[12], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[12]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[13] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[13], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[13], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[13], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[13], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[13], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[13], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[13], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[13], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[13]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[14] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[14], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[14], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[14], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[14], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[14], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[14], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[14], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[14], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[14]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[15] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[15], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[15], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[15], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[15], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[15], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[15], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[15], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[15], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[15]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[16] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[16], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[16], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[16], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[16], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[16], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[16], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[16], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[16], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[16]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[17] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[17], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[17], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[17], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[17], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[17], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[17], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[17], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[17], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[17]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[18] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[18], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[18], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[18], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[18], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[18], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[18], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[18], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[18], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[18]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[19] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[19], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[19], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[19], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[19], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[19], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[19], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[19], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[19], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[19]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[20] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[20], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[20], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[20], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[20], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[20], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[20], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[20], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[20], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[20]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[21] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[21], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[21], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[21], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[21], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[21], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[21], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[21], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[21], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[21]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[22] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[22], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[22], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[22], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[22], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[22], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[22], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[22], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[22], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[22]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[23] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[23], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[23], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[23], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[23], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[23], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[23], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[23], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[23], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[23]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[24] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[24], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[24], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[24], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[24], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[24], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[24], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[24], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[24], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[24]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[25] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[25], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[25], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[25], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[25], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[25], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[25], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[25], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[25], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[25]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[26] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[26], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[26], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[26], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[26], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[26], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[26], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[26], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[26], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[26]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[27] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[27], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[27], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[27], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[27], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[27], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[27], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[27], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[27], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[27]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[28] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[28], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[28], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[28], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[28], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[28], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[28], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[28], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[28], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[28]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[30] ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[30], ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[30], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[30], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[30], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[30], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[30], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[30], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:8:p0|table_index_out[30], ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:9:p0|table_index_out[30]  ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[3]  ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[3],  ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[3],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[3],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:4:p0|table_index_out[3],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:5:p0|table_index_out[3],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:6:p0|table_index_out[3],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:7:p0|table_index_out[3]   ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[2]  ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[2],  ;
+;                                                     ; due to stuck port data_in ; mandelbrot_stage:\pipeline:2:p0|table_index_out[2],  ;
+;                                                     ;                           ; mandelbrot_stage:\pipeline:3:p0|table_index_out[2]   ;
+; mandelbrot_stage:\pipeline:0:p0|table_index_out[1]  ; Stuck at GND              ; mandelbrot_stage:\pipeline:1:p0|table_index_out[1]   ;
+;                                                     ; due to stuck port data_in ;                                                      ;
++-----------------------------------------------------+---------------------------+------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -2405,7 +2650,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Wed Nov  8 15:03:10 2023
+    Info: Processing started: Wed Nov  8 15:47:25 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project2_ads -c project2_ads
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2624,8 +2869,8 @@ Info (21057): Implemented 5361 device resources after synthesis - the final reso
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 208 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 541 megabytes
-    Info: Processing ended: Wed Nov  8 15:03:33 2023
+    Info: Peak virtual memory: 528 megabytes
+    Info: Processing ended: Wed Nov  8 15:47:48 2023
     Info: Elapsed time: 00:00:23
     Info: Total CPU time (on all processors): 00:00:32
 

@@ -1,9 +1,9 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-use work.vga_data.all;
-use work.ads_fixed.all;
-use work.ads_complex.all;
+use vga.vga_data.all;
+use ads.ads_fixed.all;
+use ads.ads_complex.all;
 
 entity pipeline_test is
 end entity pipeline_test;
@@ -79,6 +79,7 @@ end generate pipeline;
 	test_fixture: process is
 	begin
 		for x in -20 to 15 loop
+			c_nodes(0) <= ads_cmplx(x, -x);
 		end loop;
 	end process test_fixture;
 
