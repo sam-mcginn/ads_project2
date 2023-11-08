@@ -8,7 +8,7 @@ use work.project2_pkg.all;
 library vga;
 use vga.vga_data.all;
 library ads;
-use ads.ads_complex.all;
+use ads.ads_complex_pkg.all;
 use ads.ads_fixed.all;
 
 entity mandelbrot_stage is
@@ -18,6 +18,7 @@ entity mandelbrot_stage is
 	);
 	port (
 		clock: in std_logic;
+		reset: in std_logic;
 		-- Threshold
 		--threshold_in: in ads_complex;
 		--threshold_out: out ads_complex;
@@ -44,13 +45,22 @@ architecture behavior of mandelbrot_stage is
 	--signal z_curr: ads_complex := z_in;
 begin
 	-- start with c=c_in, z=0; compute fc(z) = z^2 + c
-	stage: process (clock) is
+	stage: process (reset, clock) is
 		variable z_curr: ads_complex;
 		variable re_square: ads_sfixed;
 		variable im_square: ads_sfixed;
 		variable ab_term: ads_sfixed;
 	begin
-		if rising_edge(clock) then
+		if reset = '0' then
+			z_curr := complex_zero;
+			re_square := to_ads_sfixed(0);
+			im_square := to_ads_sfixed(0);
+			ab_term := to_ads_sfixed(0);
+			c_out <= complex_zero;
+			z_out <= complex_zero;
+			overflow_out <= false;
+			table_index_out <= 0;
+		elsif rising_edge(clock) then
 			-- square = a^2 + 2abi - b^2
 			-- absolute value = a^2 + b^2
 			re_square := z_in.re * z_in.re;

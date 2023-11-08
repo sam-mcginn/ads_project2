@@ -1,21 +1,34 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
+library vga;
 use vga.vga_data.all;
+
+library ads;
 use ads.ads_fixed.all;
-use ads.ads_complex.all;
+use ads.ads_complex_pkg.all;
+
+use work.project2_pkg.all;
+
+use std.textio.all;
 
 entity pipeline_test is
+	generic (
+		threshold: ads_sfixed := to_ads_sfixed(2);
+		num_iterations: natural := 10
+	);
 end entity pipeline_test;
 
 architecture test of pipeline_test is
-component mandelbrot_stage is
+	-- DUT (?)
+	component mandelbrot_stage is
 		generic (
 			threshold: ads_sfixed;
 			stage_number: natural
 		);
 		port (
 			clock: in std_logic;
+			reset: in std_logic;
 			-- Threshold
 			--threshold_in: in ads_complex;
 			--threshold_out: out ads_complex;
@@ -48,23 +61,25 @@ component mandelbrot_stage is
 	
 	signal vga_clock: std_logic := '1';
 	signal done: boolean := false;
+	signal reset: std_logic := '1';
+	
 	
 begin
-
-	clock <= not clock after 5 ns when not done else '0';
+	vga_clock <= not vga_clock after 5 ns when not done else '0';
 	z_nodes(0) <= complex_zero;
 	index_nodes(0) <= 0;
-	overflow_in(0) <= false;
+	overflow_nodes(0) <= false;
 
 -- for .. generate
 pipeline: for num in 0 to num_iterations-1 generate
-	p0: mandelbrot
+	p0: mandelbrot_stage
 			generic map (
 				threshold => threshold,
 				stage_number => num
 			)
 			port map (
 				clock => vga_clock,
+				reset => reset,
 				c_in => c_nodes(num),
 				c_out => c_nodes(num+1),
 				z_in => z_nodes(num),
@@ -77,9 +92,17 @@ pipeline: for num in 0 to num_iterations-1 generate
 end generate pipeline;
 
 	test_fixture: process is
+		variable step_size: real := 0.05;
+		variable text_out: line;
 	begin
-		for x in -20 to 15 loop
-			c_nodes(0) <= ads_cmplx(x, -x);
+		reset <= '0';
+		wait until rising_edge(vga_clock);
+		reset <= '1';
+		for x in 0 to 20 loop
+			c_nodes(0) <= ads_cmplx(to_ads_sfixed(step_size*real(x)),to_ads_sfixed(step_size*real(x)));
+			wait until rising_edge(vga_clock);
+			write(text_out, integer'image(index_nodes(num_iterations)));
+			writeline(output, text_out);
 		end loop;
 	end process test_fixture;
 

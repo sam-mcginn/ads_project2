@@ -1,0 +1,10 @@
+v 4
+file . "../vga_pkg.vhd" "86a4007d333894af6072feaa165538585b4f98d9" "20231108231425.639":
+  package vga_pkg at 2( 26) + 0 on 143;
+  package body vga_pkg at 94( 2072) + 0 on 144;
+file . "../vga_data.vhd" "645ad06c5e13b09c8ba420741713b77d23744440" "20231108231425.538":
+  package vga_data at 1( 0) + 0 on 139 body;
+  package body vga_data at 133( 3502) + 0 on 140;
+file . "../vga_fsm.vhd" "aa0d87d05c8403681a93eb1e964aa4879d238ad1" "20231108231425.591":
+  entity vga_fsm at 1( 0) + 0 on 141;
+  architecture fsm of vga_fsm at 26( 433) + 0 on 142;

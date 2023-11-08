@@ -8,7 +8,7 @@ library vga;
 use vga.vga_data.all;
 use vga.vga_pkg.all;
 library ads;
-use ads.ads_complex.all;
+use ads.ads_complex_pkg.all;
 use ads.ads_fixed.all;
 
 package project2_pkg is
