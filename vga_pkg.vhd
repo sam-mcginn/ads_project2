@@ -14,7 +14,7 @@ package vga_pkg is
 		);
 		port (
 			reset:			in	std_logic;
-			point: 			in coordinate;
+			--point: 			in coordinate;
 			point_valid: 	in boolean;
 			table_index:	in natural;
 			
@@ -47,6 +47,7 @@ package vga_pkg is
 		port (
 			vga_clock:		in	std_logic;
 			reset:			in	std_logic;
+			reset_led:	out std_logic;
 
 			point:			out	coordinate;
 			point_valid:	out	boolean;
@@ -78,7 +79,7 @@ package vga_pkg is
 			v_sync:			out std_logic;
 			reset_led:  	out std_logic;
 			
-			curr_point:		out coordinate;
+			--curr_point:		out coordinate;
 			
 			table_index: 	in natural;
 			red:				out	std_logic_vector (3 downto 0);

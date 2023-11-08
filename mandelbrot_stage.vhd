@@ -53,8 +53,8 @@ begin
 			-- absolute value = a^2 + b^2
 			re_square := z_in.re * z_in.re;
 			im_square := z_in.im * z_in.im;
-			ab_term := z_in.re * z_in.im * to_ads_sfixed(2);
-			z_curr := ads_cmplx(re_square - im_square, ab_term);
+			ab_term := z_in.re * z_in.im; -- * to_ads_sfixed(2);
+			--z_curr := ads_cmplx(re_square - im_square, ab_term);
 			
 			--if (threshold > (re_square + im_square)) then
 			--	table_index_out <= stage_number;
@@ -74,7 +74,9 @@ begin
 				table_index_out <= stage_number;
 			end if;
 			
-			z_out <= z_curr;
+			--z_out <= z_curr;
+			z_out.re <= re_square - im_square + c_in.re;
+			z_out.im <= ab_term + ab_term + c_in.im;
 			c_out <= c_in;
 		end if;
 	end process stage;

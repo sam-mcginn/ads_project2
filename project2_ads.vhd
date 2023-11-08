@@ -16,8 +16,8 @@ entity project2_ads is
 		horz_pixels: 		natural := 800;
 		vert_pixels: 		natural := 600;
 		
-		thres_re: ads_sfixed := to_ads_sfixed(5.0);
-		thres_im: ads_sfixed := to_ads_sfixed(5.0);
+		thres_re: ads_sfixed := to_ads_sfixed(2.0);
+		thres_im: ads_sfixed := to_ads_sfixed(2.0);
 		
 		min_real: ads_sfixed := to_ads_sfixed(-2.2);
 		max_real: ads_sfixed := to_ads_sfixed(1.0);
@@ -60,6 +60,7 @@ architecture top_arch of project2_ads is
 	
 	-- Current point
 	signal curr_point: coordinate;
+	signal point_valid: boolean;
 	signal curr_h: natural;
 	signal curr_v: natural;
 	
@@ -69,7 +70,45 @@ architecture top_arch of project2_ads is
 	signal vsync_reg: std_logic_vector(0 to num_iterations-1);
 	signal vsync_in: std_logic;
 	signal vga_clock: std_logic;
+	
+	-- create seed point
+	function make_seed_point (
+			point: coordinate
+		) return ads_complex
+	is
+		variable ret: ads_complex;
+	begin
+			ret.re := ((max_real - min_real)*(to_ads_sfixed(point.x/horz_pixels))) + min_real;
+			ret.im := ((max_im - min_im)*(to_ads_sfixed(point.y/vert_pixels))) + min_im;
+			return ret;
+	end function make_seed_point;
+		
 begin
+	-- Controls sync signals and point count for VGA
+	fsm: vga_fsm
+		generic map (
+			vga_res => vga_res_default
+		)
+		port map (
+			vga_clock => vga_clock,
+			reset => reset,
+			reset_led => reset_led,
+
+			point => curr_point,
+			point_valid => point_valid,
+
+			h_sync => hsync_in,
+			v_sync => vsync_in
+		);
+		
+	-- VGA clock
+		clk: clock_25
+		port map (
+			inclk0 => clock,
+			c0 => vga_clock,
+			locked => locked_led
+		);
+		
 	-- shift register for sync signals to match pipeline delay
 	sync_regs: process(vga_clock, reset) is
 	begin
@@ -87,6 +126,8 @@ begin
 	z_nodes(0) <= ads_cmplx(to_ads_sfixed(0), to_ads_sfixed(0));
 	index_nodes(0) <= 0;
 	overflow_nodes(0) <= false;
+	c_nodes(0) <= make_seed_point(curr_point);
+
 	-- instantiate num_iterations mandelbrot blocks (pipeline)
 	pipeline: for num in 0 to num_iterations-1 generate
 		p0: mandelbrot_stage
@@ -106,55 +147,42 @@ begin
 				overflow_out => overflow_nodes(num+1)
 			);
 	end generate pipeline;
+		
+	-- Decompose curr_point into real/horz and im/vert:
+	--curr_h <= curr_point.x;
+	--curr_v <= curr_point.y;
 	
-	v0: vga_output
+	-- Drive mandelbrot pipeline
+	--display: process (vga_clock) is
+	--	variable re_in: ads_sfixed;
+	--	variable im_in: ads_sfixed;
+		--variable index_out: natural;
+	--begin
+	--	if rising_edge(vga_clock) then
+			-- calculate seed = c_in from current point
+			-- (scale R{c}, I{c} range <-- horizontal, vertical pixels)
+
+			
+			-- input c_in to pipeline
+		--c_nodes(0) <= ads_cmplx(re_in, im_in);
+			
+			-- read index from output
+			--index_out := index_nodes(num_iterations);
+	--	end if;
+	--end process display;
+	
+	-- Drive VGA output from color map:
+	output: pipeline_rgb_out
 		generic map (
-			vga_res => vga_res_default,
 			num_iterations => num_iterations
 		)
 		port map (
-			clock_in => vga_clock,
 			reset => reset,
-			h_sync => hsync_in,
-			v_sync => vsync_in,
-			reset_led => reset_led,
-			curr_point => curr_point,
+			point_valid => point_valid,
 			table_index => index_nodes(num_iterations),
 			red => r_out,
 			green => g_out,
 			blue => b_out
-		);
-		
-	-- VGA clock
-		clk: clock_25
-		port map (
-			inclk0 => clock,
-			c0 => vga_clock,
-			locked => locked_led
-		);
-		
-	-- Decompose curr_point into real/horz and im/vert:
-	curr_h <= curr_point.x;
-	curr_v <= curr_point.y;
-	
-	-- Drive mandelbrot pipeline
-	display: process (vga_clock) is
-		variable re_in: ads_sfixed;
-		variable im_in: ads_sfixed;
-		--variable index_out: natural;
-	begin
-		if rising_edge(vga_clock) then
-			-- calculate seed = c_in from current point
-			-- (scale R{c}, I{c} range <-- horizontal, vertical pixels)
-			re_in := ((max_real - min_real)*(to_ads_sfixed(curr_h/horz_pixels))) + min_real;
-			im_in := ((max_im - min_im)*(to_ads_sfixed(curr_v/vert_pixels))) + min_im;
-			
-			-- input c_in to pipeline
-			c_nodes(0) <= ads_cmplx(re_in, im_in);
-			
-			-- read index from output
-			--index_out := index_nodes(num_iterations);
-		end if;
-	end process display;
+		);	
 
 end architecture top_arch;

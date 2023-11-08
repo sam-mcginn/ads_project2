@@ -16,9 +16,9 @@ entity vga_output is
 		reset:			in	std_logic;
 		h_sync: 			out std_logic;
 		v_sync:			out std_logic;
-		reset_led:  	out std_logic;
+		--reset_led:  	out std_logic;
 		
-		curr_point:		out coordinate;
+		--curr_point:		out coordinate;
 		
 		table_index: 	in natural;
 		red:				out	std_logic_vector (3 downto 0);
@@ -33,7 +33,7 @@ entity vga_output is
 
  begin
 	-- Drive current point to point output
-	curr_point <= point;
+	--curr_point <= point;
 	
 	driver: vga_fsm
 		generic map (
@@ -55,7 +55,6 @@ entity vga_output is
 		)
 		port map (
 			reset => reset,
-			point => point,
 			point_valid => point_valid,
 			table_index => table_index,
 			red => red,
@@ -63,13 +62,13 @@ entity vga_output is
 			blue => blue
 		);		
 			
-	reset_light: process(reset)
-	begin
-		if (reset = '0') then
-			reset_led <= '1';
-		else
-			reset_led <= '0';
-		end if;
-	end process reset_light;
+	--reset_light: process(reset)
+	--begin
+	--	if (reset = '0') then
+	--		reset_led <= '1';
+	--	else
+	--		reset_led <= '0';
+	--	end if;
+	--end process reset_light;
 
 end architecture top;

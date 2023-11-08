@@ -14,7 +14,7 @@ entity pipeline_rgb_out is
 	);
 	port (
 		reset:			in	std_logic;
-		point: 			in coordinate;
+		--point: 			in coordinate;
 		point_valid: 	in boolean;
 		table_index:	in natural;
 		
@@ -74,16 +74,16 @@ architecture gen of pipeline_rgb_out is
 													(0, 0, 0)
 												);
 begin
-	color_output: process(reset, point, point_valid, table_index)
+	color_output: process(reset, point_valid, table_index)
 		begin
 			if (reset = '0')  or (not point_valid) then
 				red <= "0000";
 				green <= "0000";
 				blue <= "0000";
 			else
-				red <= std_logic_vector(to_unsigned((color_map(table_index, 0)/17), red'length));
-				green <= std_logic_vector(to_unsigned((color_map(table_index, 1)/17), green'length));
-				blue <= std_logic_vector(to_unsigned((color_map(table_index, 2)/17), blue'length));
+				red <= std_logic_vector(to_unsigned(table_index, red'length));
+				green <= std_logic_vector(to_unsigned(table_index, green'length));
+				blue <= std_logic_vector(to_unsigned(table_index, blue'length));
 			end if;			
 	end process;
 	
