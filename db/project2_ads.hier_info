@@ -2,22 +2,22 @@
 clock => clock_25:clk.inclk0
 reset => vga_fsm:fsm.reset
 reset => pipeline_rgb_out:output.reset
-horz_sync << hsync_reg[9].DB_MAX_OUTPUT_PORT_TYPE
-vert_sync << vsync_reg[9].DB_MAX_OUTPUT_PORT_TYPE
-r_out[0] << pipeline_rgb_out:output.red[0]
-r_out[1] << pipeline_rgb_out:output.red[1]
-r_out[2] << pipeline_rgb_out:output.red[2]
-r_out[3] << pipeline_rgb_out:output.red[3]
-g_out[0] << pipeline_rgb_out:output.green[0]
-g_out[1] << pipeline_rgb_out:output.green[1]
-g_out[2] << pipeline_rgb_out:output.green[2]
-g_out[3] << pipeline_rgb_out:output.green[3]
-b_out[0] << pipeline_rgb_out:output.blue[0]
-b_out[1] << pipeline_rgb_out:output.blue[1]
-b_out[2] << pipeline_rgb_out:output.blue[2]
-b_out[3] << pipeline_rgb_out:output.blue[3]
-reset_led << vga_fsm:fsm.reset_led
-locked_led << clock_25:clk.locked
+horz_sync <= hsync_reg[9].DB_MAX_OUTPUT_PORT_TYPE
+vert_sync <= vsync_reg[9].DB_MAX_OUTPUT_PORT_TYPE
+r_out[0] <= pipeline_rgb_out:output.red[0]
+r_out[1] <= pipeline_rgb_out:output.red[1]
+r_out[2] <= pipeline_rgb_out:output.red[2]
+r_out[3] <= pipeline_rgb_out:output.red[3]
+g_out[0] <= pipeline_rgb_out:output.green[0]
+g_out[1] <= pipeline_rgb_out:output.green[1]
+g_out[2] <= pipeline_rgb_out:output.green[2]
+g_out[3] <= pipeline_rgb_out:output.green[3]
+b_out[0] <= pipeline_rgb_out:output.blue[0]
+b_out[1] <= pipeline_rgb_out:output.blue[1]
+b_out[2] <= pipeline_rgb_out:output.blue[2]
+b_out[3] <= pipeline_rgb_out:output.blue[3]
+reset_led <= vga_fsm:fsm.reset_led
+locked_led <= clock_25:clk.locked
 
 
 |project2_ads|vga_fsm:fsm

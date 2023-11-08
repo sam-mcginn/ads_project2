@@ -4,11 +4,12 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 
-library work;
-use work.vga_data.all;
-use work.ads_complex.all;
-use work.ads_fixed.all;
-use work.vga_pkg.all;
+library vga;
+use vga.vga_data.all;
+use vga.vga_pkg.all;
+library ads;
+use ads.ads_complex.all;
+use ads.ads_fixed.all;
 
 package project2_pkg is
 

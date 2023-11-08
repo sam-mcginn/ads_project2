@@ -3,8 +3,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-library work;
-use work.vga_data.all;
+library vga;
+use vga.vga_data.all;
 
 package vga_pkg is
 	-- Converts point, index --> RGB value using color map

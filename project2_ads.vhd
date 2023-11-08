@@ -5,16 +5,20 @@ use ieee.numeric_std.all;
 
 library work;
 use work.project2_pkg.all;
-use work.vga_data.all;
-use work.vga_pkg.all;
-use work.ads_complex.all;
-use work.ads_fixed.all;
+library vga;
+use vga.vga_data.all;
+use vga.vga_pkg.all;
+library ads;
+use ads.ads_complex.all;
+use ads.ads_fixed.all;
 
 entity project2_ads is
 	generic (
 		num_iterations: 	natural := 10;
 		horz_pixels: 		natural := 800;
 		vert_pixels: 		natural := 600;
+		h_pixels_inv: ads_sfixed := to_ads_sfixed(0.00125);
+		v_pixels_inv: ads_sfixed := to_ads_sfixed(0.001667);
 		
 		thres_re: ads_sfixed := to_ads_sfixed(2.0);
 		thres_im: ads_sfixed := to_ads_sfixed(2.0);
@@ -61,8 +65,8 @@ architecture top_arch of project2_ads is
 	-- Current point
 	signal curr_point: coordinate;
 	signal point_valid: boolean;
-	signal curr_h: natural;
-	signal curr_v: natural;
+	--signal curr_h: natural;
+	--signal curr_v: natural;
 	
 	-- VGA signals
 	signal hsync_reg: std_logic_vector(0 to num_iterations-1);
@@ -78,8 +82,8 @@ architecture top_arch of project2_ads is
 	is
 		variable ret: ads_complex;
 	begin
-			ret.re := ((max_real - min_real)*(to_ads_sfixed(point.x/horz_pixels))) + min_real;
-			ret.im := ((max_im - min_im)*(to_ads_sfixed(point.y/vert_pixels))) + min_im;
+			ret.re := ((max_real - min_real)*(to_ads_sfixed(point.x)*h_pixels_inv)) + min_real;
+			ret.im := ((max_im - min_im)*(to_ads_sfixed(point.y)*v_pixels_inv)) + min_im;
 			return ret;
 	end function make_seed_point;
 		
@@ -126,7 +130,7 @@ begin
 	z_nodes(0) <= ads_cmplx(to_ads_sfixed(0), to_ads_sfixed(0));
 	index_nodes(0) <= 0;
 	overflow_nodes(0) <= false;
-	c_nodes(0) <= make_seed_point(curr_point);
+	--c_nodes(0) <= make_seed_point(curr_point);	 --PA
 
 	-- instantiate num_iterations mandelbrot blocks (pipeline)
 	pipeline: for num in 0 to num_iterations-1 generate
@@ -152,15 +156,16 @@ begin
 	--curr_h <= curr_point.x;
 	--curr_v <= curr_point.y;
 	
-	-- Drive mandelbrot pipeline
-	--display: process (vga_clock) is
-	--	variable re_in: ads_sfixed;
-	--	variable im_in: ads_sfixed;
+	-- Drive mandelbrot pipeline		-- --PA
+	display: process (vga_clock) is
+		variable re_in: ads_sfixed;
+		variable im_in: ads_sfixed;
 		--variable index_out: natural;
-	--begin
-	--	if rising_edge(vga_clock) then
-			-- calculate seed = c_in from current point
-			-- (scale R{c}, I{c} range <-- horizontal, vertical pixels)
+	begin
+		if rising_edge(vga_clock) then
+			c_nodes(0) <= make_seed_point(curr_point);
+			 --calculate seed = c_in from current point		--PA
+			 --(scale R{c}, I{c} range <-- horizontal, vertical pixels)		--PA
 
 			
 			-- input c_in to pipeline
@@ -168,8 +173,8 @@ begin
 			
 			-- read index from output
 			--index_out := index_nodes(num_iterations);
-	--	end if;
-	--end process display;
+		end if;
+	end process display;
 	
 	-- Drive VGA output from color map:
 	output: pipeline_rgb_out

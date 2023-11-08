@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project2_ads
-Tue Nov  7 20:10:26 2023
+Wed Nov  8 15:03:33 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -56,10 +56,10 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
  48. Parameter Settings for Inferred Entity Instance: mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult1
  49. Parameter Settings for Inferred Entity Instance: mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult0
  50. Parameter Settings for Inferred Entity Instance: mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult2
- 51. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 52. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
- 53. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 54. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 51. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2
+ 52. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult3
+ 53. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 54. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
  55. altpll Parameter Settings by Entity Instance
  56. lpm_mult Parameter Settings by Entity Instance
  57. Port Connectivity Checks: "mandelbrot_stage:\pipeline:9:p0"
@@ -93,19 +93,19 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov  7 20:10:26 2023          ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov  8 15:03:32 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; project2_ads                                   ;
 ; Top-level Entity Name              ; project2_ads                                   ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 6,144                                          ;
-;     Total combinational functions  ; 5,733                                          ;
-;     Dedicated logic registers      ; 971                                            ;
-; Total registers                    ; 971                                            ;
+; Total logic elements               ; 5,079                                          ;
+;     Total combinational functions  ; 4,630                                          ;
+;     Dedicated logic registers      ; 1,011                                          ;
+; Total registers                    ; 1011                                           ;
 ; Total pins                         ; 18                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
-; Embedded Multiplier 9-bit elements ; 200                                            ;
+; Embedded Multiplier 9-bit elements ; 208                                            ;
 ; Total PLLs                         ; 1                                              ;
 ; UFM blocks                         ; 0                                              ;
 ; ADC blocks                         ; 0                                              ;
@@ -211,49 +211,42 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.7%      ;
-;     Processor 3            ;   0.3%      ;
+;     Processor 2            ;   0.8%      ;
+;     Processor 3            ;   0.2%      ;
 ;     Processor 4            ;   0.2%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                  ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
-; ads_fixed.vhd                    ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd                                         ; work    ;
-; ads_complex.vhd                  ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd                                       ; work    ;
-; vga_data.vhd                     ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd                                          ; work    ;
-; vga_fsm.vhd                      ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/vga_fsm.vhd                                           ; work    ;
-; project2_ads.vhd                 ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd                                      ;         ;
-; project2_pkg.vhd                 ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/project2_pkg.vhd                                      ; work    ;
-; mandelbrot_stage.vhd             ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd                                  ;         ;
-; pipeline_rgb_out.vhd             ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/pipeline_rgb_out.vhd                                  ; work    ;
-; vga_pkg.vhd                      ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/vga_pkg.vhd                                           ; work    ;
-; clock_25.vhd                     ; yes             ; User Wizard-Generated File   ; /home/smcginn-adsd/src/ads/ads_project2/clock_25.vhd                                          ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/altpll.tdf          ;         ;
-; aglobal221.inc                   ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc      ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/stratix_pll.inc     ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/stratixii_pll.inc   ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/cycloneii_pll.inc   ;         ;
-; db/clock_25_altpll.v             ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/clock_25_altpll.v                                  ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_mult.tdf        ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_add_sub.inc     ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/multcore.inc        ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/bypassff.inc        ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/altshift.inc        ;         ;
-; db/mult_9hs.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/mult_9hs.tdf                                       ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
-; db/lpm_divide_2vl.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/lpm_divide_2vl.tdf                                 ;         ;
-; db/sign_div_unsign_4nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/sign_div_unsign_4nh.tdf                            ;         ;
-; db/alt_u_div_ike.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/alt_u_div_ike.tdf                                  ;         ;
-; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/add_sub_t3c.tdf                                    ;         ;
-; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/add_sub_u3c.tdf                                    ;         ;
-; db/mult_dks.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/mult_dks.tdf                                       ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                    ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
+; ads_fixed.vhd                    ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd                                       ; ads     ;
+; ads_complex.vhd                  ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd                                     ; ads     ;
+; vga_data.vhd                     ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd                                        ; vga     ;
+; vga_fsm.vhd                      ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/vga_fsm.vhd                                         ; vga     ;
+; project2_ads.vhd                 ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd                                    ;         ;
+; project2_pkg.vhd                 ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/project2_pkg.vhd                                    ; work    ;
+; mandelbrot_stage.vhd             ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd                                ;         ;
+; pipeline_rgb_out.vhd             ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/pipeline_rgb_out.vhd                                ; vga     ;
+; vga_pkg.vhd                      ; yes             ; User VHDL File               ; /home/smcginn-adsd/src/ads/ads_project2/vga_pkg.vhd                                         ; vga     ;
+; clock_25.vhd                     ; yes             ; User Wizard-Generated File   ; /home/smcginn-adsd/src/ads/ads_project2/clock_25.vhd                                        ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/altpll.tdf        ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc    ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/stratix_pll.inc   ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/stratixii_pll.inc ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/cycloneii_pll.inc ;         ;
+; db/clock_25_altpll.v             ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/clock_25_altpll.v                                ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_mult.tdf      ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_add_sub.inc   ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/multcore.inc      ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/bypassff.inc      ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/altshift.inc      ;         ;
+; db/mult_9hs.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/mult_9hs.tdf                                     ;         ;
+; db/mult_iks.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/mult_iks.tdf                                     ;         ;
+; db/mult_dks.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home/smcginn-adsd/src/ads/ads_project2/db/mult_dks.tdf                                     ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -261,116 +254,112 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 6,144                                                                                ;
+; Estimated Total logic elements              ; 5,079                                                                                ;
 ;                                             ;                                                                                      ;
-; Total combinational functions               ; 5733                                                                                 ;
+; Total combinational functions               ; 4630                                                                                 ;
 ; Logic element usage by number of LUT inputs ;                                                                                      ;
-;     -- 4 input functions                    ; 1374                                                                                 ;
-;     -- 3 input functions                    ; 3027                                                                                 ;
-;     -- <=2 input functions                  ; 1332                                                                                 ;
+;     -- 4 input functions                    ; 1066                                                                                 ;
+;     -- 3 input functions                    ; 2778                                                                                 ;
+;     -- <=2 input functions                  ; 786                                                                                  ;
 ;                                             ;                                                                                      ;
 ; Logic elements by mode                      ;                                                                                      ;
-;     -- normal mode                          ; 2569                                                                                 ;
-;     -- arithmetic mode                      ; 3164                                                                                 ;
+;     -- normal mode                          ; 1710                                                                                 ;
+;     -- arithmetic mode                      ; 2920                                                                                 ;
 ;                                             ;                                                                                      ;
-; Total registers                             ; 971                                                                                  ;
-;     -- Dedicated logic registers            ; 971                                                                                  ;
+; Total registers                             ; 1011                                                                                 ;
+;     -- Dedicated logic registers            ; 1011                                                                                 ;
 ;     -- I/O registers                        ; 0                                                                                    ;
 ;                                             ;                                                                                      ;
 ; I/O pins                                    ; 18                                                                                   ;
 ;                                             ;                                                                                      ;
-; Embedded Multiplier 9-bit elements          ; 200                                                                                  ;
+; Embedded Multiplier 9-bit elements          ; 208                                                                                  ;
 ;                                             ;                                                                                      ;
 ; Total PLLs                                  ; 1                                                                                    ;
 ;     -- PLLs                                 ; 1                                                                                    ;
 ;                                             ;                                                                                      ;
 ; Maximum fan-out node                        ; clock_25:clk|altpll:altpll_component|clock_25_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 973                                                                                  ;
-; Total fan-out                               ; 21440                                                                                ;
-; Average fan-out                             ; 3.09                                                                                 ;
+; Maximum fan-out                             ; 1013                                                                                 ;
+; Total fan-out                               ; 18611                                                                                ;
+; Average fan-out                             ; 3.16                                                                                 ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                 ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                           ; Entity Name         ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |project2_ads                             ; 5733 (165)          ; 971 (20)                  ; 0           ; 0          ; 200          ; 0       ; 100       ; 18   ; 0            ; 0          ; |project2_ads                                                                                                 ; project2_ads        ; work         ;
-;    |clock_25:clk|                         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|clock_25:clk                                                                                    ; clock_25            ; work         ;
-;       |altpll:altpll_component|           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|clock_25:clk|altpll:altpll_component                                                            ; altpll              ; work         ;
-;          |clock_25_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|clock_25:clk|altpll:altpll_component|clock_25_altpll:auto_generated                             ; clock_25_altpll     ; work         ;
-;    |lpm_divide:Div0|                      ; 627 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_2vl:auto_generated|     ; 627 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|lpm_divide:Div0|lpm_divide_2vl:auto_generated                                                   ; lpm_divide_2vl      ; work         ;
-;          |sign_div_unsign_4nh:divider|    ; 627 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|lpm_divide:Div0|lpm_divide_2vl:auto_generated|sign_div_unsign_4nh:divider                       ; sign_div_unsign_4nh ; work         ;
-;             |alt_u_div_ike:divider|       ; 627 (627)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|lpm_divide:Div0|lpm_divide_2vl:auto_generated|sign_div_unsign_4nh:divider|alt_u_div_ike:divider ; alt_u_div_ike       ; work         ;
-;    |lpm_divide:Div1|                      ; 590 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_2vl:auto_generated|     ; 590 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|lpm_divide:Div1|lpm_divide_2vl:auto_generated                                                   ; lpm_divide_2vl      ; work         ;
-;          |sign_div_unsign_4nh:divider|    ; 590 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|lpm_divide:Div1|lpm_divide_2vl:auto_generated|sign_div_unsign_4nh:divider                       ; sign_div_unsign_4nh ; work         ;
-;             |alt_u_div_ike:divider|       ; 590 (590)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|lpm_divide:Div1|lpm_divide_2vl:auto_generated|sign_div_unsign_4nh:divider|alt_u_div_ike:divider ; alt_u_div_ike       ; work         ;
-;    |lpm_mult:Mult0|                       ; 73 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult0                                                                                  ; lpm_mult            ; work         ;
-;       |mult_dks:auto_generated|           ; 73 (73)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult0|mult_dks:auto_generated                                                          ; mult_dks            ; work         ;
-;    |lpm_mult:Mult1|                       ; 73 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult1                                                                                  ; lpm_mult            ; work         ;
-;       |mult_dks:auto_generated|           ; 73 (73)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult1|mult_dks:auto_generated                                                          ; mult_dks            ; work         ;
-;    |mandelbrot_stage:\pipeline:0:p0|      ; 0 (0)               ; 57 (57)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:0:p0                                                                 ; mandelbrot_stage    ; work         ;
-;    |mandelbrot_stage:\pipeline:1:p0|      ; 545 (305)           ; 116 (116)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0                                                                 ; mandelbrot_stage    ; work         ;
-;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult0                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult0|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult1                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult1|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult2                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult2|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;    |mandelbrot_stage:\pipeline:2:p0|      ; 546 (306)           ; 117 (117)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0                                                                 ; mandelbrot_stage    ; work         ;
-;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult0                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult0|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult1                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult1|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult2                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult2|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;    |mandelbrot_stage:\pipeline:3:p0|      ; 546 (306)           ; 117 (117)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0                                                                 ; mandelbrot_stage    ; work         ;
-;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult0                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult0|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult1                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult1|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult2                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult2|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;    |mandelbrot_stage:\pipeline:4:p0|      ; 547 (307)           ; 118 (118)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0                                                                 ; mandelbrot_stage    ; work         ;
-;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult0                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult0|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult1                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult1|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult2                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult2|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;    |mandelbrot_stage:\pipeline:5:p0|      ; 547 (307)           ; 118 (118)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0                                                                 ; mandelbrot_stage    ; work         ;
-;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult0                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult0|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult1                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult1|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult2                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult2|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;    |mandelbrot_stage:\pipeline:6:p0|      ; 547 (307)           ; 118 (118)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0                                                                 ; mandelbrot_stage    ; work         ;
-;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult0                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult0|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult1                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult1|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult2                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult2|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;    |mandelbrot_stage:\pipeline:7:p0|      ; 547 (307)           ; 62 (62)                   ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0                                                                 ; mandelbrot_stage    ; work         ;
-;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult0                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult0|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult1                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult1|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult2                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult2|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;    |mandelbrot_stage:\pipeline:8:p0|      ; 258 (98)            ; 5 (5)                     ; 0           ; 0          ; 16           ; 0       ; 8         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:8:p0                                                                 ; mandelbrot_stage    ; work         ;
-;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:8:p0|lpm_mult:Mult0                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:8:p0|lpm_mult:Mult0|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:8:p0|lpm_mult:Mult1                                                  ; lpm_mult            ; work         ;
-;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:8:p0|lpm_mult:Mult1|mult_9hs:auto_generated                          ; mult_9hs            ; work         ;
-;    |mandelbrot_stage:\pipeline:9:p0|      ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:9:p0                                                                 ; mandelbrot_stage    ; work         ;
-;    |pipeline_rgb_out:output|              ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|pipeline_rgb_out:output                                                                         ; pipeline_rgb_out    ; work         ;
-;    |vga_fsm:fsm|                          ; 114 (114)           ; 119 (119)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|vga_fsm:fsm                                                                                     ; vga_fsm             ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                     ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                  ; Entity Name      ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------+------------------+--------------+
+; |project2_ads                             ; 4630 (211)          ; 1011 (78)                 ; 0           ; 0          ; 208          ; 0       ; 104       ; 18   ; 0            ; 0          ; |project2_ads                                                                        ; project2_ads     ; work         ;
+;    |clock_25:clk|                         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|clock_25:clk                                                           ; clock_25         ; work         ;
+;       |altpll:altpll_component|           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|clock_25:clk|altpll:altpll_component                                   ; altpll           ; work         ;
+;          |clock_25_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|clock_25:clk|altpll:altpll_component|clock_25_altpll:auto_generated    ; clock_25_altpll  ; work         ;
+;    |lpm_mult:Mult0|                       ; 33 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult0                                                         ; lpm_mult         ; work         ;
+;       |mult_iks:auto_generated|           ; 33 (33)             ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult0|mult_iks:auto_generated                                 ; mult_iks         ; work         ;
+;    |lpm_mult:Mult1|                       ; 73 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult1                                                         ; lpm_mult         ; work         ;
+;       |mult_dks:auto_generated|           ; 73 (73)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult1|mult_dks:auto_generated                                 ; mult_dks         ; work         ;
+;    |lpm_mult:Mult2|                       ; 33 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult2                                                         ; lpm_mult         ; work         ;
+;       |mult_iks:auto_generated|           ; 33 (33)             ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult2|mult_iks:auto_generated                                 ; mult_iks         ; work         ;
+;    |lpm_mult:Mult3|                       ; 73 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult3                                                         ; lpm_mult         ; work         ;
+;       |mult_dks:auto_generated|           ; 73 (73)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|lpm_mult:Mult3|mult_dks:auto_generated                                 ; mult_dks         ; work         ;
+;    |mandelbrot_stage:\pipeline:0:p0|      ; 0 (0)               ; 59 (59)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:0:p0                                        ; mandelbrot_stage ; work         ;
+;    |mandelbrot_stage:\pipeline:1:p0|      ; 545 (305)           ; 118 (118)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0                                        ; mandelbrot_stage ; work         ;
+;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult0                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult0|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult1                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult1|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult2                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|lpm_mult:Mult2|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;    |mandelbrot_stage:\pipeline:2:p0|      ; 546 (306)           ; 119 (119)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0                                        ; mandelbrot_stage ; work         ;
+;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult0                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult0|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult1                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult1|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult2                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|lpm_mult:Mult2|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;    |mandelbrot_stage:\pipeline:3:p0|      ; 546 (306)           ; 119 (119)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0                                        ; mandelbrot_stage ; work         ;
+;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult0                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult0|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult1                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult1|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult2                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|lpm_mult:Mult2|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;    |mandelbrot_stage:\pipeline:4:p0|      ; 547 (307)           ; 120 (120)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0                                        ; mandelbrot_stage ; work         ;
+;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult0                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult0|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult1                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult1|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult2                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|lpm_mult:Mult2|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;    |mandelbrot_stage:\pipeline:5:p0|      ; 547 (307)           ; 120 (120)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0                                        ; mandelbrot_stage ; work         ;
+;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult0                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult0|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult1                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult1|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult2                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|lpm_mult:Mult2|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;    |mandelbrot_stage:\pipeline:6:p0|      ; 547 (307)           ; 120 (120)                 ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0                                        ; mandelbrot_stage ; work         ;
+;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult0                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult0|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult1                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult1|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult2                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|lpm_mult:Mult2|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;    |mandelbrot_stage:\pipeline:7:p0|      ; 547 (307)           ; 62 (62)                   ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0                                        ; mandelbrot_stage ; work         ;
+;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult0                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult0|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult1                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult1|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult2|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult2                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|lpm_mult:Mult2|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;    |mandelbrot_stage:\pipeline:8:p0|      ; 258 (98)            ; 5 (5)                     ; 0           ; 0          ; 16           ; 0       ; 8         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:8:p0                                        ; mandelbrot_stage ; work         ;
+;       |lpm_mult:Mult0|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:8:p0|lpm_mult:Mult0                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:8:p0|lpm_mult:Mult0|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;       |lpm_mult:Mult1|                    ; 80 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:8:p0|lpm_mult:Mult1                         ; lpm_mult         ; work         ;
+;          |mult_9hs:auto_generated|        ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:8:p0|lpm_mult:Mult1|mult_9hs:auto_generated ; mult_9hs         ; work         ;
+;    |mandelbrot_stage:\pipeline:9:p0|      ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|mandelbrot_stage:\pipeline:9:p0                                        ; mandelbrot_stage ; work         ;
+;    |pipeline_rgb_out:output|              ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|pipeline_rgb_out:output                                                ; pipeline_rgb_out ; vga          ;
+;    |vga_fsm:fsm|                          ; 116 (116)           ; 87 (87)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project2_ads|vga_fsm:fsm                                                            ; vga_fsm          ; vga          ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -380,12 +369,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Statistic                             ; Number Used ;
 +---------------------------------------+-------------+
 ; Simple Multipliers (9-bit)            ; 0           ;
-; Simple Multipliers (18-bit)           ; 100         ;
+; Simple Multipliers (18-bit)           ; 104         ;
 ; Embedded Multiplier Blocks            ; --          ;
-; Embedded Multiplier 9-bit elements    ; 200         ;
-; Signed Embedded Multipliers           ; 25          ;
+; Embedded Multiplier 9-bit elements    ; 208         ;
+; Signed Embedded Multipliers           ; 27          ;
 ; Unsigned Embedded Multipliers         ; 25          ;
-; Mixed Sign Embedded Multipliers       ; 50          ;
+; Mixed Sign Embedded Multipliers       ; 52          ;
 ; Variable Sign Embedded Multipliers    ; 0           ;
 ; Dedicated Input Shift Register Chains ; 0           ;
 +---------------------------------------+-------------+
@@ -472,23 +461,9 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; mandelbrot_stage:\pipeline:0:p0|c_out.im[-16]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-16] ;
 ; mandelbrot_stage:\pipeline:0:p0|c_out.im[-17]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-17] ;
 ; mandelbrot_stage:\pipeline:0:p0|c_out.im[-18]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-18] ;
-; mandelbrot_stage:\pipeline:0:p0|z_out.re[-18]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.re[-17] ;
-; mandelbrot_stage:\pipeline:0:p0|z_out.im[-18]         ; Merged with mandelbrot_stage:\pipeline:0:p0|z_out.im[-17] ;
-; mandelbrot_stage:\pipeline:1:p0|c_out.re[-18]         ; Merged with mandelbrot_stage:\pipeline:1:p0|c_out.re[-17] ;
-; mandelbrot_stage:\pipeline:1:p0|c_out.im[-18]         ; Merged with mandelbrot_stage:\pipeline:1:p0|c_out.im[-17] ;
-; mandelbrot_stage:\pipeline:2:p0|c_out.re[-18]         ; Merged with mandelbrot_stage:\pipeline:2:p0|c_out.re[-17] ;
-; mandelbrot_stage:\pipeline:2:p0|c_out.im[-18]         ; Merged with mandelbrot_stage:\pipeline:2:p0|c_out.im[-17] ;
-; mandelbrot_stage:\pipeline:3:p0|c_out.re[-18]         ; Merged with mandelbrot_stage:\pipeline:3:p0|c_out.re[-17] ;
-; mandelbrot_stage:\pipeline:3:p0|c_out.im[-18]         ; Merged with mandelbrot_stage:\pipeline:3:p0|c_out.im[-17] ;
-; mandelbrot_stage:\pipeline:4:p0|c_out.re[-18]         ; Merged with mandelbrot_stage:\pipeline:4:p0|c_out.re[-17] ;
-; mandelbrot_stage:\pipeline:4:p0|c_out.im[-18]         ; Merged with mandelbrot_stage:\pipeline:4:p0|c_out.im[-17] ;
-; mandelbrot_stage:\pipeline:5:p0|c_out.re[-18]         ; Merged with mandelbrot_stage:\pipeline:5:p0|c_out.re[-17] ;
-; mandelbrot_stage:\pipeline:5:p0|c_out.im[-18]         ; Merged with mandelbrot_stage:\pipeline:5:p0|c_out.im[-17] ;
-; mandelbrot_stage:\pipeline:6:p0|c_out.re[-18]         ; Merged with mandelbrot_stage:\pipeline:6:p0|c_out.re[-17] ;
-; mandelbrot_stage:\pipeline:6:p0|c_out.im[-18]         ; Merged with mandelbrot_stage:\pipeline:6:p0|c_out.im[-17] ;
-; vga_fsm:fsm|point.x[0..4]                             ; Lost fanout                                               ;
-; vga_fsm:fsm|point.y[0..2]                             ; Lost fanout                                               ;
-; Total Number of Removed Registers = 95                ;                                                           ;
+; vga_fsm:fsm|point.y[11..30]                           ; Lost fanout                                               ;
+; vga_fsm:fsm|point.x[11..30]                           ; Lost fanout                                               ;
+; Total Number of Removed Registers = 113               ;                                                           ;
 +-------------------------------------------------------+-----------------------------------------------------------+
 
 
@@ -517,7 +492,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 971   ;
+; Total registers                              ; 1011  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 64    ;
@@ -532,20 +507,22 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|z_out.im[-9]  ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|z_out.re[-15] ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|z_out.im[1]   ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|z_out.re[-15] ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|z_out.im[-6]  ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|z_out.re[10]  ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|z_out.im[-4]  ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|z_out.re[-14] ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|z_out.im[10]  ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|z_out.re[-8]  ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|z_out.im[-7]  ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|z_out.re[3]   ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|z_out.im[-9]  ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|z_out.re[-15] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |project2_ads|c_nodes[0].im[-17]                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |project2_ads|c_nodes[0].re[-17]                            ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|z_out.im[-1]  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|z_out.re[-2]  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|z_out.im[-5]  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:6:p0|z_out.re[-3]  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|z_out.im[-2]  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:5:p0|z_out.re[-1]  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|z_out.im[-6]  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:4:p0|z_out.re[-5]  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|z_out.im[-1]  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:3:p0|z_out.re[-18] ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|z_out.im[-1]  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:2:p0|z_out.re[9]   ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|z_out.im[-1]  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |project2_ads|mandelbrot_stage:\pipeline:1:p0|z_out.re[6]   ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |project2_ads|mandelbrot_stage:\pipeline:8:p0|result        ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|result        ;
 ; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; No         ; |project2_ads|mandelbrot_stage:\pipeline:7:p0|result        ;
@@ -579,6 +556,8 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; num_iterations ; 10                            ; Signed Integer              ;
 ; horz_pixels    ; 800                           ; Signed Integer              ;
 ; vert_pixels    ; 600                           ; Signed Integer              ;
+; h_pixels_inv   ; 00000000000000000000101000111 ; Unsigned Binary             ;
+; v_pixels_inv   ; 00000000000000000000110110100 ; Unsigned Binary             ;
 ; thres_re       ; 00000000010000000000000000000 ; Unsigned Binary             ;
 ; thres_im       ; 00000000010000000000000000000 ; Unsigned Binary             ;
 ; min_real       ; 11111111101110011001100110100 ; Unsigned Binary             ;
@@ -1898,31 +1877,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 31             ; Untyped                ;
-; LPM_WIDTHD             ; 10             ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_2vl ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2                 ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 29       ; Untyped             ;
+; LPM_WIDTHB                                     ; 10       ; Untyped             ;
+; LPM_WIDTHP                                     ; 39       ; Untyped             ;
+; LPM_WIDTHR                                     ; 39       ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED   ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Untyped             ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES      ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_iks ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1                 ;
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult3                 ;
 +------------------------------------------------+----------+---------------------+
 ; Parameter Name                                 ; Value    ; Type                ;
 +------------------------------------------------+----------+---------------------+
@@ -1956,31 +1947,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 31             ; Untyped                ;
-; LPM_WIDTHD             ; 10             ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_2vl ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                 ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 29       ; Untyped             ;
+; LPM_WIDTHB                                     ; 10       ; Untyped             ;
+; LPM_WIDTHP                                     ; 39       ; Untyped             ;
+; LPM_WIDTHR                                     ; 39       ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED   ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Untyped             ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES      ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_iks ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                 ;
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1                 ;
 +------------------------------------------------+----------+---------------------+
 ; Parameter Name                                 ; Value    ; Type                ;
 +------------------------------------------------+----------+---------------------+
@@ -2036,7 +2039,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+------------------------------------------------+
 ; Name                                  ; Value                                          ;
 +---------------------------------------+------------------------------------------------+
-; Number of entity instances            ; 25                                             ;
+; Number of entity instances            ; 27                                             ;
 ; Entity Instance                       ; mandelbrot_stage:\pipeline:8:p0|lpm_mult:Mult1 ;
 ;     -- LPM_WIDTHA                     ; 29                                             ;
 ;     -- LPM_WIDTHB                     ; 29                                             ;
@@ -2290,7 +2293,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                           ;
 ;     -- INPUT_A_FIXED_VALUE            ; Bx                                             ;
 ;     -- INPUT_B_FIXED_VALUE            ; Bx                                             ;
-; Entity Instance                       ; lpm_mult:Mult1                                 ;
+; Entity Instance                       ; lpm_mult:Mult2                                 ;
+;     -- LPM_WIDTHA                     ; 29                                             ;
+;     -- LPM_WIDTHB                     ; 10                                             ;
+;     -- LPM_WIDTHP                     ; 39                                             ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                            ;
+;     -- USE_EAB                        ; OFF                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                             ;
+; Entity Instance                       ; lpm_mult:Mult3                                 ;
 ;     -- LPM_WIDTHA                     ; 21                                             ;
 ;     -- LPM_WIDTHB                     ; 29                                             ;
 ;     -- LPM_WIDTHP                     ; 50                                             ;
@@ -2302,6 +2316,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- INPUT_A_FIXED_VALUE            ; Bx                                             ;
 ;     -- INPUT_B_FIXED_VALUE            ; Bx                                             ;
 ; Entity Instance                       ; lpm_mult:Mult0                                 ;
+;     -- LPM_WIDTHA                     ; 29                                             ;
+;     -- LPM_WIDTHB                     ; 10                                             ;
+;     -- LPM_WIDTHP                     ; 39                                             ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                            ;
+;     -- USE_EAB                        ; OFF                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                             ;
+; Entity Instance                       ; lpm_mult:Mult1                                 ;
 ;     -- LPM_WIDTHA                     ; 21                                             ;
 ;     -- LPM_WIDTHB                     ; 29                                             ;
 ;     -- LPM_WIDTHP                     ; 50                                             ;
@@ -2343,25 +2368,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 18                          ;
-; cycloneiii_ff         ; 971                         ;
+; cycloneiii_ff         ; 1011                        ;
 ;     CLR               ; 64                          ;
-;     plain             ; 907                         ;
-; cycloneiii_lcell_comb ; 5734                        ;
-;     arith             ; 3164                        ;
-;         2 data inputs ; 620                         ;
-;         3 data inputs ; 2544                        ;
-;     normal            ; 2570                        ;
-;         0 data inputs ; 86                          ;
+;     plain             ; 947                         ;
+; cycloneiii_lcell_comb ; 4631                        ;
+;     arith             ; 2920                        ;
+;         2 data inputs ; 651                         ;
+;         3 data inputs ; 2269                        ;
+;     normal            ; 1711                        ;
+;         0 data inputs ; 44                          ;
 ;         1 data inputs ; 9                           ;
-;         2 data inputs ; 618                         ;
-;         3 data inputs ; 483                         ;
-;         4 data inputs ; 1374                        ;
-; cycloneiii_mac_mult   ; 100                         ;
-; cycloneiii_mac_out    ; 100                         ;
+;         2 data inputs ; 83                          ;
+;         3 data inputs ; 509                         ;
+;         4 data inputs ; 1066                        ;
+; cycloneiii_mac_mult   ; 104                         ;
+; cycloneiii_mac_out    ; 104                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 66.00                       ;
-; Average LUT depth     ; 15.17                       ;
+; Max LUT depth         ; 13.70                       ;
+; Average LUT depth     ; 8.82                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2380,7 +2405,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Tue Nov  7 20:10:04 2023
+    Info: Processing started: Wed Nov  8 15:03:10 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project2_ads -c project2_ads
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2391,13 +2416,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file rgb_out
     Info (12022): Found design unit 1: rgb_out-gen File: /home/smcginn-adsd/src/ads/ads_project2/rgb_out.vhd Line: 22
     Info (12023): Found entity 1: rgb_out File: /home/smcginn-adsd/src/ads/ads_project2/rgb_out.vhd Line: 9
 Info (12021): Found 2 design units, including 0 entities, in source file ads_fixed.vhd
-    Info (12022): Found design unit 1: ads_fixed File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 7
+    Info (12022): Found design unit 1: ads_fixed (ads) File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 7
     Info (12022): Found design unit 2: ads_fixed-body File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 60
 Info (12021): Found 2 design units, including 0 entities, in source file ads_complex.vhd
-    Info (12022): Found design unit 1: ads_complex File: /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd Line: 6
+    Info (12022): Found design unit 1: ads_complex (ads) File: /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd Line: 6
     Info (12022): Found design unit 2: ads_complex-body File: /home/smcginn-adsd/src/ads/ads_project2/ads_complex.vhd Line: 58
 Info (12021): Found 2 design units, including 0 entities, in source file vga_data.vhd
-    Info (12022): Found design unit 1: vga_data File: /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd Line: 4
+    Info (12022): Found design unit 1: vga_data (vga) File: /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd Line: 4
     Info (12022): Found design unit 2: vga_data-body File: /home/smcginn-adsd/src/ads/ads_project2/vga_data.vhd Line: 133
 Info (12021): Found 2 design units, including 1 entities, in source file vga_fsm.vhd
     Info (12022): Found design unit 1: vga_fsm-fsm File: /home/smcginn-adsd/src/ads/ads_project2/vga_fsm.vhd Line: 26
@@ -2406,25 +2431,25 @@ Info (12021): Found 2 design units, including 1 entities, in source file vga_tes
     Info (12022): Found design unit 1: vga_test-test_fixture File: /home/smcginn-adsd/src/ads/ads_project2/vga_test.vhd Line: 13
     Info (12023): Found entity 1: vga_test File: /home/smcginn-adsd/src/ads/ads_project2/vga_test.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file project2_ads.vhd
-    Info (12022): Found design unit 1: project2_ads-top_arch File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 48
-    Info (12023): Found entity 1: project2_ads File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 13
+    Info (12022): Found design unit 1: project2_ads-top_arch File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 52
+    Info (12023): Found entity 1: project2_ads File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 15
 Info (12021): Found 1 design units, including 0 entities, in source file project2_pkg.vhd
-    Info (12022): Found design unit 1: project2_pkg File: /home/smcginn-adsd/src/ads/ads_project2/project2_pkg.vhd Line: 13
+    Info (12022): Found design unit 1: project2_pkg File: /home/smcginn-adsd/src/ads/ads_project2/project2_pkg.vhd Line: 14
 Info (12021): Found 2 design units, including 1 entities, in source file mandelbrot_stage.vhd
-    Info (12022): Found design unit 1: mandelbrot_stage-behavior File: /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd Line: 41
-    Info (12023): Found entity 1: mandelbrot_stage File: /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd Line: 12
+    Info (12022): Found design unit 1: mandelbrot_stage-behavior File: /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd Line: 43
+    Info (12023): Found entity 1: mandelbrot_stage File: /home/smcginn-adsd/src/ads/ads_project2/mandelbrot_stage.vhd Line: 14
 Info (12021): Found 2 design units, including 1 entities, in source file pipeline_rgb_out.vhd
-    Info (12022): Found design unit 1: pipeline_rgb_out-gen File: /home/smcginn-adsd/src/ads/ads_project2/pipeline_rgb_out.vhd Line: 28
-    Info (12023): Found entity 1: pipeline_rgb_out File: /home/smcginn-adsd/src/ads/ads_project2/pipeline_rgb_out.vhd Line: 11
+    Info (12022): Found design unit 1: pipeline_rgb_out-gen File: /home/smcginn-adsd/src/ads/ads_project2/pipeline_rgb_out.vhd Line: 30
+    Info (12023): Found entity 1: pipeline_rgb_out File: /home/smcginn-adsd/src/ads/ads_project2/pipeline_rgb_out.vhd Line: 13
 Info (12021): Found 2 design units, including 0 entities, in source file vga_pkg.vhd
-    Info (12022): Found design unit 1: vga_pkg File: /home/smcginn-adsd/src/ads/ads_project2/vga_pkg.vhd Line: 9
+    Info (12022): Found design unit 1: vga_pkg (vga) File: /home/smcginn-adsd/src/ads/ads_project2/vga_pkg.vhd Line: 9
     Info (12022): Found design unit 2: vga_pkg-body File: /home/smcginn-adsd/src/ads/ads_project2/vga_pkg.vhd Line: 94
 Info (12021): Found 2 design units, including 1 entities, in source file clock_25.vhd
     Info (12022): Found design unit 1: clock_25-SYN File: /home/smcginn-adsd/src/ads/ads_project2/clock_25.vhd Line: 53
     Info (12023): Found entity 1: clock_25 File: /home/smcginn-adsd/src/ads/ads_project2/clock_25.vhd Line: 43
 Info (12127): Elaborating entity "project2_ads" for the top level hierarchy
-Info (12128): Elaborating entity "vga_fsm" for hierarchy "vga_fsm:fsm" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 88
-Info (12128): Elaborating entity "clock_25" for hierarchy "clock_25:clk" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 105
+Info (12128): Elaborating entity "vga_fsm" for hierarchy "vga_fsm:fsm" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 92
+Info (12128): Elaborating entity "clock_25" for hierarchy "clock_25:clk" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 109
 Info (12128): Elaborating entity "altpll" for hierarchy "clock_25:clk|altpll:altpll_component" File: /home/smcginn-adsd/src/ads/ads_project2/clock_25.vhd Line: 139
 Info (12130): Elaborated megafunction instantiation "clock_25:clk|altpll:altpll_component" File: /home/smcginn-adsd/src/ads/ads_project2/clock_25.vhd Line: 139
 Info (12133): Instantiated megafunction "clock_25:clk|altpll:altpll_component" with the following parameter: File: /home/smcginn-adsd/src/ads/ads_project2/clock_25.vhd Line: 139
@@ -2486,17 +2511,17 @@ Info (12133): Instantiated megafunction "clock_25:clk|altpll:altpll_component" w
 Info (12021): Found 1 design units, including 1 entities, in source file db/clock_25_altpll.v
     Info (12023): Found entity 1: clock_25_altpll File: /home/smcginn-adsd/src/ads/ads_project2/db/clock_25_altpll.v Line: 30
 Info (12128): Elaborating entity "clock_25_altpll" for hierarchy "clock_25:clk|altpll:altpll_component|clock_25_altpll:auto_generated" File: /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:0:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 133
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:1:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 133
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:2:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 133
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:3:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 133
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:4:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 133
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:5:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 133
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:6:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 133
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:7:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 133
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:8:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 133
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:9:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 133
-Info (12128): Elaborating entity "pipeline_rgb_out" for hierarchy "pipeline_rgb_out:output" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 175
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:0:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 137
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:1:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 137
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:2:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 137
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:3:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 137
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:4:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 137
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:5:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 137
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:6:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 137
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:7:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 137
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:8:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 137
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:9:p0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 137
+Info (12128): Elaborating entity "pipeline_rgb_out" for hierarchy "pipeline_rgb_out:output" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 180
 Info (278001): Inferred 27 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mandelbrot_stage:\pipeline:8:p0|Mult1" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mandelbrot_stage:\pipeline:8:p0|Mult0" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
@@ -2521,10 +2546,10 @@ Info (278001): Inferred 27 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mandelbrot_stage:\pipeline:1:p0|Mult1" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mandelbrot_stage:\pipeline:1:p0|Mult0" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mandelbrot_stage:\pipeline:1:p0|Mult2" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 82
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 81
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult2" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult3" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
 Info (12130): Elaborated megafunction instantiation "mandelbrot_stage:\pipeline:8:p0|lpm_mult:Mult1" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
 Info (12133): Instantiated megafunction "mandelbrot_stage:\pipeline:8:p0|lpm_mult:Mult1" with the following parameter: File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
     Info (12134): Parameter "LPM_WIDTHA" = "29"
@@ -2538,24 +2563,21 @@ Info (12133): Instantiated megafunction "mandelbrot_stage:\pipeline:8:p0|lpm_mul
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_9hs.tdf
     Info (12023): Found entity 1: mult_9hs File: /home/smcginn-adsd/src/ads/ads_project2/db/mult_9hs.tdf Line: 31
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 82
-Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 82
-    Info (12134): Parameter "LPM_WIDTHN" = "31"
-    Info (12134): Parameter "LPM_WIDTHD" = "10"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2vl.tdf
-    Info (12023): Found entity 1: lpm_divide_2vl File: /home/smcginn-adsd/src/ads/ads_project2/db/lpm_divide_2vl.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_4nh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_4nh File: /home/smcginn-adsd/src/ads/ads_project2/db/sign_div_unsign_4nh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ike.tdf
-    Info (12023): Found entity 1: alt_u_div_ike File: /home/smcginn-adsd/src/ads/ads_project2/db/alt_u_div_ike.tdf Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
-    Info (12023): Found entity 1: add_sub_t3c File: /home/smcginn-adsd/src/ads/ads_project2/db/add_sub_t3c.tdf Line: 23
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
-    Info (12023): Found entity 1: add_sub_u3c File: /home/smcginn-adsd/src/ads/ads_project2/db/add_sub_u3c.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult1" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
-Info (12133): Instantiated megafunction "lpm_mult:Mult1" with the following parameter: File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult2" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
+Info (12133): Instantiated megafunction "lpm_mult:Mult2" with the following parameter: File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
+    Info (12134): Parameter "LPM_WIDTHA" = "29"
+    Info (12134): Parameter "LPM_WIDTHB" = "10"
+    Info (12134): Parameter "LPM_WIDTHP" = "39"
+    Info (12134): Parameter "LPM_WIDTHR" = "39"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_iks.tdf
+    Info (12023): Found entity 1: mult_iks File: /home/smcginn-adsd/src/ads/ads_project2/db/mult_iks.tdf Line: 31
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult3" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
+Info (12133): Instantiated megafunction "lpm_mult:Mult3" with the following parameter: File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
     Info (12134): Parameter "LPM_WIDTHA" = "21"
     Info (12134): Parameter "LPM_WIDTHB" = "29"
     Info (12134): Parameter "LPM_WIDTHP" = "50"
@@ -2567,14 +2589,19 @@ Info (12133): Instantiated megafunction "lpm_mult:Mult1" with the following para
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_dks.tdf
     Info (12023): Found entity 1: mult_dks File: /home/smcginn-adsd/src/ads/ads_project2/db/mult_dks.tdf Line: 31
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 81
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 81
-    Info (12134): Parameter "LPM_WIDTHN" = "31"
-    Info (12134): Parameter "LPM_WIDTHD" = "10"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
 Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
+    Info (12134): Parameter "LPM_WIDTHA" = "29"
+    Info (12134): Parameter "LPM_WIDTHB" = "10"
+    Info (12134): Parameter "LPM_WIDTHP" = "39"
+    Info (12134): Parameter "LPM_WIDTHR" = "39"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult1" File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
+Info (12133): Instantiated megafunction "lpm_mult:Mult1" with the following parameter: File: /home/smcginn-adsd/src/ads/ads_project2/ads_fixed.vhd Line: 316
     Info (12134): Parameter "LPM_WIDTHA" = "21"
     Info (12134): Parameter "LPM_WIDTHB" = "29"
     Info (12134): Parameter "LPM_WIDTHP" = "50"
@@ -2584,22 +2611,22 @@ Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following para
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "YES"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (13014): Ignored 5399 buffer(s)
-    Info (13019): Ignored 5399 SOFT buffer(s)
+Info (13014): Ignored 5553 buffer(s)
+    Info (13019): Ignored 5553 SOFT buffer(s)
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (17049): 40 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 6419 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5361 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 6200 logic cells
+    Info (21061): Implemented 5134 logic cells
     Info (21065): Implemented 1 PLLs
-    Info (21062): Implemented 200 DSP elements
+    Info (21062): Implemented 208 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 525 megabytes
-    Info: Processing ended: Tue Nov  7 20:10:26 2023
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Peak virtual memory: 541 megabytes
+    Info: Processing ended: Wed Nov  8 15:03:33 2023
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:32
 
 
