@@ -1,0 +1,9 @@
+#ignore all files
+*
+#except
+!*.vhd
+!*.qpf
+!*.qsf
+!*.tcl
+!*/
+!.gitignore

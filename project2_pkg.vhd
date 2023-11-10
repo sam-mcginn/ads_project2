@@ -25,6 +25,7 @@ package project2_pkg is
 			--threshold_out: out ads_complex;
 			
 			-- Initial seed value
+			reset: in std_logic;
 			c_in: in ads_complex;
 			c_out: out ads_complex;
 			

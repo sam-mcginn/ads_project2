@@ -14,7 +14,7 @@ use ads.ads_fixed.all;
 
 entity project2_ads is
 	generic (
-		num_iterations: 	natural := 10;
+		num_iterations: 	natural := 20;
 		horz_pixels: 		natural := 800;
 		vert_pixels: 		natural := 600;
 		h_pixels_inv: ads_sfixed := to_ads_sfixed(0.00125);
@@ -69,9 +69,11 @@ architecture top_arch of project2_ads is
 	--signal curr_v: natural;
 	
 	-- VGA signals
-	signal hsync_reg: std_logic_vector(0 to num_iterations-1);
+	type boolean_array is array(0 to num_iterations) of boolean;
+	signal point_valid_array: boolean_array;
+	signal hsync_reg: std_logic_vector(0 to num_iterations);
 	signal hsync_in: std_logic;
-	signal vsync_reg: std_logic_vector(0 to num_iterations-1);
+	signal vsync_reg: std_logic_vector(0 to num_iterations);
 	signal vsync_in: std_logic;
 	signal vga_clock: std_logic;
 	
@@ -116,15 +118,20 @@ begin
 	-- shift register for sync signals to match pipeline delay
 	sync_regs: process(vga_clock, reset) is
 	begin
-		if rising_edge(vga_clock) then
-			hsync_reg <= hsync_in & hsync_reg(0 to num_iterations - 2);
-			vsync_reg <= vsync_in & vsync_reg(0 to num_iterations - 2);
+		if reset = '0' then
+			hsync_reg <= (others => '1');
+			vsync_reg <= (others => '1');
+			point_valid_array <= (others => false);
+		elsif rising_edge(vga_clock) then
+			hsync_reg <= hsync_in & hsync_reg(0 to num_iterations - 1);
+			vsync_reg <= vsync_in & vsync_reg(0 to num_iterations - 1);
+			point_valid_array <= point_valid & point_valid_array(0 to num_iterations - 1);
 		end if;
 	end process sync_regs;
 	
 	-- Use output of 'shift reg' to drive sync outputs
-	horz_sync <= hsync_reg(num_iterations-1);
-	vert_sync <= vsync_reg(num_iterations-1);
+	horz_sync <= hsync_reg(num_iterations);
+	vert_sync <= vsync_reg(num_iterations);
 		
 	-- z, index should both start at 0
 	z_nodes(0) <= ads_cmplx(to_ads_sfixed(0), to_ads_sfixed(0));
@@ -141,6 +148,7 @@ begin
 			)
 			port map (
 				clock => vga_clock,
+				reset => reset,
 				c_in => c_nodes(num),
 				c_out => c_nodes(num+1),
 				z_in => z_nodes(num),
@@ -183,7 +191,7 @@ begin
 		)
 		port map (
 			reset => reset,
-			point_valid => point_valid,
+			point_valid => point_valid_array(num_iterations),
 			table_index => index_nodes(num_iterations),
 			red => r_out,
 			green => g_out,

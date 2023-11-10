@@ -46,16 +46,18 @@ architecture behavior of mandelbrot_stage is
 begin
 	-- start with c=c_in, z=0; compute fc(z) = z^2 + c
 	stage: process (reset, clock) is
-		variable z_curr: ads_complex;
+		--variable z_curr: ads_complex;
 		variable re_square: ads_sfixed;
 		variable im_square: ads_sfixed;
 		variable ab_term: ads_sfixed;
 	begin
+		re_square := to_ads_sfixed(0);
+		im_square := to_ads_sfixed(0);
+		ab_term := to_ads_sfixed(0);
+
 		if reset = '0' then
-			z_curr := complex_zero;
-			re_square := to_ads_sfixed(0);
-			im_square := to_ads_sfixed(0);
-			ab_term := to_ads_sfixed(0);
+			--z_curr := complex_zero;
+
 			c_out <= complex_zero;
 			z_out <= complex_zero;
 			overflow_out <= false;
@@ -65,7 +67,8 @@ begin
 			-- absolute value = a^2 + b^2
 			re_square := z_in.re * z_in.re;
 			im_square := z_in.im * z_in.im;
-			ab_term := z_in.re * z_in.im; -- * to_ads_sfixed(2);
+			ab_term := z_in.re * z_in.im; 
+			-- * to_ads_sfixed(2);
 			--z_curr := ads_cmplx(re_square - im_square, ab_term);
 			
 			--if (threshold > (re_square + im_square)) then
@@ -74,7 +77,7 @@ begin
 			--	table_index_out <= table_index_in;
 			--end if;
 			
-			if (threshold > (re_square + im_square)) or overflow_in then
+			if ((re_square + im_square) > threshold) or overflow_in then
 				overflow_out <= true;
 			else
 				overflow_out <= false;
@@ -84,6 +87,7 @@ begin
 				table_index_out <= table_index_in;
 			else
 				table_index_out <= stage_number;
+				--table_index_out <= table_index_in + 1;
 			end if;
 			
 			--z_out <= z_curr;

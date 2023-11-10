@@ -1,5 +1,5 @@
 Flow report for project2_ads
-Wed Nov  8 15:48:41 2023
+Fri Nov 10 18:24:43 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -41,21 +41,21 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Wed Nov  8 15:48:41 2023          ;
+; Flow Status                        ; Successful - Fri Nov 10 18:24:43 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; project2_ads                                   ;
 ; Top-level Entity Name              ; project2_ads                                   ;
 ; Family                             ; MAX 10                                         ;
 ; Device                             ; 10M50DAF484C7G                                 ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 4,832 / 49,760 ( 10 % )                        ;
-;     Total combinational functions  ; 4,632 / 49,760 ( 9 % )                         ;
-;     Dedicated logic registers      ; 600 / 49,760 ( 1 % )                           ;
-; Total registers                    ; 600                                            ;
+; Total logic elements               ; 24,754 / 49,760 ( 50 % )                       ;
+;     Total combinational functions  ; 24,201 / 49,760 ( 49 % )                       ;
+;     Dedicated logic registers      ; 1,889 / 49,760 ( 4 % )                         ;
+; Total registers                    ; 1889                                           ;
 ; Total pins                         ; 18 / 360 ( 5 % )                               ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                          ;
-; Embedded Multiplier 9-bit elements ; 208 / 288 ( 72 % )                             ;
+; Embedded Multiplier 9-bit elements ; 288 / 288 ( 100 % )                            ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                                 ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                                  ;
 ; ADC blocks                         ; 0 / 2 ( 0 % )                                  ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/08/2023 15:47:25 ;
+; Start date & time ; 11/10/2023 18:16:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; project2_ads        ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 8796750404080.169947644503444          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 10995770589187.169965816733484         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; clock_25_inst.vhd                      ; --            ; --          ; --         ;
@@ -98,30 +98,30 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 528 MB              ; 00:00:32                           ;
-; Fitter               ; 00:00:47     ; 1.3                     ; 1154 MB             ; 00:01:24                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 407 MB              ; 00:00:03                           ;
-; Total                ; 00:01:11     ; --                      ; --                  ; 00:01:59                           ;
+; Analysis & Synthesis ; 00:01:04     ; 1.0                     ; 5148 MB             ; 00:00:58                           ;
+; Fitter               ; 00:03:03     ; 2.3                     ; 6454 MB             ; 00:07:36                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4807 MB             ; 00:00:03                           ;
+; Total                ; 00:04:12     ; --                      ; --                  ; 00:08:37                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+----------------------+------------------+----------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+----------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis ; ADSD-Ubuntu      ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
-; Fitter               ; ADSD-Ubuntu      ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
-; Assembler            ; ADSD-Ubuntu      ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
-+----------------------+------------------+----------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; NathanLenovo     ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; NathanLenovo     ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; NathanLenovo     ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off project2_ads -c project2_ads
-quartus_fit --read_settings_files=off --write_settings_files=off project2_ads -c project2_ads
-quartus_asm --read_settings_files=off --write_settings_files=off project2_ads -c project2_ads
+quartus_fit --read_settings_files=on --write_settings_files=off project2_ads -c project2_ads
+quartus_asm --read_settings_files=on --write_settings_files=off project2_ads -c project2_ads
 
 
 

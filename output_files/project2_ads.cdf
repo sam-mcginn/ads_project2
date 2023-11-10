@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("/home/smcginn-adsd/src/ads/ads_project2/output_files/") File("project2_ads.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/esosa/OneDrive - UMass Lowell/Documents/Quartus Projects/ads_project2/output_files/") File("project2_ads.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

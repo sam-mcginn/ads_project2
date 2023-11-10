@@ -1,5 +1,5 @@
 --lpm_compare CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="MAX 10" LPM_WIDTH=6 ONE_INPUT_IS_CONSTANT="YES" aeb dataa datab
---VERSION_BEGIN 22.1 cbx_cycloneii 2023:07:20:14:03:03:SC cbx_lpm_add_sub 2023:07:20:14:03:03:SC cbx_lpm_compare 2023:07:20:14:03:03:SC cbx_mgl 2023:07:20:14:14:26:SC cbx_nadder 2023:07:20:14:03:03:SC cbx_stratix 2023:07:20:14:03:03:SC cbx_stratixii 2023:07:20:14:03:03:SC  VERSION_END
+--VERSION_BEGIN 22.1 cbx_cycloneii 2023:07:21:07:12:21:SC cbx_lpm_add_sub 2023:07:21:07:12:21:SC cbx_lpm_compare 2023:07:21:07:12:21:SC cbx_mgl 2023:07:21:07:12:36:SC cbx_nadder 2023:07:21:07:12:21:SC cbx_stratix 2023:07:21:07:12:21:SC cbx_stratixii 2023:07:21:07:12:21:SC  VERSION_END
 
 
 -- Copyright (C) 2023  Intel Corporation. All rights reserved.

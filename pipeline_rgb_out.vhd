@@ -31,49 +31,46 @@ architecture gen of pipeline_rgb_out is
 	-- Color map
 	type rgb_array is array(0 to 39, 0 to 2) of integer range 0 to 255;
 	constant color_map: rgb_array := (
-													(153, 255, 255),
-													(125, 255, 255),
-													(102, 255, 255),
-													(85, 255, 255),
-													(70, 255, 255),
-													(51, 255, 255),
-													(35, 255, 255),
-													(125, 225, 255),
-													(100, 225, 255),
-													(125, 200, 255),
-													
-													(100, 200, 255),
-													(50, 200, 255),
-													(25, 200, 255),
-													(0, 200, 255),
-													(100, 153, 255),
-													(75, 153, 255),
-													(51, 153, 255),
-													(25, 150, 255),
-													(50, 125, 255),
-													(25, 125, 255),
-
-													(0, 125, 255),
-													(0, 100, 255),
-													(0, 75, 255),
-													(0, 50, 255),
-													(0, 25, 255),
-													(0, 0, 255),
-													(0, 0, 235),
-													(0, 0, 220),
-													(0, 0, 204),
-													(0, 0, 185),
-													
-													(0, 0, 170),
-													(0, 0, 153),
-													(0, 0, 135),
-													(0, 0, 119),
-													(0, 0, 102),
-													(0, 0, 85),
-													(0, 0, 70),
-													(0, 0, 51),
-													(0, 0, 25),
-													(0, 0, 0)
+													(   9,  15,  15 ),
+													(   7,  15,  15 ),
+													(   6,  15,  15 ),
+													(   5,  15,  15 ),
+													(   4,  15,  15 ),
+													(   3,  15,  15 ),
+													(   2,  15,  15 ),
+													(   7,  14,  15 ),
+													(   6,  14,  15 ),
+													(   7,  12,  15 ),
+													(   6,  12,  15 ),
+													(   3,  12,  15 ),
+													(   1,  12,  15 ),
+													(   0,  12,  15 ),
+													(   6,   9,  15 ),
+													(   4,   9,  15 ),
+													(   3,   9,  15 ),
+													(   1,   9,  15 ),
+													(   3,   7,  15 ),
+													(   1,   7,  15 ),
+													(   0,   7,  15 ),
+													(   0,   6,  15 ),
+													(   0,   4,  15 ),
+													(   0,   3,  15 ),
+													(   0,   1,  15 ),
+													(   0,   0,  15 ),
+													(   0,   0,  14 ),
+													(   0,   0,  13 ),
+													(   0,   0,  12 ),
+													(   0,   0,  11 ),
+													(   0,   0,  10 ),
+													(   0,   0,   9 ),
+													(   0,   0,   8 ),
+													(   0,   0,   7 ),
+													(   0,   0,   6 ),
+													(   0,   0,   5 ),
+													(   0,   0,   4 ),
+													(   0,   0,   3 ),
+													(   0,   0,   1 ),
+													(   0,   0,   0 )
 												);
 begin
 	color_output: process(reset, point_valid, table_index)
@@ -82,18 +79,21 @@ begin
 				red <= "0000";
 				green <= "0000";
 				blue <= "0000";
-			elsif (table_index > 30) then
-				red <= std_logic_vector(to_unsigned(table_index-30, red'length));
-				green <= std_logic_vector(to_unsigned(table_index-30, green'length));
-				blue <= std_logic_vector(to_unsigned(table_index-30, blue'length));
-			elsif (table_index > 15) then
-				red <= std_logic_vector(to_unsigned(table_index-15, red'length));
-				green <= std_logic_vector(to_unsigned(table_index-15, green'length));
-				blue <= std_logic_vector(to_unsigned(table_index-15, blue'length));
-			else
-				red <= std_logic_vector(to_unsigned(table_index, red'length));
-				green <= std_logic_vector(to_unsigned(table_index, green'length));
-				blue <= std_logic_vector(to_unsigned(table_index, blue'length));
+			else 
+				red <= std_logic_vector(to_unsigned(color_map(table_index, 0), 4));
+				green <= std_logic_vector(to_unsigned(color_map(table_index, 1), 4));
+				blue <= std_logic_vector(to_unsigned(color_map(table_index, 0), 4));
+				--red <= std_logic_vector(to_unsigned(table_index-30, red'length));
+				--green <= std_logic_vector(to_unsigned(table_index-30, green'length));
+				--blue <= std_logic_vector(to_unsigned(table_index-30, blue'length));
+			--elsif (table_index > 15) then
+				--red <= std_logic_vector(to_unsigned(table_index-15, red'length));
+				--green <= std_logic_vector(to_unsigned(table_index-15, green'length));
+				--blue <= std_logic_vector(to_unsigned(table_index-15, blue'length));
+			--else
+				--red <= std_logic_vector(to_unsigned(table_index, red'length));
+				--green <= std_logic_vector(to_unsigned(table_index, green'length));
+				--blue <= std_logic_vector(to_unsigned(table_index, blue'length));
 			end if;			
 	end process;
 	
