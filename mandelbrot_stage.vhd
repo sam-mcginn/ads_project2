@@ -51,11 +51,12 @@ begin
 		variable im_square: ads_sfixed;
 		variable ab_term: ads_sfixed;
 	begin
+		re_square := to_ads_sfixed(0);
+		im_square := to_ads_sfixed(0);
+		ab_term := to_ads_sfixed(0);
+		
 		if reset = '0' then
 			z_curr := complex_zero;
-			re_square := to_ads_sfixed(0);
-			im_square := to_ads_sfixed(0);
-			ab_term := to_ads_sfixed(0);
 			c_out <= complex_zero;
 			z_out <= complex_zero;
 			overflow_out <= false;
@@ -74,7 +75,7 @@ begin
 			--	table_index_out <= table_index_in;
 			--end if;
 			
-			if (threshold > (re_square + im_square)) or overflow_in then
+			if ((re_square + im_square) > threshold) or overflow_in then
 				overflow_out <= true;
 			else
 				overflow_out <= false;

@@ -1,16 +1,16 @@
-Analysis & Synthesis Status : Successful - Wed Nov  8 15:47:48 2023
+Analysis & Synthesis Status : Successful - Mon Nov 13 20:46:13 2023
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : project2_ads
 Top-level Entity Name : project2_ads
 Family : MAX 10
-Total logic elements : 5,079
-    Total combinational functions : 4,630
-    Dedicated logic registers : 1,011
-Total registers : 1011
+Total logic elements : 130
+    Total combinational functions : 110
+    Dedicated logic registers : 86
+Total registers : 86
 Total pins : 18
 Total virtual pins : 0
 Total memory bits : 0
-Embedded Multiplier 9-bit elements : 208
+Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1
 UFM blocks : 0
 ADC blocks : 0

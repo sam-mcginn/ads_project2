@@ -27,6 +27,8 @@ entity pipeline_rgb_out is
 	);
 end entity pipeline_rgb_out;
 
+-- For Project 2 - change color map and red, green, blue assignments
+
 architecture gen of pipeline_rgb_out is
 	-- Color map
 	type rgb_array is array(0 to 39, 0 to 2) of integer range 0 to 255;
@@ -82,18 +84,10 @@ begin
 				red <= "0000";
 				green <= "0000";
 				blue <= "0000";
-			elsif (table_index > 30) then
-				red <= std_logic_vector(to_unsigned(table_index-30, red'length));
-				green <= std_logic_vector(to_unsigned(table_index-30, green'length));
-				blue <= std_logic_vector(to_unsigned(table_index-30, blue'length));
-			elsif (table_index > 15) then
-				red <= std_logic_vector(to_unsigned(table_index-15, red'length));
-				green <= std_logic_vector(to_unsigned(table_index-15, green'length));
-				blue <= std_logic_vector(to_unsigned(table_index-15, blue'length));
 			else
-				red <= std_logic_vector(to_unsigned(table_index, red'length));
-				green <= std_logic_vector(to_unsigned(table_index, green'length));
-				blue <= std_logic_vector(to_unsigned(table_index, blue'length));
+				red <= std_logic_vector(to_unsigned(color_map(table_index, 0), 4));
+				green <= std_logic_vector(to_unsigned(color_map(table_index, 1), 4));
+				blue <= std_logic_vector(to_unsigned(color_map(table_index, 2), 4));
 			end if;			
 	end process;
 	
