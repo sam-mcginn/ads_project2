@@ -46,7 +46,7 @@ architecture behavior of mandelbrot_stage is
 begin
 	-- start with c=c_in, z=0; compute fc(z) = z^2 + c
 	stage: process (reset, clock) is
-		variable z_curr: ads_complex;
+		--variable z_curr: ads_complex;
 		variable re_square: ads_sfixed;
 		variable im_square: ads_sfixed;
 		variable ab_term: ads_sfixed;
@@ -56,7 +56,7 @@ begin
 		ab_term := to_ads_sfixed(0);
 		
 		if reset = '0' then
-			z_curr := complex_zero;
+			--z_curr := complex_zero;
 			c_out <= complex_zero;
 			z_out <= complex_zero;
 			overflow_out <= false;
