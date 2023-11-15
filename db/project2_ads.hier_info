@@ -34,22 +34,22 @@ reset => hsync_reg[3].PRESET
 reset => hsync_reg[2].PRESET
 reset => hsync_reg[1].PRESET
 reset => hsync_reg[0].PRESET
-horz_sync <= hsync_reg[10].DB_MAX_OUTPUT_PORT_TYPE
-vert_sync <= vsync_reg[10].DB_MAX_OUTPUT_PORT_TYPE
-r_out[0] <= pipeline_rgb_out:output.red[0]
-r_out[1] <= pipeline_rgb_out:output.red[1]
-r_out[2] <= pipeline_rgb_out:output.red[2]
-r_out[3] <= pipeline_rgb_out:output.red[3]
-g_out[0] <= pipeline_rgb_out:output.green[0]
-g_out[1] <= pipeline_rgb_out:output.green[1]
-g_out[2] <= pipeline_rgb_out:output.green[2]
-g_out[3] <= pipeline_rgb_out:output.green[3]
-b_out[0] <= pipeline_rgb_out:output.blue[0]
-b_out[1] <= pipeline_rgb_out:output.blue[1]
-b_out[2] <= pipeline_rgb_out:output.blue[2]
-b_out[3] <= pipeline_rgb_out:output.blue[3]
-reset_led <= vga_fsm:fsm.reset_led
-locked_led <= clock_25:clk.locked
+horz_sync << hsync_reg[10].DB_MAX_OUTPUT_PORT_TYPE
+vert_sync << vsync_reg[10].DB_MAX_OUTPUT_PORT_TYPE
+r_out[0] << pipeline_rgb_out:output.red[0]
+r_out[1] << pipeline_rgb_out:output.red[1]
+r_out[2] << pipeline_rgb_out:output.red[2]
+r_out[3] << pipeline_rgb_out:output.red[3]
+g_out[0] << pipeline_rgb_out:output.green[0]
+g_out[1] << pipeline_rgb_out:output.green[1]
+g_out[2] << pipeline_rgb_out:output.green[2]
+g_out[3] << pipeline_rgb_out:output.green[3]
+b_out[0] << pipeline_rgb_out:output.blue[0]
+b_out[1] << pipeline_rgb_out:output.blue[1]
+b_out[2] << pipeline_rgb_out:output.blue[2]
+b_out[3] << pipeline_rgb_out:output.blue[3]
+reset_led << vga_fsm:fsm.reset_led
+locked_led << clock_25:clk.locked
 
 
 |project2_ads|vga_fsm:fsm
@@ -8497,7 +8497,6 @@ table_index[0] => Mux0.IN69
 table_index[0] => Mux1.IN69
 table_index[0] => Mux2.IN69
 table_index[0] => Mux3.IN69
-table_index[0] => Mux4.IN69
 table_index[0] => Mux5.IN69
 table_index[0] => Mux6.IN69
 table_index[0] => Mux7.IN69
@@ -8509,7 +8508,7 @@ table_index[1] => Mux0.IN68
 table_index[1] => Mux1.IN68
 table_index[1] => Mux2.IN68
 table_index[1] => Mux3.IN68
-table_index[1] => Mux4.IN68
+table_index[1] => Mux4.IN36
 table_index[1] => Mux5.IN68
 table_index[1] => Mux6.IN68
 table_index[1] => Mux7.IN68
@@ -8521,7 +8520,7 @@ table_index[2] => Mux0.IN67
 table_index[2] => Mux1.IN67
 table_index[2] => Mux2.IN67
 table_index[2] => Mux3.IN67
-table_index[2] => Mux4.IN67
+table_index[2] => Mux4.IN35
 table_index[2] => Mux5.IN67
 table_index[2] => Mux6.IN67
 table_index[2] => Mux7.IN67
@@ -8533,7 +8532,7 @@ table_index[3] => Mux0.IN66
 table_index[3] => Mux1.IN66
 table_index[3] => Mux2.IN66
 table_index[3] => Mux3.IN66
-table_index[3] => Mux4.IN66
+table_index[3] => Mux4.IN34
 table_index[3] => Mux5.IN66
 table_index[3] => Mux6.IN66
 table_index[3] => Mux7.IN66
@@ -8544,7 +8543,7 @@ table_index[4] => Mux0.IN65
 table_index[4] => Mux1.IN65
 table_index[4] => Mux2.IN65
 table_index[4] => Mux3.IN65
-table_index[4] => Mux4.IN65
+table_index[4] => Mux4.IN33
 table_index[4] => Mux5.IN65
 table_index[4] => Mux6.IN65
 table_index[4] => Mux7.IN65
@@ -8555,7 +8554,7 @@ table_index[5] => Mux0.IN64
 table_index[5] => Mux1.IN64
 table_index[5] => Mux2.IN64
 table_index[5] => Mux3.IN64
-table_index[5] => Mux4.IN64
+table_index[5] => Mux4.IN32
 table_index[5] => Mux5.IN64
 table_index[5] => Mux6.IN64
 table_index[5] => Mux7.IN64

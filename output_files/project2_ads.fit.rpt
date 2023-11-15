@@ -1,5 +1,5 @@
 Fitter report for project2_ads
-Mon Nov 13 20:46:23 2023
+Wed Nov 15 18:01:30 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Mon Nov 13 20:46:23 2023          ;
+; Fitter Status                      ; Successful - Wed Nov 15 18:01:30 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; project2_ads                                   ;
 ; Top-level Entity Name              ; project2_ads                                   ;
@@ -154,13 +154,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.04        ;
+; Average used               ; 1.03        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.2%      ;
-;     Processors 3-4         ;   1.2%      ;
+;     Processor 2            ;   1.1%      ;
+;     Processors 3-4         ;   1.1%      ;
 +----------------------------+-------------+
 
 
@@ -1486,7 +1486,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.12 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1497,10 +1497,10 @@ Warning (169177): 2 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
     Info (169178): Pin clock uses I/O standard 3.3-V LVTTL at P11 File: /home/smcginn-adsd/src/ads/ads_project2/project2_ads.vhd Line: 37
 Info (144001): Generated suppressed messages file /home/smcginn-adsd/src/ads/ads_project2/output_files/project2_ads.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 1099 megabytes
-    Info: Processing ended: Mon Nov 13 20:46:23 2023
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Peak virtual memory: 1088 megabytes
+    Info: Processing ended: Wed Nov 15 18:01:30 2023
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:12
 
 
 +----------------------------+
