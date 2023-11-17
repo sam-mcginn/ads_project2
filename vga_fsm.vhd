@@ -1,9 +1,9 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
-
-library work;
-use work.vga_data.all;
+library vga;
+use vga.vga_data.all;
 
 
 entity vga_fsm is
@@ -13,6 +13,7 @@ entity vga_fsm is
 	port (
 		vga_clock:		in	std_logic;
 		reset:			in	std_logic;
+		reset_led:  	out std_logic;
 
 		point:			out	coordinate;
 		point_valid:	out	boolean;
@@ -37,14 +38,15 @@ begin
 	--end if;
 --end process;
 
+-- updates current pixel on each clock cycle OR when reset
 position_counter: process(vga_clock, reset)
 begin
 	if (reset = '0') then
 		vga_point <= make_coordinate(0,0);
-		point <= vga_point;
+		--point <= vga_point;		--   --PA
 	elsif (vga_clock'event) and (vga_clock = '1') then
 		vga_point <= next_coordinate(vga_point, vga_res);
-		point <= vga_point;
+		--point <= vga_point;		--   --PA
 	end if;
 		
 end process;
@@ -76,9 +78,18 @@ is_active: process(vga_clock,vga_point)
 begin
 	if (vga_clock'event and vga_clock = '1') then
 		point_valid <= point_visible(vga_point, vga_res);
+		point <= vga_point;
 	end if;
-	
 end process;
+
+reset_light: process(reset)
+	begin
+		if (reset = '0') then
+			reset_led <= '1';
+		else
+			reset_led <= '0';
+		end if;
+	end process reset_light;
 	-- implement methodology to drive outputs here
 	-- use vga_data functions and types to make your life easier
 end architecture fsm;

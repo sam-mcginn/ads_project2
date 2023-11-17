@@ -2,7 +2,24 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "horz_sync",
+					"strict" : false
+				},
+				{
+					"name" : "vert_sync",
+					"strict" : false
+				},
+				{
+					"name" : "reset_led",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

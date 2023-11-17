@@ -1,0 +1,9 @@
+v 4
+file . "../mandelbrot_stage.vhd" "4d03be715681cd95bb4e8e2c31512c1698164d67" "20231108231425.709":
+  entity mandelbrot_stage at 1( 0) + 0 on 74;
+  architecture behavior of mandelbrot_stage at 44( 851) + 0 on 75;
+file . "../project2_pkg.vhd" "b61d726a6ff0a04ecdfa94436e7cbcc98b1fc480" "20231108231425.678":
+  package project2_pkg at 2( 21) + 0 on 73;
+file . "pipeline_testa.vhd" "746c768163d2eed458aaa049f54b59c94e360370" "20231108231425.761":
+  entity pipeline_test at 1( 0) + 0 on 76;
+  architecture test of pipeline_test at 22( 338) + 0 on 77;

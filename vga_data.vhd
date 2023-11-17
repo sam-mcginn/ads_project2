@@ -236,12 +236,12 @@ package body vga_data is
 		if ret.x = timing_range(vga_res, horizontal) then
 			ret.x := 0;
 			ret.y := ret.y + 1;
-			if ret.y = timing_range(vga_res, vertical) then
-				ret.y := 0;
-			end if;
 		end if;
 
-
+		if ret.y = timing_range(vga_res, vertical) then
+			ret.y := 0;
+		end if;
+		
 		return ret;
 	end function next_coordinate;
 

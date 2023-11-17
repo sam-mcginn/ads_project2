@@ -1,5 +1,5 @@
 Flow report for project2_ads
-Sat Nov  4 11:25:41 2023
+Wed Nov 15 18:01:40 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -41,22 +41,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Sat Nov  4 11:25:38 2023          ;
+; Flow Status                        ; Successful - Wed Nov 15 18:01:34 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; project2_ads                                   ;
 ; Top-level Entity Name              ; project2_ads                                   ;
 ; Family                             ; MAX 10                                         ;
 ; Device                             ; 10M50DAF484C7G                                 ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 1 / 49,760 ( < 1 % )                           ;
-;     Total combinational functions  ; 1 / 49,760 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 0 / 49,760 ( 0 % )                             ;
-; Total registers                    ; 0                                              ;
-; Total pins                         ; 1 / 360 ( < 1 % )                              ;
+; Total logic elements               ; 131 / 49,760 ( < 1 % )                         ;
+;     Total combinational functions  ; 111 / 49,760 ( < 1 % )                         ;
+;     Dedicated logic registers      ; 86 / 49,760 ( < 1 % )                          ;
+; Total registers                    ; 86                                             ;
+; Total pins                         ; 18 / 360 ( 5 % )                               ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                          ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                                ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                 ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                                  ;
 ; ADC blocks                         ; 0 / 2 ( 0 % )                                  ;
 +------------------------------------+------------------------------------------------+
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/04/2023 11:25:19 ;
+; Start date & time ; 11/15/2023 18:01:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; project2_ads        ;
 +-------------------+---------------------+
@@ -78,9 +78,10 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589187.169911151929360         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 8796750404080.170008926603556          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; MISC_FILE                           ; clock_25_inst.vhd                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; clock_25.cmp                           ; --            ; --          ; --         ;
 ; MISC_FILE                           ; clock_25.ppf                           ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -97,24 +98,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4828 MB             ; 00:00:11                           ;
-; Fitter               ; 00:00:05     ; 1.0                     ; 6246 MB             ; 00:00:07                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4716 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4922 MB             ; 00:00:02                           ;
-; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:22                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 462 MB              ; 00:00:23                           ;
+; Fitter               ; 00:00:11     ; 1.0                     ; 1088 MB             ; 00:00:12                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 387 MB              ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.1                     ; 527 MB              ; 00:00:05                           ;
+; Total                ; 00:00:29     ; --                      ; --                  ; 00:00:43                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; NathanLenovo     ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; NathanLenovo     ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; NathanLenovo     ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; NathanLenovo     ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++----------------------+------------------+----------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++----------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis ; ADSD-Ubuntu      ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
+; Fitter               ; ADSD-Ubuntu      ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
+; Assembler            ; ADSD-Ubuntu      ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
+; Timing Analyzer      ; ADSD-Ubuntu      ; Ubuntu 22.04.3 ; 22         ; x86_64         ;
++----------------------+------------------+----------------+------------+----------------+
 
 
 ------------

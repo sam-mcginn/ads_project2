@@ -1,11 +1,14 @@
 --Top level file
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 library vga;
 use vga.vga_data.all;
+use vga.vga_pkg.all;
 
 entity vga_output is
 	generic (
+		num_iterations: 	natural := 40;
 		vga_res:	vga_timing := vga_res_default
 	);
 	port (
@@ -13,67 +16,31 @@ entity vga_output is
 		reset:			in	std_logic;
 		h_sync: 			out std_logic;
 		v_sync:			out std_logic;
-		reset_led:  	out std_logic;
-		locked_led: 	out std_logic;
+		--reset_led:  	out std_logic;
 		
-		red:			out	std_logic_vector (3 downto 0);
-		green:		out	std_logic_vector (3 downto 0);
-		blue:			out	std_logic_vector (3 downto 0)
+		--curr_point:		out coordinate;
+		
+		table_index: 	in natural;
+		red:				out	std_logic_vector (3 downto 0);
+		green:			out	std_logic_vector (3 downto 0);
+		blue:				out	std_logic_vector (3 downto 0)
 	);
  end entity vga_output;
  
  architecture top of vga_output is
-	--components 
-		component vga_fsm is
-			generic (
-				vga_res:	vga_timing := vga_res_default
-			);
-			port (
-				vga_clock:		in	std_logic; --25Mhz
-				reset:			in	std_logic;
-
-				point:			out	coordinate;
-				point_valid:	out	boolean;
-
-				h_sync:			out	std_logic;
-				v_sync:			out 	std_logic
-			);
-		end component vga_fsm;
-		
-		component rgb_out is
-			port (
-				reset:			in	std_logic;
-				point: 			in coordinate;
-				point_valid: in boolean;
-				
-
-				red:			out	std_logic_vector (3 downto 0);
-				green:		out	std_logic_vector (3 downto 0);
-				blue:			out	std_logic_vector (3 downto 0)
-			);
-		end component rgb_out;
-		
-		component clock_25 is
-			port (
-				inclk0: 			IN STD_LOGIC  := '0';
-				c0: 				OUT STD_LOGIC ;
-				locked: 			OUT STD_LOGIC 
-			);
-		end component clock_25;
-		
-
-  --any signal declarations you may need
   signal point: coordinate;
-  signal vga_clock: std_logic;
   signal point_valid: boolean;
 
  begin
+	-- Drive current point to point output
+	--curr_point <= point;
+	
 	driver: vga_fsm
 		generic map (
 			vga_res => vga_res_default			
 		)
 		port map (
-			vga_clock => vga_clock,
+			vga_clock => clock_in,
 			reset => reset,
 			point => point,
 			point_valid => point_valid,
@@ -82,34 +49,26 @@ entity vga_output is
 		);
 
 
-	output: rgb_out
+	output: pipeline_rgb_out
+		generic map (
+			num_iterations => num_iterations
+		)
 		port map (
 			reset => reset,
-			point => point,
 			point_valid => point_valid,
+			table_index => table_index,
 			red => red,
 			green => green,
 			blue => blue
-		);
-		
-	clk: clock_25
-		port map (
-			inclk0 => clock_in,
-			c0 => vga_clock,
-			locked => locked_led
-		);
+		);		
 			
-			
-	reset_light: process(reset)
-	begin
-		if (reset = '0') then
-			reset_led <= '1';
-		else
-			reset_led <= '0';
-		end if;
-	end process;
-		-- make instance of ro_puf
-
-
+	--reset_light: process(reset)
+	--begin
+	--	if (reset = '0') then
+	--		reset_led <= '1';
+	--	else
+	--		reset_led <= '0';
+	--	end if;
+	--end process reset_light;
 
 end architecture top;

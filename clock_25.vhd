@@ -52,13 +52,13 @@ END clock_25;
 
 ARCHITECTURE SYN OF clock_25 IS
 
-	SIGNAL sub_wire0	: STD_LOGIC ;
-	SIGNAL sub_wire1	: STD_LOGIC_VECTOR (1 DOWNTO 0);
-	SIGNAL sub_wire2_bv	: BIT_VECTOR (0 DOWNTO 0);
-	SIGNAL sub_wire2	: STD_LOGIC_VECTOR (0 DOWNTO 0);
-	SIGNAL sub_wire3	: STD_LOGIC_VECTOR (4 DOWNTO 0);
-	SIGNAL sub_wire4	: STD_LOGIC ;
-	SIGNAL sub_wire5	: STD_LOGIC ;
+	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (4 DOWNTO 0);
+	SIGNAL sub_wire1	: STD_LOGIC ;
+	SIGNAL sub_wire2	: STD_LOGIC ;
+	SIGNAL sub_wire3	: STD_LOGIC ;
+	SIGNAL sub_wire4	: STD_LOGIC_VECTOR (1 DOWNTO 0);
+	SIGNAL sub_wire5_bv	: BIT_VECTOR (0 DOWNTO 0);
+	SIGNAL sub_wire5	: STD_LOGIC_VECTOR (0 DOWNTO 0);
 
 
 
@@ -128,13 +128,13 @@ ARCHITECTURE SYN OF clock_25 IS
 	END COMPONENT;
 
 BEGIN
-	sub_wire2_bv(0 DOWNTO 0) <= "0";
-	sub_wire2    <= To_stdlogicvector(sub_wire2_bv);
-	sub_wire0    <= inclk0;
-	sub_wire1    <= sub_wire2(0 DOWNTO 0) & sub_wire0;
-	sub_wire4    <= sub_wire3(0);
-	c0    <= sub_wire4;
-	locked    <= sub_wire5;
+	sub_wire5_bv(0 DOWNTO 0) <= "0";
+	sub_wire5    <= To_stdlogicvector(sub_wire5_bv);
+	sub_wire1    <= sub_wire0(0);
+	c0    <= sub_wire1;
+	locked    <= sub_wire2;
+	sub_wire3    <= inclk0;
+	sub_wire4    <= sub_wire5(0 DOWNTO 0) & sub_wire3;
 
 	altpll_component : altpll
 	GENERIC MAP (
@@ -195,9 +195,9 @@ BEGIN
 		width_clock => 5
 	)
 	PORT MAP (
-		inclk => sub_wire1,
-		clk => sub_wire3,
-		locked => sub_wire5
+		inclk => sub_wire4,
+		clk => sub_wire0,
+		locked => sub_wire2
 	);
 
 
@@ -222,7 +222,7 @@ END SYN;
 -- Retrieval info: PRIVATE: CREATE_INCLK1_CHECK STRING "0"
 -- Retrieval info: PRIVATE: CUR_DEDICATED_CLK STRING "c0"
 -- Retrieval info: PRIVATE: CUR_FBIN_CLK STRING "c0"
--- Retrieval info: PRIVATE: DEVICE_SPEED_GRADE STRING "7"
+-- Retrieval info: PRIVATE: DEVICE_SPEED_GRADE STRING "Any"
 -- Retrieval info: PRIVATE: DIV_FACTOR0 NUMERIC "1"
 -- Retrieval info: PRIVATE: DUTY_CYCLE0 STRING "50.00000000"
 -- Retrieval info: PRIVATE: EFF_OUTPUT_FREQ_VALUE0 STRING "40.000000"
@@ -360,6 +360,6 @@ END SYN;
 -- Retrieval info: GEN_FILE: TYPE_NORMAL clock_25.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL clock_25.cmp TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL clock_25.bsf FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL clock_25_inst.vhd FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL clock_25_inst.vhd TRUE
 -- Retrieval info: LIB_FILE: altera_mf
 -- Retrieval info: CBX_MODULE_PREFIX: ON
