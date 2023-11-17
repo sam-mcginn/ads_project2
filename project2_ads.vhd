@@ -14,7 +14,9 @@ use ads.ads_fixed.all;
 
 entity project2_ads is
 	generic (
-		-- change num_iterations to 20
+		-- '0' = Mandelbrot, '1' = Fatou+Julia
+		type_fractal: std_logic := '0';
+		
 		num_iterations: 	natural := 15;
 		horz_pixels: 		natural := 800;
 		vert_pixels: 		natural := 600;
@@ -64,6 +66,9 @@ architecture top_arch of project2_ads is
 	-- Convert threshold to complex format
 	constant threshold: ads_sfixed := (thres_im*thres_im) + (thres_re*thres_re);
 	
+	-- Arbitrary value of c (Fatou and Julia)
+	constant arb_constant: ads_complex := ads_cmplx(to_ads_sfixed(-0.8), to_ads_sfixed(0.2));
+	
 	-- Current point
 	signal curr_point: coordinate;
 	signal point_valid: boolean;
@@ -110,7 +115,7 @@ begin
 		);
 		
 	-- VGA clock
-		clk: clock_25
+	clk: clock_25
 		port map (
 			inclk0 => clock,
 			c0 => vga_clock,
@@ -134,13 +139,49 @@ begin
 	-- Use output of 'shift reg' to drive sync outputs
 	horz_sync <= hsync_reg(num_iterations);
 	vert_sync <= vsync_reg(num_iterations);
-		
-	-- z, index should both start at 0
-	z_nodes(0) <= ads_cmplx(to_ads_sfixed(0), to_ads_sfixed(0));
+	
+	
+	-- For both Mandelbrot and Fatou+Julia sets:
+	-- Index should start at 0, overflow starts at false
 	index_nodes(0) <= 0;
 	overflow_nodes(0) <= false;
-	--c_nodes(0) <= make_seed_point(curr_point);	 --PA
+	
+	-- Mandelbrot: z0 = 0, c = make_seed_point
+	z_nodes(0) <= complex_zero when type_fractal = '0';
+	-- Fatou and Julia: z0 = make_seed_point, c0 = arbitrary constant
+	c_nodes(0) <= arb_constant when type_fractal = '1';
 
+	-- Drive pipeline
+	display: process (vga_clock) is
+		variable re_in: ads_sfixed;
+		variable im_in: ads_sfixed;
+	begin
+		if rising_edge(vga_clock) then
+			if (type_fractal = '0') then
+				-- MANDELBROT:
+				c_nodes(0) <= make_seed_point(curr_point);
+			else
+				-- FATOU + JULIA
+				z_nodes(0) <= make_seed_point(curr_point);
+			end if;
+		end if;
+	end process display;
+	
+	-- Drive VGA output from color map:
+	output: pipeline_rgb_out
+		generic map (
+			num_iterations => num_iterations
+		)
+		port map (
+			reset => reset,
+			point_valid => point_valid_array(num_iterations),  		-- FIX pkg, vhd
+			table_index => index_nodes(num_iterations),
+			red => r_out,
+			green => g_out,
+			blue => b_out
+		);	
+		
+	-- PIPELINE:
 	-- instantiate num_iterations mandelbrot blocks (pipeline)
 	pipeline: for num in 0 to num_iterations-1 generate
 		p0: mandelbrot_stage
@@ -161,43 +202,7 @@ begin
 				overflow_out => overflow_nodes(num+1)
 			);
 	end generate pipeline;
-		
-	-- Decompose curr_point into real/horz and im/vert:
-	--curr_h <= curr_point.x;
-	--curr_v <= curr_point.y;
 	
-	-- Drive mandelbrot pipeline		-- --PA
-	display: process (vga_clock) is
-		variable re_in: ads_sfixed;
-		variable im_in: ads_sfixed;
-		--variable index_out: natural;
-	begin
-		if rising_edge(vga_clock) then
-			c_nodes(0) <= make_seed_point(curr_point);
-			 --calculate seed = c_in from current point		--PA
-			 --(scale R{c}, I{c} range <-- horizontal, vertical pixels)		--PA
-
-			
-			-- input c_in to pipeline
-		--c_nodes(0) <= ads_cmplx(re_in, im_in);
-			
-			-- read index from output
-			--index_out := index_nodes(num_iterations);
-		end if;
-	end process display;
-	
-	-- Drive VGA output from color map:
-	output: pipeline_rgb_out
-		generic map (
-			num_iterations => num_iterations
-		)
-		port map (
-			reset => reset,
-			point_valid => point_valid_array(num_iterations),  		-- FIX pkg, vhd
-			table_index => index_nodes(num_iterations),
-			red => r_out,
-			green => g_out,
-			blue => b_out
-		);	
+	-- FATOU AND JULIA:
 
 end architecture top_arch;

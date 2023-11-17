@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project2_ads
-Fri Nov 17 12:17:36 2023
+Fri Nov 17 13:40:18 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -23,22 +23,22 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
  15. Parameter Settings for User Entity Instance: Top-level Entity: |project2_ads
  16. Parameter Settings for User Entity Instance: vga_fsm:fsm
  17. Parameter Settings for User Entity Instance: clock_25:clk|altpll:altpll_component
- 18. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:0:p0
- 19. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:1:p0
- 20. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:2:p0
- 21. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:3:p0
- 22. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:4:p0
- 23. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:5:p0
- 24. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:6:p0
- 25. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:7:p0
- 26. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:8:p0
- 27. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:9:p0
- 28. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:10:p0
- 29. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:11:p0
- 30. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:12:p0
- 31. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:13:p0
- 32. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:14:p0
- 33. Parameter Settings for User Entity Instance: pipeline_rgb_out:output
+ 18. Parameter Settings for User Entity Instance: pipeline_rgb_out:output
+ 19. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:0:p0
+ 20. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:1:p0
+ 21. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:2:p0
+ 22. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:3:p0
+ 23. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:4:p0
+ 24. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:5:p0
+ 25. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:6:p0
+ 26. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:7:p0
+ 27. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:8:p0
+ 28. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:9:p0
+ 29. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:10:p0
+ 30. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:11:p0
+ 31. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:12:p0
+ 32. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:13:p0
+ 33. Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:14:p0
  34. Parameter Settings for Inferred Entity Instance: mandelbrot_stage:\pipeline:13:p0|lpm_mult:Mult0
  35. Parameter Settings for Inferred Entity Instance: mandelbrot_stage:\pipeline:13:p0|lpm_mult:Mult1
  36. Parameter Settings for Inferred Entity Instance: mandelbrot_stage:\pipeline:12:p0|lpm_mult:Mult0
@@ -154,7 +154,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 17 12:17:36 2023          ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 17 13:40:18 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; project2_ads                                   ;
 ; Top-level Entity Name              ; project2_ads                                   ;
@@ -272,8 +272,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.6%      ;
-;     Processor 3            ;   0.3%      ;
+;     Processor 2            ;   0.3%      ;
+;     Processor 3            ;   0.2%      ;
 ;     Processor 4            ;   0.2%      ;
 +----------------------------+-------------+
 
@@ -840,6 +840,7 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------+-------------------------------+-----------------------------+
 ; Parameter Name ; Value                         ; Type                        ;
 +----------------+-------------------------------+-----------------------------+
+; type_fractal   ; '0'                           ; Enumerated                  ;
 ; num_iterations ; 15                            ; Signed Integer              ;
 ; horz_pixels    ; 800                           ; Signed Integer              ;
 ; vert_pixels    ; 600                           ; Signed Integer              ;
@@ -1239,6 +1240,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipeline_rgb_out:output ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; num_iterations ; 15    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: mandelbrot_stage:\pipeline:0:p0 ;
 +----------------+-------------------------------+-----------------------------+
@@ -1401,16 +1412,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; threshold      ; 00000001000000000000000000000 ; Unsigned Binary              ;
 ; stage_number   ; 14                            ; Signed Integer               ;
 +----------------+-------------------------------+------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: pipeline_rgb_out:output ;
-+----------------+-------+---------------------------------------------+
-; Parameter Name ; Value ; Type                                        ;
-+----------------+-------+---------------------------------------------+
-; num_iterations ; 15    ; Signed Integer                              ;
-+----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -6408,7 +6409,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:27     ;
+; Top            ; 00:00:24     ;
 +----------------+--------------+
 
 
@@ -6418,7 +6419,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Fri Nov 17 12:16:55 2023
+    Info: Processing started: Fri Nov 17 13:39:42 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project2_ads -c project2_ads
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -6444,7 +6445,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file vga_tes
     Info (12022): Found design unit 1: vga_test-test_fixture File: /home/smcginn-adsd/ads_project2/vga_test.vhd Line: 13
     Info (12023): Found entity 1: vga_test File: /home/smcginn-adsd/ads_project2/vga_test.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file project2_ads.vhd
-    Info (12022): Found design unit 1: project2_ads-top_arch File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 53
+    Info (12022): Found design unit 1: project2_ads-top_arch File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 55
     Info (12023): Found entity 1: project2_ads File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 15
 Info (12021): Found 1 design units, including 0 entities, in source file project2_pkg.vhd
     Info (12022): Found design unit 1: project2_pkg File: /home/smcginn-adsd/ads_project2/project2_pkg.vhd Line: 14
@@ -6461,8 +6462,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file clock_2
     Info (12022): Found design unit 1: clock_25-SYN File: /home/smcginn-adsd/ads_project2/clock_25.vhd Line: 53
     Info (12023): Found entity 1: clock_25 File: /home/smcginn-adsd/ads_project2/clock_25.vhd Line: 43
 Info (12127): Elaborating entity "project2_ads" for the top level hierarchy
-Info (12128): Elaborating entity "vga_fsm" for hierarchy "vga_fsm:fsm" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 96
-Info (12128): Elaborating entity "clock_25" for hierarchy "clock_25:clk" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 113
+Info (12128): Elaborating entity "vga_fsm" for hierarchy "vga_fsm:fsm" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 101
+Info (12128): Elaborating entity "clock_25" for hierarchy "clock_25:clk" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 118
 Info (12128): Elaborating entity "altpll" for hierarchy "clock_25:clk|altpll:altpll_component" File: /home/smcginn-adsd/ads_project2/clock_25.vhd Line: 139
 Info (12130): Elaborated megafunction instantiation "clock_25:clk|altpll:altpll_component" File: /home/smcginn-adsd/ads_project2/clock_25.vhd Line: 139
 Info (12133): Instantiated megafunction "clock_25:clk|altpll:altpll_component" with the following parameter: File: /home/smcginn-adsd/ads_project2/clock_25.vhd Line: 139
@@ -6524,22 +6525,22 @@ Info (12133): Instantiated megafunction "clock_25:clk|altpll:altpll_component" w
 Info (12021): Found 1 design units, including 1 entities, in source file db/clock_25_altpll.v
     Info (12023): Found entity 1: clock_25_altpll File: /home/smcginn-adsd/ads_project2/db/clock_25_altpll.v Line: 30
 Info (12128): Elaborating entity "clock_25_altpll" for hierarchy "clock_25:clk|altpll:altpll_component|clock_25_altpll:auto_generated" File: /home/smcginn-adsd/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:0:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:1:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:2:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:3:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:4:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:5:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:6:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:7:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:8:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:9:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:10:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:11:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:12:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:13:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:14:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 146
-Info (12128): Elaborating entity "pipeline_rgb_out" for hierarchy "pipeline_rgb_out:output" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 190
+Info (12128): Elaborating entity "pipeline_rgb_out" for hierarchy "pipeline_rgb_out:output" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 171
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:0:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:1:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:2:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:3:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:4:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:5:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:6:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:7:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:8:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:9:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:10:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:11:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:12:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:13:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
+Info (12128): Elaborating entity "mandelbrot_stage" for hierarchy "mandelbrot_stage:\pipeline:14:p0" File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 187
 Info (278001): Inferred 42 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mandelbrot_stage:\pipeline:13:p0|Mult0" File: /home/smcginn-adsd/ads_project2/ads_fixed.vhd Line: 316
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mandelbrot_stage:\pipeline:13:p0|Mult1" File: /home/smcginn-adsd/ads_project2/ads_fixed.vhd Line: 316
@@ -7011,7 +7012,7 @@ Info (12133): Instantiated megafunction "lpm_mult:Mult1|mult_dks:auto_generated|
 Info (13014): Ignored 12353 buffer(s)
     Info (13016): Ignored 140 CARRY_SUM buffer(s)
     Info (13019): Ignored 12213 SOFT buffer(s)
-Info (13000): Registers with preset signals will power-up high File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 123
+Info (13000): Registers with preset signals will power-up high File: /home/smcginn-adsd/ads_project2/project2_ads.vhd Line: 128
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 40 registers lost all their fanouts during netlist optimizations.
@@ -7158,9 +7159,9 @@ Info (21057): Implemented 11279 device resources after synthesis - the final res
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 288 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 598 megabytes
-    Info: Processing ended: Fri Nov 17 12:17:36 2023
-    Info: Elapsed time: 00:00:41
-    Info: Total CPU time (on all processors): 00:00:54
+    Info: Peak virtual memory: 589 megabytes
+    Info: Processing ended: Fri Nov 17 13:40:18 2023
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:46
 
 
