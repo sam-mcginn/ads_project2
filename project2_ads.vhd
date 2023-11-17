@@ -15,9 +15,9 @@ use ads.ads_fixed.all;
 entity project2_ads is
 	generic (
 		-- '0' = Mandelbrot, '1' = Fatou+Julia
-		type_fractal: std_logic := '0';
+		type_fractal: std_logic := '1';
 		
-		num_iterations: 	natural := 15;
+		num_iterations: 	natural := 20;
 		horz_pixels: 		natural := 800;
 		vert_pixels: 		natural := 600;
 		h_pixels_inv: ads_sfixed := to_ads_sfixed(0.00125);
