@@ -15,7 +15,7 @@ use ads.ads_fixed.all;
 entity project2_ads is
 	generic (
 		-- change num_iterations to 20
-		num_iterations: 	natural := 10;
+		num_iterations: 	natural := 15;
 		horz_pixels: 		natural := 800;
 		vert_pixels: 		natural := 600;
 		h_pixels_inv: ads_sfixed := to_ads_sfixed(0.00125);
@@ -127,6 +127,7 @@ begin
 		elsif rising_edge(vga_clock) then
 			hsync_reg <= hsync_in & hsync_reg(0 to num_iterations - 1);
 			vsync_reg <= vsync_in & vsync_reg(0 to num_iterations - 1);
+			point_valid_array <= point_valid & point_valid_array(0 to num_iterations-1);
 		end if;
 	end process sync_regs;
 	
