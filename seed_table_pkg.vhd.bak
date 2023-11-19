@@ -1,0 +1,3 @@
+library ads;
+use ads.ads_fixed.all;
+use ads.ads_complex_pkg.all;

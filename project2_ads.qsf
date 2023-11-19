@@ -102,4 +102,5 @@ set_global_assignment -name VHDL_FILE pipeline_rgb_out.vhd -library vga
 set_global_assignment -name VHDL_FILE vga_pkg.vhd -library vga
 set_global_assignment -name TCL_SCRIPT_FILE place_project2.tcl
 set_global_assignment -name QIP_FILE clock_25.qip
+set_global_assignment -name VHDL_FILE seed_table_pkg.vhd -library ads
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

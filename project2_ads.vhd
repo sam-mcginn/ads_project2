@@ -11,10 +11,11 @@ use vga.vga_pkg.all;
 library ads;
 use ads.ads_complex_pkg.all;
 use ads.ads_fixed.all;
+use ads.seed_table_pkg.all;
 
 entity project2_ads is
 	generic (
-		-- '0' = Mandelbrot, '1' = Fatou+Julia
+		-- 0 = Mandelbrot, 1 = Fatou+Julia
 		type_fractal: std_logic := '1';
 		
 		num_iterations: 	natural := 20;
@@ -68,6 +69,7 @@ architecture top_arch of project2_ads is
 	
 	-- Arbitrary value of c (Fatou and Julia)
 	constant arb_constant: ads_complex := ads_cmplx(to_ads_sfixed(-0.8), to_ads_sfixed(0.2));
+	--signal var_constant: ads_complex := seed_rom(0);
 	
 	-- Current point
 	signal curr_point: coordinate;
@@ -149,12 +151,25 @@ begin
 	-- Mandelbrot: z0 = 0, c = make_seed_point
 	z_nodes(0) <= complex_zero when type_fractal = '0';
 	-- Fatou and Julia: z0 = make_seed_point, c0 = arbitrary constant
-	c_nodes(0) <= arb_constant when type_fractal = '1';
+	--c_nodes(0) <= arb_constant when type_fractal = '1';		-- for static image
+				
+	-- Animate Fatou + Julia set
+	animate: process (vga_clock) is
+		variable fj_index: seed_index_type := 0;
+	begin
+		if type_fractal = '1' and rising_edge(vga_clock) then
+			if curr_point.x = (horz_pixels-1) and curr_point.y = (vert_pixels-1) then
+				fj_index := get_next_seed_index(fj_index);
+			end if;
+			c_nodes(0) <= seed_rom(fj_index);
+		end if;
+	end process animate;
 
 	-- Drive pipeline
 	display: process (vga_clock) is
 		variable re_in: ads_sfixed;
 		variable im_in: ads_sfixed;
+		--variable fj_index: seed_index_type := 0;
 	begin
 		if rising_edge(vga_clock) then
 			if (type_fractal = '0') then
