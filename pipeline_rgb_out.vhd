@@ -3,8 +3,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-library work;
-use work.project2_pkg.all;
 
 library vga;
 use vga.vga_data.all;

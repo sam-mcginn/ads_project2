@@ -14,7 +14,7 @@ use ads.ads_fixed.all;
 
 entity project2_ads is
 	generic (
-		num_iterations: 	natural := 20;
+		num_iterations: 	natural := 27;
 		horz_pixels: 		natural := 800;
 		vert_pixels: 		natural := 600;
 		h_pixels_inv: ads_sfixed := to_ads_sfixed(0.00125);
